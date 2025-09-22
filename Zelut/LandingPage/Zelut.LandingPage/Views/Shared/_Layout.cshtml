@@ -7,28 +7,42 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Zelut.LandingPage.styles.css" asp-append-version="true" />
+    <script src="~/js/tailwind.js"></script>
+    <script src="~/js/main.js" defer></script>
+    <link rel="stylesheet" href="./css/index.css" />
+    <style>
+
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Zelut.LandingPage</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <header class="sticky shadow-xs top-0 z-20 w-full bg-white flex items-center justify-between py-4 md:py-6 px-5 md:px-10 lg:px-20">
+        <div class="flex-1 lg:hidden" onclick="openMenu()">
+            <img src="~/images/icons/menu.svg"
+                 alt="menu"
+                 class="pointer-events-none" />
+        </div>
+        <div class="flex-1 flex items-center justify-center lg:justify-start">
+            <a href="/">
+                <img src="~/images/logo.png"
+                     alt="logo"
+                     class="max-w-22 lg:max-w-full" />
+            </a>
+        </div>      
+        <nav class="hidden lg:flex items-center justify-center gap-10 flex-2 header-navbar text-nowrap">
+            <a asp-controller="Home" asp-action="Index" class="currentPageNav">خانه</a>
+            <a asp-controller="Home" asp-action="Products">محصولات</a>
+            <a asp-controller="Home" asp-action="AboutUs">درباره ما</a>
+            <a asp-controller="Home" asp-action="ContactUs">ارتباط با ما</a>
+            <a asp-controller="Home" asp-action="Weblog">مجله زیلوت</a>
         </nav>
+        <div class="flex flex-1 items-center justify-end gap-2">
+            <img src="~/images/search.svg" alt="search" />
+            <div class="items-center hidden gap-2 md:flex">
+                <p>Fa</p>
+                <p>|</p>
+                <p>En</p>
+            </div>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -36,9 +50,62 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Zelut.LandingPage - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-lightGreen px-5 md:px-10 lg:px-20 pb-10 text-white relative">
+        <div class="absolute bg-glassyWhite p-6 flex items-center justify-center z-10 left-5 md:left-10 lg:left-20 -translate-y-1/3 scrollBtn cursor-pointer"
+             onclick="scrollToTop()">
+            <img src="~/images/icons/arrow.svg" alt="arrow" />
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between">
+            <div>
+                <div class="py-10 pb-2 w-fit patternContainer">
+                    <p class="text-2xl md:text-3xl lg:text-4xl p-5">
+                        زمیــن بـــرای زنــدگی
+                    </p>
+                </div>
+                <div class="flex flex-col text-sm gap-3 p-5">
+                    <a href="#">فرصت‌های شغلی</a>
+                    <a href="#">پاسخ به پرسش‌های متداول</a>
+                    <a href="#">رضایت مشتری و پیشنهادات</a>
+                    <div class="text-base flex gap-5">
+                        <span>تلفـن پشـتیـبانی</span>
+                        <a href="#">۰۲۱۱۲۳۴۵۷۶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-5 p-5">
+                <p class="text-sm">عضو باشگاه خبری زیلوت شوید</p>
+                <div class="bg-white rounded-lg text-black flex items-stretch gap-1 h-10 shadow-3xl">
+                    <div class="bg-gray-300 rounded-lg h-full w-12 shadow-md flex items-center justify-center">
+                        <img src="~/images/sendArrow.png" alt="" />
+                    </div>
+                    <input type="text"
+                           name="phone"
+                           id="phone"
+                           class="bg-none focus-visible:outline-0 placeholder:text-xs placeholder:opacity-50 w-full h-full p-2 text-center"
+                           placeholder="از جدیدترین اخبار ما مطلع شوید" />
+                </div>
+                <div class="flex items-center justify-between gap-8">
+                    <div class="w-10 aspect-square flex items-center justify-center bg-lightGray shadow-3xl rounded-lg">
+                        <img src="~/images/media/aparat.png" alt="aparat" />
+                    </div>
+                    <div class="w-10 aspect-square flex items-center justify-center bg-lightGray shadow-3xl rounded-lg">
+                        <img src="~/images/media/whatsapp.png" alt="whatsapp" />
+                    </div>
+                    <div class="w-10 aspect-square flex items-center justify-center bg-lightGray shadow-3xl rounded-lg">
+                        <img src="~/images/media/youtube.png" alt="youtube" />
+                    </div>
+                    <div class="w-10 aspect-square flex items-center justify-center bg-lightGray shadow-3xl rounded-lg">
+                        <img src="~/images/media/instagram.png" alt="instagram" />
+                    </div>
+                    <div class="w-10 aspect-square flex items-center justify-center bg-lightGray shadow-3xl rounded-lg">
+                        <img src="~/images/media/telegram.png" alt="telegram" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t-2 p-5" style="border-color: #5daeba">
+            <p class="text-sm">تمامی حقوق متعلق به زیلوت می باشد.</p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

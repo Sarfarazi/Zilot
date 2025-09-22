@@ -1,0 +1,446 @@
+﻿<section class="lg:pb-16 px-10 lg:px-20 relative flex items-center bg-lightGray justify-end productsHeroSection">
+    <div class="hidden lg:flex lg:absolute right-0 lg:right-20 items-center justify-center overflow-hidden lg:h-full">
+        <img src="~/images/productsCover.png"
+             class="object-cover w-full"
+             alt="slider" />
+    </div>
+    <div class="bg-glassyWhite relative p-5 md:p-10 lg:py-16 lg:px-10 xl:py-12 lg:w-2/6 backdrop-blur-md text-center">
+        <img src="~/images/icons/diamonds.svg"
+             alt="pattern"
+             class="absolute -top-10 left-5 hidden lg:block" />
+
+        <h1 class="text-green text-2xl md:text-3xl lg:text-5xl mb-5 leading-relaxed font-medium">
+            محصـولات
+        </h1>
+        <p class="text-justify text-base md:text-lg lg:text-xl">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+            در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جام می توان امید داشت
+        </p>
+    </div>
+</section>
+
+<div class="p-10 px-10 md:px-16 lg:p-22 lg:px-26 flex w-full overflow-x-scroll items-center justify-between gap-4">
+    <div class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer currentProductCat"
+         onclick="productCategoryHandler('all')">
+        <p class="skew-x-24 pointer-events-none">همه</p>
+    </div>
+    <div class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer"
+         onclick="productCategoryHandler('minimal')">
+        <p class="skew-x-24 pointer-events-none">مینیمــال</p>
+    </div>
+    <div class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer"
+         onclick="productCategoryHandler('classic')">
+        <p class="skew-x-24 pointer-events-none">کلاسیــک</p>
+    </div>
+    <div class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer"
+         onclick="productCategoryHandler('sport')">
+        <p class="skew-x-24 pointer-events-none">اسپـــرت</p>
+    </div>
+    <div class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer"
+         onclick="productCategoryHandler('office')">
+        <p class="skew-x-24 pointer-events-none">آفیــــس</p>
+    </div>
+</div>
+
+<section class="px-5 md:px-10 lg:px-20 mb-20 grid gap-y-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Pamchal.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">آفیس 01</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Cut-B.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">مینیمال 01</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Raash.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">کلاسیک 02</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Pouneh.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">مینیمال 04</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Shabnam.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">افیس 03</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="flex-1 shadow-xl">
+            <div class="overflow-hidden" style="aspect-ratio: 2 / 1.7">
+                <img src="~/images/products/Yaas.png"
+                     alt="product"
+                     class="w-full object-cover" />
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl">اسپرت 04</h3>
+                <p class="my-5">16 رنگ</p>
+                <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                    <div class="w-10 aspect-square rounded-sm shrink-0"
+                         style="background-color: #393939"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #d9d9d9"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #5e6575"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #b4a592"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #585453"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #81807e"></div>
+                    <div class="w-10 aspect-square bg-green rounded-sm shrink-0"
+                         style="background-color: #938778"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Product"
+                   class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
+                    <p>مشخصات محصول</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll">
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog1.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۱۸ تیر ۱۴۰۴</p>
+                            </div>
+                            <a asp-controller="Home" asp-action="News"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog2.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۶ بهمن ۱۴۰۲</p>
+                            </div>
+                            <a asp-controller="Home" asp-action="News"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog3.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۱۱ خرداد ۱۴۰۰</p>
+                            </div>
+                            <a asp-controller="Home" asp-action="News"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

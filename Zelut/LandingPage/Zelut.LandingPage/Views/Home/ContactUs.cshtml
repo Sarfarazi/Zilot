@@ -1,0 +1,211 @@
+﻿<section class="p-5 md:p-10 py-10 lg:p-20">
+    <div class="flex flex-col-reverse lg:flex-row bg-white shadow-xl items-stretch">
+        <div class="flex-2 p-8 lg:p-16 md:text-lg">
+            <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
+                دفتر مرکزی
+            </h2>
+            <div>
+                <p class="py-5 text-justify">
+                    تهـران، خیابان مطــهــری، خـیابان میــرعماد، کوچه چهاردهــم، پلاک
+                    5، طبقه 1
+                </p>
+                <div class="flex items-center justify-between py-2">
+                    <p>تلـفن:</p>
+                    <a href="tel:021881122333">333 22 11 88 - 021</a>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <p>فکـس:</p>
+                    <a href="tel:021881122333">333 22 11 88 - 021</a>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <p>ایمیـــل:</p>
+                    <a href="mailto:info@zelutco.com">info@zelutco.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex-3 bg-green min-h-56 w-full lg:min-h-auto z-10"
+             id="map"></div>
+    </div>
+</section>
+
+<section class="px-10 lg:px-20 mb-10">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
+        تماس با ما
+    </h2>
+    <form class="flex flex-col gap-8 py-10">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="relative flex-1">
+                <input type="text"
+                       id="nameInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="nameInput"
+                       class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام *</label>
+            </div>
+            <div class="relative flex-1">
+                <input type="text"
+                       id="familyInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="familyInput"
+                       class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام خانوادگی *</label>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="relative flex-1">
+                <input type="tel"
+                       id="phoneInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="phoneInput"
+                       class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">شماره تماس *</label>
+            </div>
+            <div class="relative flex-1">
+                <input type="email"
+                       id="emailInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" " />
+                <label for="emailInput"
+                       class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+            </div>
+        </div>
+        <div class="relative flex-1">
+            <textarea id="textarea"
+                      class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                      placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"></textarea>
+            <label for="textarea"
+                   class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">پیام شما</label>
+        </div>
+        <button class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg rounded-md shadow-md self-center md:self-end">
+            ارسال پیام
+        </button>
+    </form>
+</section>
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll">
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog1.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۱۸ تیر ۱۴۰۴</p>
+                            </div>
+                            <a href="/News.html"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog2.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۶ بهمن ۱۴۰۲</p>
+                            </div>
+                            <a href="/News.html"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
+            <div class="flex flex-col">
+                <div class="flex-1">
+                    <img src="~/images/blog3.png"
+                         alt="blog"
+                         class="w-full object-cover" />
+                </div>
+                <div class="flex-2 bg-whiteGreen">
+                    <div class="p-5 flex flex-col">
+                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
+                            مجله زیلوت
+                        </p>
+                        <p class="text-lightGreen leading-relaxed mb-2">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان ها
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است.
+                        </p>
+                        <div class="flex items-center justify-between pt-3">
+                            <div class="flex items-center gap-1">
+                                <img src="~/images/edit.svg" alt="edit" />
+                                <p class="text-xs opacity-50">۱۱ خرداد ۱۴۰۰</p>
+                            </div>
+                            <a href="/News.html"
+                               class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
+                                <img src="~/images/moreArrow.png" alt="arrow" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var map = L.map("map").setView(
+      [35.72932137582643, 51.42666632042495],
+      17
+    );
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+    }).addTo(map);
+    L.marker([35.72932137582643, 51.42666632042495]).addTo(map);
+</script>

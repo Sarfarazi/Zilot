@@ -1,0 +1,260 @@
+@theme {
+  --color-clifford: #da373d;
+  --color-lightGreen: #038193;
+}
+
+a {
+  display: inline-block;
+}
+
+/* For Chrome, Safari, and Edge */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.heroSection,
+.productsHeroSection {
+  min-height: 650px;
+}
+
+.currentProductCat{
+  background-color: var(--color-lightGreen);
+  color: white;
+}
+
+.currentColor{
+  border: 2px solid white;
+  outline: 1px solid black;
+}
+
+.scrollBtn {
+  backdrop-filter: blur(16px);
+}
+
+.categoryNav p {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.currentCategory {
+  opacity: 1 !important;
+}
+
+.currentAbout {
+  background-color: var(--color-lightGreen);
+}
+@media screen and (min-width: 768px) {
+  .currentAbout {
+    transform: scale(1.15) skewX(-10deg);
+    transform-origin: bottom;
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .heroSection,
+  .productsHeroSection {
+    min-height: 50vh !important;
+    background-image: url(./images/slider.png);
+    background-position: center;
+    background-size: cover;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .productsHeroSection {
+    background-image: url(./images/productsCover.png);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .productDetail {
+    max-width: calc(100% / 7 * 4) !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heroSection,
+  .productsHeroSection {
+    min-height: unset !important;
+  }
+}
+
+.newsHeroSection {
+  max-height: 70vh;
+}
+
+.patternContainer {
+  background-image: url(./images/pattern.png);
+  background-size: cover;
+}
+
+.heroPatternContainer {
+  background-image: url(./images/heroPattern.png);
+  background-size: cover;
+}
+
+.header-navbar a {
+  opacity: 0.5;
+}
+
+.currentPageNav {
+  opacity: 1 !important;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 50px !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.swiper-button-prev {
+  right: 0 !important;
+  left: unset !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  padding: 20px;
+  height: 105% !important;
+  top: 0 !important;
+  color: var(--color-lightGreen) !important;
+}
+
+.swiper-button-next {
+  left: 0 !important;
+  right: unset !important;
+}
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(90%) hue-rotate(300deg) brightness(80%) contrast(90%);
+}
+
+.leaflet-marker-icon {
+  filter: hue-rotate(320deg) !important;
+}
+
+
+
+
+
+
+/* menu */
+.sidebarMenu-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #242424;
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top right;
+  transition: 400ms ease;
+  transform: scale(1);
+  padding: 20px 20px 50px;
+  color: white;
+  overflow: scroll;
+}
+
+.sidebarMenu {
+  transition: 200ms ease;
+}
+
+.sidebarMenu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebarMenu-top svg {
+  width: 35px;
+}
+.sidebarMenu-top img{
+  width: 80px;
+}
+
+.sidebarMenu-links {
+  padding: 40px 20px;
+}
+
+
+.sidebar-collection-submenu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 18px;
+}
+
+.collapsed {
+  height: 0 !important;
+  transition: 400ms ease;
+}
+
+.collection-title:has(+ .collapsed) svg {
+  transform: rotate(0deg);
+  transition: 400ms ease;
+}
+
+.sidebarMenu-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0 10%;
+}
+
+.sidebarMenu-bottom-register {
+  text-align: center;
+  width: 100%;
+}
+
+.sidebarMenu-bottom-register a {
+  background-color: white;
+  color: black;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.sidebarMenu-bottom-media {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0.6;
+}
+
+.menu-media-link svg {
+  width: 25px;
+  padding: 10px;
+  box-sizing: content-box;
+  fill: white;
+}
+
+.menuClosed {
+  transform: scale(0);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
