@@ -361,31 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/EndPoint/wwwroot/js/products.min.js
-/EndPoint/wwwroot/js/productsRendering.min.js
-/EndPoint/wwwroot/js/iu.min.js
-/EndPoint/wwwroot/js/Views/Supervisor/all.min.js
-/EndPoint/wwwroot/js/productsRendering.min.js
-/EndPoint/wwwroot/js/products.min.js
-/EndPoint/wwwroot/js/agents.min.js
-/EndPoint/wwwroot/js/Views/Supervisor/all.min.js
-/EndPoint/wwwroot/FileUpload/Products
-/EndPoint/wwwroot/js/iu.min.js
-/EndPoint/wwwroot/js/productsRendering.min.js
-/EndPoint/wwwroot/js/palazHome.min.js
-/EndPoint/wwwroot/js/palazHome.min.js
-/EndPoint/wwwroot/js/Views/Agent/all.min.js
-/EndPoint/wwwroot/js/Views/ac.min.js
-/EndPoint/wwwroot/js/products.min.js
-/EndPoint/wwwroot/js/Views/Consumer/all.min.js
-/EndPoint/wwwroot/js/Views/Supervisor/all.min.js
-/EndPoint/wwwroot/FileUpload/Suggestion
-/EndPoint/wwwroot/js/Suggestion.min.js
-/EndPoint/wwwroot/css/landing/assets/js/products.min.js
-/EndPoint/wwwroot/js/iu.min.js
-/EndPoint/wwwroot/FileUpload/Knowledge
-/EndPoint/wwwroot/FileUpload/Tickets
-/EndPoint/wwwroot/FileUpload/Agents
-/EndPoint/wwwroot/js/iu.min.js
-/EndPoint/wwwroot/js/Views/Supervisor/all.min.js
-/EndPoint/wwwroot/js/Views/Agent/all.min.js
