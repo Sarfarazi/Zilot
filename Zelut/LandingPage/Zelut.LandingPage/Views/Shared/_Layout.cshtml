@@ -12,7 +12,7 @@
     <script src="~/js/swiper.js"></script>
     <link rel="stylesheet" href="~/lib/leaflet/leaflet.css">
     <script src="~/lib/leaflet/leaflet.js"></script>
-    </style>
+
 </head>
 
 <body>
@@ -28,10 +28,10 @@
         </div>
         <nav class="hidden lg:flex items-center justify-center gap-10 flex-2 header-navbar text-nowrap">
             <a asp-controller="Home" asp-action="Index" class="currentPageNav">خانه</a>
-            <a asp-controller="Home" asp-action="Products">محصولات</a>
-            <a asp-controller="Home" asp-action="AboutUs">درباره ما</a>
-            <a asp-controller="Home" asp-action="ContactUs">ارتباط با ما</a>
-            <a asp-controller="Home" asp-action="Weblog">مجله زیلوت</a>
+            <a asp-controller="Home" asp-action="Products" class="currentPageNav">محصولات</a>
+            <a asp-controller="Home" asp-action="AboutUs" class="currentPageNav">درباره ما</a>
+            <a asp-controller="Home" asp-action="ContactUs" class="currentPageNav">ارتباط با ما</a>
+            <a asp-controller="Home" asp-action="Weblog" class="currentPageNav">مجله زیلوت</a>
         </nav>
         <div class="flex flex-1 items-center justify-end gap-2">
             <img src="~/images/search.svg" alt="search" />
