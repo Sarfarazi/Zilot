@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Zelut/LandingPage/Zelut.LandingPage/wwwroot/lib
+/Zelut/Panel/Zelut.Panel/wwwroot/lib
