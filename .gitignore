@@ -381,7 +381,6 @@ FodyWeavers.xsd
 /EndPoint/wwwroot/js/Views/Supervisor/all.min.js
 /EndPoint/wwwroot/FileUpload/Suggestion
 /EndPoint/wwwroot/js/Suggestion.min.js
-*.js
 /EndPoint/wwwroot/css/landing/assets/js/products.min.js
 /EndPoint/wwwroot/js/iu.min.js
 /EndPoint/wwwroot/FileUpload/Knowledge
