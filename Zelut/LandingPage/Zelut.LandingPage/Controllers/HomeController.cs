@@ -9,12 +9,11 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        [Route("/products")]
         public IActionResult Products()
         {
             return View();
         }
-        
+
         public IActionResult Product()
         {
             return View();
@@ -41,6 +40,16 @@ namespace Zelut.LandingPage.Controllers
         }
 
         public IActionResult Weblog()
+        {
+            return View();
+        }
+
+        public IActionResult DesignConsulting()
+        {
+            return View();
+        }
+        
+        public IActionResult InstallServices()
         {
             return View();
         }

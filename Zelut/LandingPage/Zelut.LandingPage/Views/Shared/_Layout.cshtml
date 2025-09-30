@@ -17,7 +17,7 @@
 
 <body>
     <header
-        class="sticky shadow-xs top-0 z-20 w-full bg-white flex items-center justify-between py-4 md:py-6 px-5 md:px-10 lg:px-20">
+        class="sticky shadow-xs top-0 z-20 w-full bg-white flex items-center justify-between py-4 px-5 md:px-10 lg:px-20">
         <div class="flex-1 lg:hidden" onclick="openMenu()">
             <img src="~/images/icons/menu.svg" alt="menu" class="pointer-events-none" />
         </div>
@@ -26,18 +26,58 @@
                 <img src="~/images/logo.png" alt="logo" class="max-w-22 lg:max-w-full" />
             </a>
         </div>
-        <nav class="hidden lg:flex items-center justify-center gap-10 flex-2 header-navbar text-nowrap">
-            <a asp-controller="Home" asp-action="Index" class="currentPageNav">خانه</a>
-            <a asp-controller="Home" asp-action="Products" class="currentPageNav">محصولات</a>
-            <a asp-controller="Home" asp-action="AboutUs" class="currentPageNav">درباره ما</a>
-            <a asp-controller="Home" asp-action="ContactUs" class="currentPageNav">ارتباط با ما</a>
-            <a asp-controller="Home" asp-action="Weblog" class="currentPageNav">مجله زیلوت</a>
-        </nav>
-        <a asp-controller="Home" asp-action="SalesInfo"
-            class="currentPageNav py-2 text-lg shadow-sm px-10 bg-lightGreen text-white rounded-xl">ثبـت اطـلاعات
-            خـرید</a>
+        <nav class="hidden lg:flex items-center justify-center gap-6 flex-3 lg:gap-4 header-navbar text-nowrap">
+            <a asp-controller="Home" asp-action="Index" class="currentPageNav py-2 px-4">خانه</a>
+            <div class="flex flex-col items-center relative hasSubMenu">
+                <a asp-controller="Home" asp-action="Products" class="currentPageNav py-2 px-4 mainLink">محصولات</a>
 
-        <div class="flex flex-1 items-center justify-end gap-2">
+                <div
+                    class="flex flex-col items-center bg-white absolute top-full px-2 shadow-md hidden submenu border-t-1 border-black">
+                    <a asp-controller="Home" asp-action="Products"
+                        class="currentPageNav py-3 px-5 border-b-1 border-gray-300 w-full text-center">موکت</a>
+                    <a asp-controller="Home" asp-action="Products"
+                        class="currentPageNav py-3 px-5 w-full text-center">پادری</a>
+                </div>
+            </div>
+            <a asp-controller="Home" asp-action="AboutUs" class="currentPageNav py-2 px-4 ">درباره ما</a>
+            <a asp-controller="Home" asp-action="ContactUs" class="currentPageNav py-2 px-4 ">ارتباط با ما</a>
+
+            <div class="flex flex-col items-center relative hasSubMenu">
+                <a asp-controller="Home" asp-action="Weblog" class="currentPageNav py-2 px-4 mainLink">مجله زیلوت</a>
+
+                <div
+                    class="flex flex-col items-center bg-white absolute top-full px-2 shadow-md hidden submenu border-t-1 border-black">
+                    <a asp-controller="Home" asp-action="Products"
+                        class="currentPageNav py-3 px-5 border-b-1 border-gray-300 w-full text-center">اخبار</a>
+                    <a asp-controller="Home" asp-action="Products"
+                        class="currentPageNav py-3 px-5 w-full text-center">مقالات</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center relative hasSubMenu">
+                <a asp-controller="Home" asp-action="Weblog" class="currentPageNav py-2 px-4 mainLink">خدمات</a>
+
+                <div
+                    class="flex flex-col items-center bg-white absolute top-full px-2 shadow-md hidden submenu border-t-1 border-black">
+                    <a asp-controller="Home" asp-action="DesignConsulting"
+                        class="currentPageNav p-3 border-b-1 border-gray-300 w-full text-center">مشاوره طراحی</a>
+                    <a asp-controller="Home" asp-action="InstallServices"
+                        class="currentPageNav p-3 border-b-1 border-gray-300 w-full text-center">خدمات حمل و
+                        نصب</a>
+                    <a asp-controller="Home" asp-action="Products" class="currentPageNav p-3 w-full text-center">کمک
+                        هزینه نصب</a>
+
+                </div>
+            </div>
+        </nav>
+        <div class="w-max items-center justify-end hidden xl:flex">
+            <a asp-controller="Home" asp-action="SalesInfo"
+                class="currentPageNav py-1.5 text-lg shadow-sm px-10 bg-lightGreen text-white rounded-xl">ثبـت اطـلاعات
+                خـرید</a>
+        </div>
+
+
+        <div class="flex flex-1 items-center justify-end gap-2 langPicker">
             <img src="~/images/search.svg" alt="search" />
             <div class="items-center hidden gap-2 md:flex">
                 <p>Fa</p>
