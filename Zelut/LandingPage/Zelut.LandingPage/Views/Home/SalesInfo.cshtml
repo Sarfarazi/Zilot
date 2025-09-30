@@ -1,5 +1,6 @@
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20">
-    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"اطلاعات موکت خریداری شده خود را وارد کنید"</h2>
+    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"اطلاعات موکت خریداری شده خود را وارد کنید"
+    </h2>
 
     <div>
         <form action="#" class="flex flex-col gap-8">
@@ -42,7 +43,7 @@
                 </div>
             </div>
 
-            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات فروشگاه</h3>
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات فروشگاه و فروشنده</h3>
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
@@ -70,15 +71,14 @@
                             placeholder=" " required />
                         <label for="storePhoneInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
-                            تماس فروشنده *</label>
+                            همراه فروشنده *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="text" id="installerFamilyInput"
+                        <input type="email" id="storeEmailInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " />
-                        <label for="installerFamilyInput"
-                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-8 start-1">نام
-                            و نام خانوادگی نصب کننده</label>
+                        <label for="storeEmailInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
                     </div>
                 </div>
             </div>
@@ -87,26 +87,36 @@
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
+                        <input type="text" id="productName"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder="پونه، زیبا..." required />
+                        <label for="productName"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
+                            نام موکت
+                            *</label>
+                    </div>
+                    <div class="relative flex-1">
                         <input type="number" id="totalMeter"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="totalMeter"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">متراژ
-                            خرید
+                            موکت
                             *</label>
                     </div>
-                    <div class="relative flex-1">
-                        <input type="number" id="ticketCount"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
-                        <label for="ticketCount"
-                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">
-                            تعداد اتیکت *</label>
-                    </div>
+
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input type="number" id="serialNumberCount"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " required />
+                        <label for="serialNumberCount"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">
+                            تعداد شماره سریال *</label>
+                    </div>
                     <div class="relative flex-1 relative">
-                        <input type="text" id="ticketSerial"
+                        <input type="text" id="serialNumbers"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <div
@@ -116,10 +126,24 @@
                                 <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
                             </svg>
                         </div>
-                        <label for="ticketSerial"
+                        <label for="serialNumbers"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">ثبت
-                            تیکت *</label>
+                            شماره سریال *</label>
                     </div>
+
+
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input type="number" id="productCategory"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " required />
+                        <label for="productCategory"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
+                            کاربری موکت
+                            *</label>
+                    </div>
+
                     <div class="relative flex-1">
                         <input type="file" id="fileInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
