@@ -1,5 +1,5 @@
 ﻿namespace Zelut.Domain.Entities;
-public class SaleCustomerInfo : BaseEntity
+public class SaleCustomerInfoEntity : BaseEntity
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
