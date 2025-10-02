@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/zelut/[controller]")]
+[Route("api/zelut")]
 public class BaseController : ControllerBase
 {
 }

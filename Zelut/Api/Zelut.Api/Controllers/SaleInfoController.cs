@@ -10,7 +10,7 @@ public class SaleInfoController : BaseController
     }
 
     [HttpPost]
-    [Route("/create")]
+    [Route("sale-info/create")]
     public async Task<IActionResult> Create([FromBody]SaleCustomerInfoEntity saleCustomerInfo)
     {
         var result = await _saleInfoService.CretaeSaleInfo(saleCustomerInfo);
