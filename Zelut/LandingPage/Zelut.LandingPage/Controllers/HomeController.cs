@@ -65,5 +65,10 @@ namespace Zelut.LandingPage.Controllers
         {
             return View();
         }
+        
+         public IActionResult PriceList()
+        {
+            return View();
+        }
     }
 }

@@ -89,6 +89,47 @@
                 </div>
             </div>
 
+
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات کارشناس نصب موکت</h3>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input type="text" id="installerNameInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " required />
+                        <label for="installerNameInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            کارشناس نصب
+                            *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input type="text" id="installerFamilyInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " required />
+                        <label for="installerFamilyInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            خانوادگی کارشناس نصب *</label>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input type="tel" id="installerPhoneInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " required />
+                        <label for="installerPhoneInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
+                            همراه کارشناس نصب *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input type="email" id="installerEmailInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " />
+                        <label for="installerEmailInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+                    </div>
+                </div>
+            </div>
+
             <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات موکت</h3>
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
@@ -122,9 +163,18 @@
                             تعداد شماره سریال *</label>
                     </div>
                     <div class="relative flex-1 relative">
+                       <div class="border-1 border-gray-300 px-3 py-3 pe-14 flex gap-3">
+                       <div>
+                       <div class="py-1 px-3 border-1 font-semibold text-green border-lightGreen bg-pastelGreen shadow-sm">
+                       <p>pp</p>
+
+                       </div>
+                    
+                       </div>
                         <input type="text" id="serialNumbers"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            class="block px-2.5 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
+                            </div>
                         <div
                             class="flex items-center justify-center h-3/5 font-2xl text-white rounded-full bg-gray-100 aspect-square cursor-pointer absolute left-2.5 bottom-3">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
