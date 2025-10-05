@@ -5,7 +5,7 @@ AppConfig.InitializeAppConfig(builder.Configuration);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// builder.Services.RegisterHttpClient();
+builder.Services.RegisterHttpClient();
 
 
 builder.Services.RegisterHttpClient();

@@ -4,11 +4,11 @@ namespace Zelut.LandingPage.Controllers
 {
     public class HomeController : Controller
     {
-        // private readonly HttpClient _httpClient;
-        // public HomeController(IHttpClientFactory httpClientFactory)
-        // {
-        //     _httpClient = httpClientFactory.CreateClient("zelut-api");
-        // }
+        private readonly HttpClient _httpClient;
+        public HomeController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClient = httpClientFactory.CreateClient("zelut-api");
+        }
 
         public IActionResult Index()
         {

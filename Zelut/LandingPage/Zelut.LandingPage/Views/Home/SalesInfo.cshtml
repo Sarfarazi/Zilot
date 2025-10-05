@@ -9,7 +9,7 @@
     </h2>
 
     <div>
-        <form action="ُSaleInfo" class="flex flex-col gap-8">
+        <form asp-controller="Home" asp-action="SalesInfo" method="post" class="flex flex-col gap-8">
             <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات خریدار</h3>
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
@@ -22,7 +22,7 @@
                             *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="text" id="familyInput"
+                        <input asp-for="BuyerFamily" type="text" id="familyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="familyInput"
@@ -32,7 +32,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="tel" id="phoneInput"
+                        <input asp-for="BuyerTel" type="tel" id="phoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="phoneInput"
@@ -40,7 +40,7 @@
                             تماس *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="email" id="emailInput"
+                        <input asp-for="BuyerEmail" type="email" id="emailInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " />
                         <label for="emailInput"
@@ -53,7 +53,7 @@
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="text" id="storeNameInput"
+                        <input asp-for="SellerNameShop" type="text" id="storeNameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="storeNameInput"
@@ -62,7 +62,7 @@
                             *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="text" id="storeFamilyInput"
+                        <input asp-for="SellerName" type="text" id="storeFamilyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="storeFamilyInput"
@@ -72,7 +72,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="tel" id="storePhoneInput"
+                        <input asp-for="SellerTel" type="tel" id="storePhoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="storePhoneInput"
@@ -80,7 +80,7 @@
                             همراه فروشنده *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="email" id="storeEmailInput"
+                        <input asp-for="SellerEmail" type="email" id="storeEmailInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " />
                         <label for="storeEmailInput"
@@ -94,7 +94,7 @@
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="text" id="installerNameInput"
+                        <input asp-for="InstalerName" type="text" id="installerNameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="installerNameInput"
@@ -103,7 +103,7 @@
                             *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="text" id="installerFamilyInput"
+                        <input asp-for="InstalerFamily" type="text" id="installerFamilyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="installerFamilyInput"
@@ -113,7 +113,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="tel" id="installerPhoneInput"
+                        <input asp-for="InstallerTel" type="tel" id="installerPhoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="installerPhoneInput"
@@ -121,7 +121,7 @@
                             همراه کارشناس نصب *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="email" id="installerEmailInput"
+                        <input asp-for="InstallerEmail" type="email" id="installerEmailInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " />
                         <label for="installerEmailInput"
@@ -134,7 +134,7 @@
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="text" id="productName"
+                        <input asp-for="GoodsName" type="text" id="productName"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder="پونه، زیبا..." required />
                         <label for="productName"
@@ -143,7 +143,7 @@
                             *</label>
                     </div>
                     <div class="relative flex-1">
-                        <input type="number" id="totalMeter"
+                        <input asp-for="GoodsMetraj" type="number" id="totalMeter"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="totalMeter"
@@ -155,7 +155,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="number" id="serialNumberCount"
+                        <input asp-for="GoodsCount" type="number" id="serialNumberCount"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="serialNumberCount"
@@ -167,7 +167,7 @@
                             <div class="flex gap-1" id="tagsContainer">
                             
                             </div>
-                            <input type="text" id="serialNumbers"
+                            <input asp-for="GoodsSerial" type="text" id="serialNumbers"
                                 class="block px-2.5 w-full text-lg flex-1 min-w-72 text-green bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                                 placeholder="شماره سریال" required />
                         </div>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="number" id="productCategory"
+                        <input asp-for="PictureFactor" type="number" id="productCategory"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="productCategory"
@@ -197,7 +197,7 @@
                     </div>
 
                     <div class="relative flex-1">
-                        <input type="file" id="fileInput"
+                        <input asp-for="KindOfGoods" type="file" id="fileInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " />
                         <label for="fileInput"
@@ -215,7 +215,7 @@
                     </label>
                 </div>
             </div>
-            <button
+            <button type="submit"
                 class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg cursor-pointer rounded-md shadow-md self-center md:self-end">
                 ارسال اطلاعات
             </button>
