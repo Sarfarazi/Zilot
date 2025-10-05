@@ -406,3 +406,7 @@ body.no-scroll {
 .hasSubMenu:hover .submenu {
   display: flex;
 }
+
+.priceTable tr:nth-child(even) td{
+  background-color: lightgray;
+}
