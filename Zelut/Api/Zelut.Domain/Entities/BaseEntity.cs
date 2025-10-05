@@ -4,8 +4,8 @@ public class BaseEntity
 {
     public BaseEntity()
     {
-        CreateDate = DateTime.UtcNow;
+        SaveDate = DateTime.UtcNow;
     }
     public int Id { get; set; }
-    public DateTime CreateDate { get; set; }
+    public DateTime SaveDate { get; set; }
 }

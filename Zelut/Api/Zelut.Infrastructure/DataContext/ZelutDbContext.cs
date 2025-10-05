@@ -7,5 +7,10 @@ public class ZelutDbContext : DbContext
     {
     }
 
-    public DbSet<SaleCustomerInfoEntity> SaleCustomerInfo{ get; set; }
+    public DbSet<ZelutBuyers> SaleCustomerInfo { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+    }
 }

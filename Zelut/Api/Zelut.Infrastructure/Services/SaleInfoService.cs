@@ -1,17 +1,21 @@
+using AutoMapper;
 using Zelut.Domain.Entities;
 using Zelute.Application.Repository;
 
 public class SaleInfoService : ISaleInfoService
 {
-    private readonly IRepository<SaleCustomerInfoEntity> _saleCustomerInfoRepository;
-    public SaleInfoService(IRepository<SaleCustomerInfoEntity> saleCustomerInfoRepository)
+    private readonly IRepository<ZelutBuyers> _saleCustomerInfoRepository;
+    private readonly IMapper _mapper;
+    public SaleInfoService(IRepository<ZelutBuyers> saleCustomerInfoRepository, IMapper mapper)
     {
+        _mapper = mapper;
         _saleCustomerInfoRepository = saleCustomerInfoRepository;
     }
 
-    public async Task<Result> CretaeSaleInfo(SaleCustomerInfoEntity saleCustomerInfo)
+    public async Task<Result> CretaeSaleInfo(ZelutBuyerRequestDto request)
     {
-        await _saleCustomerInfoRepository.Add(saleCustomerInfo);
+        var zelutBuyer = _mapper.Map<ZelutBuyers>(request);
+        await _saleCustomerInfoRepository.Add(zelutBuyer);
         var save_success_result = await _saleCustomerInfoRepository.SaveChangesAsync();
         if (!save_success_result)
         {
