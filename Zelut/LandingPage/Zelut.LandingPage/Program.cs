@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 // builder.Services.RegisterHttpClient();
 
 
+builder.Services.RegisterHttpClient();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

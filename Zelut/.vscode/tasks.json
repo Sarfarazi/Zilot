@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "watch Zelut.LandingPage",
+			"file": "D:\\PalazProjects\\Zilot\\Zelut\\LandingPage\\Zelut.LandingPage\\Zelut.LandingPage.csproj",
+			"problemMatcher": [],
+			"label": "dotnet: watch Zelut.LandingPage"
+		}
+	]
+}
