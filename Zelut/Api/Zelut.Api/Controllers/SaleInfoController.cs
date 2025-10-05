@@ -11,14 +11,14 @@ public class SaleInfoController : BaseController
 
     [HttpPost]
     [Route("sale-info/create")]
-    public async Task<IActionResult> Create([FromBody]SaleCustomerInfoEntity saleCustomerInfo)
+    public async Task<IActionResult> Create([FromBody]ZelutBuyerRequestDto request)
     {
-        var result = await _saleInfoService.CretaeSaleInfo(saleCustomerInfo);
+        var result = await _saleInfoService.CretaeSaleInfo(request);
         if (!result.IsSuccess)
         {
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
-        return Ok(result.Message);
+        return Ok(result);
     }
 }

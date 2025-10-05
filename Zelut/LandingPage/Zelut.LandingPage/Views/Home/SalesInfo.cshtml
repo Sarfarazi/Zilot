@@ -1,14 +1,20 @@
+@model CretaeSaleInfoDto
+
+@{
+    ViewData["Title"] = "Sales Info";
+}
+
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20">
     <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"اطلاعات موکت خریداری شده خود را وارد کنید"
     </h2>
 
     <div>
-        <form action="#" class="flex flex-col gap-8">
+        <form action="ُSaleInfo" class="flex flex-col gap-8">
             <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات خریدار</h3>
             <div class="flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="relative flex-1">
-                        <input type="text" id="nameInput"
+                        <input asp-for="BuyerName" type="text" id="nameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                             placeholder=" " required />
                         <label for="nameInput"

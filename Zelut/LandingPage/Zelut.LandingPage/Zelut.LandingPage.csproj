@@ -10,4 +10,8 @@
     <None Include="wwwroot\images\.DS_Store" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Api\Zelut.Common\Zelut.Common.csproj" />
+  </ItemGroup>
+
 </Project>

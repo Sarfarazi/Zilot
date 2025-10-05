@@ -8,4 +8,10 @@ public static class ServiceCollectionExtensions
                 .AddScoped<ISaleInfoService, SaleInfoService>();
         return services;
     }
+
+    public static IServiceCollection RegisterHttpContextAccessor(this IServiceCollection services)
+    {
+        services.AddHttpContextAccessor();
+        return services;
+    }
 }
