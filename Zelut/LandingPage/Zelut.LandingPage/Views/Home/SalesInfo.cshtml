@@ -163,22 +163,18 @@
                             تعداد شماره سریال *</label>
                     </div>
                     <div class="relative flex-1 relative">
-                       <div class="border-1 border-gray-300 px-3 py-3 pe-14 flex gap-3">
-                       <div>
-                       <div class="py-1 px-3 border-1 font-semibold text-green border-lightGreen bg-pastelGreen shadow-sm">
-                       <p>pp</p>
-
-                       </div>
-                    
-                       </div>
-                        <input type="text" id="serialNumbers"
-                            class="block px-2.5 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                        <div class="border-1 border-gray-300 px-3 py-3 pe-14 flex flex-wrap">
+                            <div class="flex gap-1" id="tagsContainer">
+                            
                             </div>
-                        <div
-                            class="flex items-center justify-center h-3/5 font-2xl text-white rounded-full bg-gray-100 aspect-square cursor-pointer absolute left-2.5 bottom-3">
+                            <input type="text" id="serialNumbers"
+                                class="block px-2.5 w-full text-lg flex-1 min-w-72 text-green bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                                placeholder="شماره سریال" required />
+                        </div>
+                        <div class="flex items-center px-2 justify-center font-2xl text-white bg-gray-100 cursor-pointer absolute left-2.5 top-2"
+                            style="height: calc(100% - 16px);" onclick="addTagInput()">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#000000">
+                                fill="var(--green)">
                                 <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
                             </svg>
                         </div>
