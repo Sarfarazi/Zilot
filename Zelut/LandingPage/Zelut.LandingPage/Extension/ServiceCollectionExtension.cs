@@ -4,7 +4,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddHttpClient("zelut-api",client =>
         {
-            client.BaseAddress = new Uri(AppConfig.RestApiConfig.BaseAddress);
+            client.BaseAddress = new Uri(AppConfig.RestApiConfig.BaseZelutApiAddress);
         });
 
         return services;

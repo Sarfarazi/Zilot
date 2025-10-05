@@ -6,6 +6,8 @@ builder.Services.AddControllersWithViews();
 // Initialize application config
 AppConfig.InitializeAppConfig(builder.Configuration);
 
+builder.Services.RegisterHttpClient();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

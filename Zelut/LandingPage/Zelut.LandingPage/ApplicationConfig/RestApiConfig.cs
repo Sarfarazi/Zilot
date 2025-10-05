@@ -1,4 +1,4 @@
 public class RestApiConfig
 {
-    public string BaseAddress { get; set; }
+    public string BaseZelutApiAddress { get; set; }
 }
