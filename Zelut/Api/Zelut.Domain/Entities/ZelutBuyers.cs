@@ -2,6 +2,7 @@
 
 public class ZelutBuyers : BaseEntity
 {
+    public long Id { get; set; }
     public string BuyerName { get; set; }
     public string BuyerFamily { get; set; }
     public string BuyerTel { get; set; }
@@ -11,12 +12,12 @@ public class ZelutBuyers : BaseEntity
     public string SellerTel { get; set; }
     public string? SellerEmail { get; set; }
     public string InstalerName { get; set; }
-    public int InstalerFamily { get; set; }
-    public int InstallerTel { get; set; }
+    public string InstalerFamily { get; set; }
+    public string InstallerTel { get; set; }
     public string? InstallerEmail { get; set; }
     public string GoodsName { get; set; }
     public int GoodsMetraj { get; set; }
-    public int?GoodsCount { get; set; }
+    public int? GoodsCount { get; set; }
     public string GoodsSerial { get; set; }
     public string PictureFactor { get; set; }
     public byte KindOfGoods { get; set; }
