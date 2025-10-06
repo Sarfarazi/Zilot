@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Zelut.Domain.Entities;
 
 public class SaleInfoController : BaseController
 {
@@ -11,7 +10,7 @@ public class SaleInfoController : BaseController
 
     [HttpPost]
     [Route("sale-info/create")]
-    public async Task<IActionResult> Create([FromBody]ZelutBuyerRequestDto request)
+    public async Task<IActionResult> Create([FromBody] ZelutBuyerRequestDto request)
     {
         var result = await _saleInfoService.CretaeSaleInfo(request);
         if (!result.IsSuccess)

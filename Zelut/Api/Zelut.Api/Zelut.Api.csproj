@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Zelut.Infrastructure\Zelut.Infrastructure.csproj" />
-    <ProjectReference Include="..\Zelut.Application\Zelut.Application.csproj" />
   </ItemGroup>
 
 </Project>
