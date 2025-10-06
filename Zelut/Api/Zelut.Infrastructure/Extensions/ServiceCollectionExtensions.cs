@@ -7,6 +7,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection RegisterSqlServer(this IServiceCollection services)
     {
         services.AddDbContext<ZelutDbContext>(options => options.UseSqlServer(ApplicationConfig.SqlServer.TestConnectionString));
+
         return services;
     }
 }

@@ -7,7 +7,9 @@ public class ZelutDbContext : DbContext
     {
     }
 
-    public DbSet<ZelutBuyers> SaleCustomerInfo { get; set; }
+    #region DbSet
+    public DbSet<ZelutBuyers> ZelutBuyers { get; set; }
+    #endregion
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
