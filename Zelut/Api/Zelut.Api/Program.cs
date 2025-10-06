@@ -13,6 +13,7 @@ ApplicationConfig.InitializeApplicationConfig(builder.Configuration);
 builder.Services.RegisterSqlServer();
 builder.Services.RegisterServices();
 builder.Services.RegisterAutoMapper();
+builder.Services.RegisterFluentValidation();
 builder.Services.RegisterHttpContextAccessor();
 
 var app = builder.Build();
