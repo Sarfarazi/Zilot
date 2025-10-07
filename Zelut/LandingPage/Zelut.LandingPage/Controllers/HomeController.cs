@@ -32,31 +32,31 @@ namespace Zelut.LandingPage.Controllers
         }
 
         [HttpPost()]
-        public async Task<IActionResult> SalesInfo(CretaeSaleInfoDto request)
+        public async Task<IActionResult> SalesInfo(CreateSaleInfoDto request)
         {
             // var web_service_result = await _httpClient.RestApiPostAsync<CretaeSaleInfoDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, request);
 
-            if (!web_service_result.IsSuccess)
-            {
-                this.SetAlert(web_service_result.Message, "error");
-                return View();
-            }
+            //if (!web_service_result.IsSuccess)
+            //{
+            //    this.SetAlert(web_service_result.Message, "error");
+            //    return View();
+            //}
 
             if (!ModelState.IsValid)
             {
-                var errors = ModelState
+                var errorMessages = ModelState
                     .Where(ms => ms.Value.Errors.Count > 0)
-                    .Select(ms => new
-                    {
-                        Messages = ms.Value.Errors.Select(e => e.ErrorMessage).ToList()
-                    }).ToList();
+                    .SelectMany(ms => ms.Value.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
 
-                var errors_string = string.Join(',', errors);
+                var errors_string = string.Join(',', errorMessages);
                 this.SetAlert(errors_string, "error");
 
                 return View();
             }
 
+            this.SetAlert("عملیات ثبت اطلاعات با موفقیت ثبت شد.", "success");
             return View();
         }
 
