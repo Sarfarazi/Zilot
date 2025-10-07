@@ -1,0 +1,8 @@
+﻿@model Zelut.LandingPage.Models.AlertViewModel;
+@if(!string.IsNullOrEmpty(Model.AlertMessage))
+{
+    <div class="alert alert-@Model.Type alert-dismissible fade show mt-2" role="alert">
+        @Model.AlertMessage
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
