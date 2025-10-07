@@ -17,7 +17,7 @@
 
 <body>
     <header
-        class="sticky shadow-xs top-0 z-20 w-full bg-white flex items-center justify-between py-4 px-5 md:px-10 lg:px-20">
+        class="sticky shadow-xs top-0 z-50 w-full bg-white flex items-center justify-between py-4 px-5 md:px-10 lg:px-20">
         <div class="flex-1 lg:hidden" onclick="openMenu()">
             <img src="~/images/icons/menu.svg" alt="menu" class="pointer-events-none" />
         </div>
@@ -43,13 +43,13 @@
             <a asp-controller="Home" asp-action="ContactUs" class="currentPageNav py-2 px-4 ">ارتباط با ما</a>
 
             <div class="flex flex-col items-center relative hasSubMenu">
-                <a asp-controller="Home" asp-action="Weblog" class="currentPageNav py-2 px-4 mainLink">مجله زیلوت</a>
+                <p class="currentPageNav py-2 px-4 mainLink">مجله زیلوت</p>
 
                 <div
                     class="flex flex-col items-center bg-white absolute top-full px-2 shadow-md hidden submenu border-t-1 border-black">
-                    <a asp-controller="Home" asp-action="Products"
+                    <a asp-controller="Home" asp-action="Weblog"
                         class="currentPageNav py-3 px-5 border-b-1 border-gray-300 w-full text-center">اخبار</a>
-                    <a asp-controller="Home" asp-action="Products"
+                    <a asp-controller="Home" asp-action="Weblog"
                         class="currentPageNav py-3 px-5 w-full text-center">مقالات</a>
                 </div>
             </div>

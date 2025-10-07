@@ -5,6 +5,7 @@
   --lightGray: #f4f6f6;
   --whiteGreen: #f9fbfb;
   --pastelGreen: #cde5e8;
+  --error: rgb(219, 32, 32);
 }
 
 
@@ -413,4 +414,21 @@ body.no-scroll {
 
 .selectedOption{
   background-color: var(--pastelGreen);
+}
+
+
+.alert-error {
+  border-color: var(--error);
+}
+
+.alert-error p{
+  color: #242424;
+}
+
+.alert-error img{
+  display: none;
+}
+
+.alert-error button{
+  background-color: var(--error);
 }

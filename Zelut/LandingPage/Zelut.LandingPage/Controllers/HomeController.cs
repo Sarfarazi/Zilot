@@ -111,6 +111,11 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
+           public IActionResult Article()
+        {
+            return View();
+        }
+
         public IActionResult DesignConsulting()
         {
             return View();

@@ -6,7 +6,7 @@
 
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20">
     @await Component.InvokeAsync("Alert")
-    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"اطلاعات موکت خریداری شده خود را وارد کنید"
+    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"کمک هزینه نصب موکت"
     </h2>
 
     <div>
@@ -17,7 +17,7 @@
                     <div class="relative flex-1">
                         <input asp-for="BuyerName" type="text" id="nameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="nameInput"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام
                             *</label>
@@ -25,7 +25,7 @@
                     <div class="relative flex-1">
                         <input asp-for="BuyerFamily" type="text" id="familyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="familyInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
                             خانوادگی *</label>
@@ -35,7 +35,7 @@
                     <div class="relative flex-1">
                         <input asp-for="BuyerTel" type="tel" id="phoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="phoneInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">شماره
                             تماس *</label>
@@ -56,7 +56,7 @@
                     <div class="relative flex-1">
                         <input asp-for="SellerNameShop" type="text" id="storeNameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="storeNameInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
                             فروشگاه
@@ -65,7 +65,7 @@
                     <div class="relative flex-1">
                         <input asp-for="SellerName" type="text" id="storeFamilyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="storeFamilyInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
                             خانوادگی فروشنده *</label>
@@ -75,7 +75,7 @@
                     <div class="relative flex-1">
                         <input asp-for="SellerTel" type="tel" id="storePhoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="storePhoneInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
                             همراه فروشنده *</label>
@@ -97,7 +97,7 @@
                     <div class="relative flex-1">
                         <input asp-for="InstalerName" type="text" id="installerNameInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="installerNameInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
                             کارشناس نصب
@@ -106,7 +106,7 @@
                     <div class="relative flex-1">
                         <input asp-for="InstalerFamily" type="text" id="installerFamilyInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="installerFamilyInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
                             خانوادگی کارشناس نصب *</label>
@@ -116,7 +116,7 @@
                     <div class="relative flex-1">
                         <input asp-for="InstallerTel" type="tel" id="installerPhoneInput"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="installerPhoneInput"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
                             همراه کارشناس نصب *</label>
@@ -137,7 +137,7 @@
                     <div class="relative flex-1">
                         <input asp-for="GoodsName" type="text" id="productName"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder="پونه، زیبا..." required />
+                            placeholder="پونه، زیبا..."  />
                         <label for="productName"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
                             نام موکت
@@ -146,7 +146,7 @@
                     <div class="relative flex-1">
                         <input asp-for="GoodsMetraj" type="number" id="totalMeter"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="totalMeter"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">متراژ
                             موکت
@@ -158,7 +158,7 @@
                     <div class="relative flex-1">
                         <input asp-for="GoodsCount" type="number" id="serialNumberCount"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required />
+                            placeholder=" "  />
                         <label for="serialNumberCount"
                             class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">
                             تعداد شماره سریال *</label>
@@ -171,7 +171,7 @@
                             <input type="text" id="serialNumbers"
                                 class="block px-2.5 w-full text-lg flex-1 min-w-72 text-green bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                                 placeholder="شماره سریال" />
-                            <input type="hidden" asp-for="GoodsSerial" id="hiddenInput" required>
+                            <input type="hidden" asp-for="GoodsSerial" id="hiddenInput" >
                         </div>
                         <div class="flex items-center px-2 justify-center font-2xl text-white bg-gray-100 cursor-pointer absolute left-2.5 top-2"
                             style="height: calc(100% - 16px);" onclick="addTagInput()">
@@ -191,8 +191,8 @@
                     <div class="relative flex-1">
                         <input type="text" id="productCategory"
                             class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                            placeholder=" " required readonly onclick="openSelectHandler()" />
-                            <input type="hidden" asp-for="KindOfGoods" id="hiddenProductCategory" required>
+                            placeholder=" "  readonly onclick="openSelectHandler()" />
+                            <input type="hidden" asp-for="KindOfGoods" id="hiddenProductCategory" >
 
                         <label for="productCategory"
                             class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
