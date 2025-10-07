@@ -51,11 +51,15 @@ public class CreateSaleInfoDto
     [Required(ErrorMessage = "متر مربع کالا الزامی است.")]
     public int GoodsMetraj { get; set; }
 
+    [Required(ErrorMessage = "تعداد شماره سریال الزامی است.")]
     public int GoodsCount { get; set; }
 
+    [Required(ErrorMessage = "شماره سریال الزامی است.")]
     public string GoodsSerial { get; set; }
 
+    [Required(ErrorMessage = "فاکتور الزامی است.")]
     public string PictureFactor { get; set; }
 
+    [Required(ErrorMessage = "کاربری کوکت الزامی است.")]
     public byte KindOfGoods { get; set; }
 }

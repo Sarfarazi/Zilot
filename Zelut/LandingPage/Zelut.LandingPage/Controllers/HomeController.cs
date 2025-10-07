@@ -44,14 +44,14 @@ namespace Zelut.LandingPage.Controllers
 
             if (!ModelState.IsValid)
             {
-                var errorMessages = ModelState
+                var errorMessage = ModelState
                     .Where(ms => ms.Value.Errors.Count > 0)
                     .SelectMany(ms => ms.Value.Errors)
                     .Select(e => e.ErrorMessage)
-                    .ToList();
+                    .FirstOrDefault();
 
-                var errors_string = string.Join(',', errorMessages);
-                this.SetAlert(errors_string, "error");
+
+                this.SetAlert(errorMessage!, "error");
 
                 return View();
             }
