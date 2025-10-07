@@ -1,5 +1,7 @@
 
 let serialNumbers = []
+let productsNames = []
+
 
 const collectionTitles = document.querySelectorAll(".collection-title");
 const collectionSubMenus = document.querySelectorAll(
@@ -80,11 +82,12 @@ const about = [
   },
 ]
 
-const homeCategoryHandler = (category, e) => {
-  document
-    .querySelector(".currentCateory")
-    .classList.remove("currentCategory");
-  e.target.classList.add("currentCategory");
+const homeCategoryHandler = (category) => {
+  if (document.querySelector(".currentCategory")) {
+    document.querySelector(".currentCategory").classList.remove("currentCategory");
+  }
+  event.target.classList.add("currentCategory");
+
 };
 
 const scrollDown = () => {
@@ -101,25 +104,25 @@ const scrollToTop = () => {
   });
 };
 
-const aboutHandler = (index, e) => {
+const aboutHandler = (index,) => {
 
   document.getElementById("aboutTitle").innerHTML = about[index].title;
   document.getElementById("aboutDesc").innerHTML = about[index].desc;
 
   document.querySelector(".currentAbout").classList.remove("currentAbout");
-  e.target.classList.add("currentAbout");
+  event.target.classList.add("currentAbout");
 };
 
-const changeColorHandler = (e) => {
+const changeColorHandler = () => {
   document.querySelector(".currentColor").classList.remove("currentColor");
-  e.target.classList.add("currentColor");
+  event.target.classList.add("currentColor");
 };
 
-const productCategoryHandler = (category, e) => {
+const productCategoryHandler = (category) => {
   document
     .querySelector(".currentProductCat")
     .classList.remove("currentProductCat");
-  e.target.classList.add("currentProductCat");
+  event.target.classList.add("currentProductCat");
 
   document.getElementById("productHeadTitle").textContent = CategoryDetail[category].title
   document.getElementById("productHeadSubtitle").textContent = CategoryDetail[category].persian_title
@@ -212,7 +215,10 @@ const selectOption = (option, e) => {
 
 window.addEventListener("click", (e) => {
   if (e.target.getAttribute("id") !== 'selectBoxOptions' && e.target.parentElement.getAttribute("id") !== 'selectBoxOptions' && e.target.getAttribute("id") !== 'productCategory')
-    document.getElementById("selectBoxOptions").classList.add("hidden")
+    if (document.getElementById("selectBoxOptions")) {
+      document.getElementById("selectBoxOptions").classList.add("hidden")
+    }
+
 })
 
 
@@ -236,4 +242,50 @@ const closeModal = (state) => {
   if (state == "success") {
     location.href = "/"
   }
+}
+
+
+
+// names tag input ---------------------------------------
+
+const addNameTagInput = () => {
+  const input = document.getElementById("productNames")
+  let val = input.value
+  if (val && val.trim().length !== 0)
+    productsNames.push(val)
+  input.value = ""
+  document.getElementById("nameHiddenInput").value = productsNames.join("-")
+  renderNameTags()
+}
+
+const renderNameTags = () => {
+  let tagsTemp = productsNames.map((item, index) => {
+    return `<div
+                                    class="py-1 px-3 ps-1 border-1 font-semibold text-green border-lightGreen bg-pastelGreen shadow-sm flex items-center gap-3">
+                                    <div class="bg-white p-1 cursor-pointer" onclick="removeNameTag(${index})">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
+                                            width="16px" fill="var(--green)">
+                                            <path
+                                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                                        </svg>
+                                    </div>
+                                    <p>${item}</p>
+
+                                </div>`
+  }).join("")
+
+  document.getElementById("nameTagsContainer").innerHTML = tagsTemp
+}
+
+const removeNameTag = (index) => {
+  productsNames.splice(index, 1)
+  document.getElementById("nameHiddenInput").value = productsNames.join("-")
+  renderNameTags()
+}
+
+
+if (document.getElementById("productNames")) {
+  document.getElementById("productNames").addEventListener("blur", () => {
+    addNameTagInput()
+  })
 }
