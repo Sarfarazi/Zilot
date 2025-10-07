@@ -1,6 +1,7 @@
 
 let serialNumbers = []
 let productsNames = []
+let selectedKindOfGoods = []
 
 
 const collectionTitles = document.querySelectorAll(".collection-title");
@@ -201,11 +202,23 @@ const openSelectHandler = () => {
   document.getElementById("selectBoxOptions").classList.remove("hidden")
 }
 
+
+
 const selectOption = (option, e) => {
-  document.querySelector(".selectedOption")?.classList.remove("selectedOption")
-  document.getElementById("productCategory").value = productCategoryList.find(item => item.id == option).value
-  document.getElementById("hiddenProductCategory").value = +option
-  event.target.classList.add("selectedOption")
+  if(selectedKindOfGoods.find(item => item.id == option)){
+    selectedKindOfGoods.splice(selectedKindOfGoods.findIndex((item) => item.id == option) , 1)
+  }else{
+    selectedKindOfGoods.push({
+      "id":+option,
+      "value": productCategoryList.find(item => item.id == option).value
+    })
+  }
+
+  let selectedItems= selectedKindOfGoods.map(item => item.value).join(" , ")
+  let selectedIds= selectedKindOfGoods.map(item => item.id).join("-")
+  document.getElementById("productCategory").value = selectedItems
+  document.getElementById("hiddenProductCategory").value = selectedIds
+  event.target.classList.toggle("selectedOption")
 
 }
 
