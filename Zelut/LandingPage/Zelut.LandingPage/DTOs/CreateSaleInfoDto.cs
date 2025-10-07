@@ -62,5 +62,5 @@ public class CreateSaleInfoDto
     public IFormFile PictureFactor { get; set; }
 
     [Required(ErrorMessage = "کاربری کوکت الزامی است.")]
-    public byte KindOfGoods { get; set; }
+    public string KindOfGoods { get; set; }
 }

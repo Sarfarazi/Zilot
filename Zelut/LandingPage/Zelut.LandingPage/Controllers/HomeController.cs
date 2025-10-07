@@ -73,7 +73,7 @@ namespace Zelut.LandingPage.Controllers
                 InstalerName = request.InstalerName,
                 InstallerEmail = request.InstallerEmail,
                 InstallerTel = request.InstallerTel,
-                KindOfGoods = request.KindOfGoods,
+                //KindOfGoods = request.KindOfGoods.,
                 SellerEmail = request.SellerEmail,
                 SellerName = request.SellerName,
                 SellerNameShop = request.SellerNameShop,
