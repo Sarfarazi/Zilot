@@ -85,6 +85,12 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
+           public IActionResult Articles()
+        {
+            return View();
+        }
+
+
         public IActionResult DesignConsulting()
         {
             return View();
