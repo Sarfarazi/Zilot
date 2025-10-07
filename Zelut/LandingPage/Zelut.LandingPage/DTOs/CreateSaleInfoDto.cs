@@ -55,11 +55,12 @@ public class CreateSaleInfoDto
     public int GoodsCount { get; set; }
 
     [Required(ErrorMessage = "شماره سریال الزامی است.")]
+    [RegularExpression(@"^\d{8}$", ErrorMessage = "شماره سریال باید دقیقا ۸ رقم باشد.")]
     public string GoodsSerial { get; set; }
 
     [Required(ErrorMessage = "فاکتور الزامی است.")]
     public IFormFile PictureFactor { get; set; }
 
     [Required(ErrorMessage = "کاربری کوکت الزامی است.")]
-    public byte KindOfGoods { get; set; }
+    public string KindOfGoods { get; set; }
 }

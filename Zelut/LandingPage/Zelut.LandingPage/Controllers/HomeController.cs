@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Runtime.ExceptionServices;
 using Zelut.LandingPage.DTOs;
 using Zelut.LandingPage.Extension;
 using Zelut.LandingPage.Helpers;
@@ -67,12 +68,12 @@ namespace Zelut.LandingPage.Controllers
                 GoodsCount = request.GoodsCount,
                 GoodsMetraj = request.GoodsMetraj,
                 GoodsName =  request.GoodsName,
-                GoodsSerial = request.GoodsSerial,
+                GoodsSerial = request.GoodsSerial.Trim(),
                 InstalerFamily = request.InstalerFamily,
                 InstalerName = request.InstalerName,
                 InstallerEmail = request.InstallerEmail,
                 InstallerTel = request.InstallerTel,
-                KindOfGoods = request.KindOfGoods,
+                //KindOfGoods = request.KindOfGoods.,
                 SellerEmail = request.SellerEmail,
                 SellerName = request.SellerName,
                 SellerNameShop = request.SellerNameShop,
