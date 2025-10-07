@@ -410,3 +410,7 @@ body.no-scroll {
 .priceTable tr:nth-child(even) td{
   background-color: lightgray;
 }
+
+.selectedOption{
+  background-color: var(--pastelGreen);
+}
