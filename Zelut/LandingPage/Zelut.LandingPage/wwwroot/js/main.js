@@ -141,12 +141,20 @@ const closeMenu = () => {
 const openMenu = () => {
   document
     .querySelector(".sidebarMenu-container")
-    .classList.remove("menuClosed");
+    .classList.toggle("menuClosed");
   document.body.classList.add("no-scroll");
   setTimeout(() => {
     document.querySelector(".sidebarMenu").style.opacity = "1";
   }, 200);
 };
+
+
+
+if (document.getElementById("serialNumbers")) {
+  document.getElementById("serialNumbers").addEventListener("blur", () => {
+    addTagInput()
+  })
+}
 
 
 
@@ -214,8 +222,18 @@ const renderOptions = () => {
                                 ${item.value}
                             </div>`
   }).join("")
-  
-  document.getElementById("selectBoxOptions").innerHTML = temp
+
+  if (document.getElementById("selectBoxOptions"))
+    document.getElementById("selectBoxOptions").innerHTML = temp
 }
 
 renderOptions()
+
+
+
+const closeModal = (state) => {
+  document.querySelector(".alertModal").classList.add("hidden")
+  if (state == "success") {
+    location.href = "/"
+  }
+}
