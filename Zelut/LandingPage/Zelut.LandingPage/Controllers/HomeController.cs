@@ -33,7 +33,7 @@ namespace Zelut.LandingPage.Controllers
         [HttpPost()]
         public async Task<IActionResult> SalesInfo(CretaeSaleInfoDto request)
         {
-            var web_service_result = await _httpClient.RestApiPostAsync<CretaeSaleInfoDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, request);
+            // var web_service_result = await _httpClient.RestApiPostAsync<CretaeSaleInfoDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, request);
 
             if(!web_service_result.IsSuccess)
             {
