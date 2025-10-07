@@ -6,9 +6,7 @@ AppConfig.InitializeAppConfig(builder.Configuration);
 builder.Services.AddControllersWithViews();
 
 builder.Services.RegisterHttpClient();
-
-
-builder.Services.RegisterHttpClient();
+builder.Services.RegisterApplicationService();
 
 var app = builder.Build();
 

@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Zelut.LandingPage.DTOs;
 using Zelut.LandingPage.Extension;
+using Zelut.LandingPage.Helpers;
 
 namespace Zelut.LandingPage.Controllers
 {
     public class HomeController : Controller
     {
         private readonly HttpClient _httpClient;
-        public HomeController(IHttpClientFactory httpClientFactory)
+        private readonly IFileHelper _fileHelper;
+        public HomeController(IHttpClientFactory httpClientFactory, IFileHelper fileHelper)
         {
             _httpClient = httpClientFactory.CreateClient("zelut-api");
+            _fileHelper = fileHelper;
         }
 
         public IActionResult Index()
@@ -34,14 +38,6 @@ namespace Zelut.LandingPage.Controllers
         [HttpPost()]
         public async Task<IActionResult> SalesInfo(CreateSaleInfoDto request)
         {
-            // var web_service_result = await _httpClient.RestApiPostAsync<CretaeSaleInfoDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, request);
-
-            //if (!web_service_result.IsSuccess)
-            //{
-            //    this.SetAlert(web_service_result.Message, "error");
-            //    return View();
-            //}
-
             if (!ModelState.IsValid)
             {
                 var errorMessage = ModelState
@@ -50,9 +46,44 @@ namespace Zelut.LandingPage.Controllers
                     .Select(e => e.ErrorMessage)
                     .FirstOrDefault();
 
-
                 this.SetAlert(errorMessage!, "error");
+                return View();
+            }
 
+            var uploadFactorResult = await _fileHelper.UploadAsync(request.PictureFactor);
+            if(!uploadFactorResult.IsSuccess)
+            {
+                this.SetAlert(uploadFactorResult.Message!, "error");
+                return View();
+            }
+
+            var rest_api_request = new RestApiSaleInofDto
+            {
+                PictureFactor = uploadFactorResult.Data,
+                BuyerEmail = request.BuyerEmail,
+                BuyerFamily = request.BuyerFamily,
+                BuyerName = request.BuyerName,
+                BuyerTel = request.BuyerTel,
+                GoodsCount = request.GoodsCount,
+                GoodsMetraj = request.GoodsMetraj,
+                GoodsName =  request.GoodsName,
+                GoodsSerial = request.GoodsSerial,
+                InstalerFamily = request.InstalerFamily,
+                InstalerName = request.InstalerName,
+                InstallerEmail = request.InstallerEmail,
+                InstallerTel = request.InstallerTel,
+                KindOfGoods = request.KindOfGoods,
+                SellerEmail = request.SellerEmail,
+                SellerName = request.SellerName,
+                SellerNameShop = request.SellerNameShop,
+                SellerTel = request.SellerTel,
+            };
+
+            var web_service_result = await _httpClient.RestApiPostAsync<RestApiSaleInofDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, rest_api_request);
+
+            if (!web_service_result.IsSuccess)
+            {
+                this.SetAlert(web_service_result.Message, "error");
                 return View();
             }
 
