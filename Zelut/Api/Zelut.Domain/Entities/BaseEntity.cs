@@ -6,6 +6,5 @@ public class BaseEntity
     {
         SaveDate = DateTime.UtcNow;
     }
-    public int Id { get; set; }
     public DateTime SaveDate { get; set; }
 }

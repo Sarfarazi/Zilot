@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Zelute.Application.Repository;
 
-public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
 {
     #region Fields
     private readonly ZelutDbContext _dbContext;
@@ -9,7 +9,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     #endregion
 
     #region ctor
-    public Repository(ZelutDbContext dbContext)
+    public EfRepository(ZelutDbContext dbContext)
     {
         _dbContext = dbContext;
         _dbSet = _dbContext.Set<TEntity>();

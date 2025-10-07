@@ -4,7 +4,7 @@ public class Result
     public string Message { get; set; } = string.Empty;
 }
 
-public class ResultDate<TData>
+public class ResultData<TData>
 {
     public TData Data { get; set; }
     public bool IsSuccess { get; set; }
