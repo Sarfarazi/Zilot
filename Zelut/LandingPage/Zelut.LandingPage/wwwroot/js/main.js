@@ -135,6 +135,7 @@ const addTagInput = () => {
   if(val && val.trim().length !== 0)
    serialNumbers.push(val)
   input.value = ""
+  document.getElementById("hiddenInput").value = serialNumbers.join("/")
   renderTags()
 }
 
@@ -159,5 +160,16 @@ const renderTags = () => {
 
 const removeTag = (index) => {
   serialNumbers.splice(index , 1)
+  document.getElementById("hiddenInput").value = serialNumbers.join("/")
   renderTags()
+}
+
+
+const openSelectHandler = () => {
+  // document.getElementById("selectBoxOptions").classList.toggle("hidden")
+}
+
+
+const selectOption = (option) => {
+  document.getElementById("productCategory").value = option
 }
