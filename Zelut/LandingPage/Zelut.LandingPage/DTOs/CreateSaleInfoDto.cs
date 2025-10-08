@@ -55,7 +55,6 @@ public class CreateSaleInfoDto
     public int GoodsCount { get; set; }
 
     [Required(ErrorMessage = "شماره سریال الزامی است.")]
-    [RegularExpression(@"^\d{8}$", ErrorMessage = "شماره سریال باید دقیقا ۸ رقم باشد.")]
     public string GoodsSerial { get; set; }
 
     [Required(ErrorMessage = "فاکتور الزامی است.")]

@@ -51,12 +51,30 @@ namespace Zelut.LandingPage.Controllers
                 return View();
             }
 
+            #region CheckSerialNumber
+            var serial_numbers = request.GoodsSerial.Split('-').ToList();
+            if (serial_numbers.Count != request.GoodsCount)
+            {
+                this.SetAlert("شماره سریال های وارد شده با تعداد مورد نظر هم خوانی ندارد.", "error");
+                return View();
+            }
+
+            var count_serial_numbers_less_than_eight_characters = serial_numbers.Where(sn => sn.Length < 8).Count();
+            if (count_serial_numbers_less_than_eight_characters > 0)
+            {
+                this.SetAlert("شماره سریال های وارد شده دقیقا باید 8 رقم باشند.", "error");
+                return View();
+            }
+            #endregion
+
+            #region UploadFile
             var uploadFactorResult = await _fileHelper.UploadAsync(request.PictureFactor);
-            if(!uploadFactorResult.IsSuccess)
+            if (!uploadFactorResult.IsSuccess)
             {
                 this.SetAlert(uploadFactorResult.Message!, "error");
                 return View();
             }
+            #endregion
 
             var rest_api_request = new RestApiSaleInofDto
             {
@@ -67,13 +85,13 @@ namespace Zelut.LandingPage.Controllers
                 BuyerTel = request.BuyerTel,
                 GoodsCount = request.GoodsCount,
                 GoodsMetraj = request.GoodsMetraj,
-                GoodsName =  request.GoodsName,
+                GoodsName = request.GoodsName,
                 GoodsSerial = request.GoodsSerial.Trim(),
                 InstalerFamily = request.InstalerFamily,
                 InstalerName = request.InstalerName,
                 InstallerEmail = request.InstallerEmail,
                 InstallerTel = request.InstallerTel,
-                //KindOfGoods = request.KindOfGoods.,
+                KindOfGoods = request.KindOfGoods,
                 SellerEmail = request.SellerEmail,
                 SellerName = request.SellerName,
                 SellerNameShop = request.SellerNameShop,
@@ -112,16 +130,15 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-           public IActionResult Article()
+        public IActionResult Article()
         {
             return View();
         }
 
-           public IActionResult Articles()
+        public IActionResult Articles()
         {
             return View();
         }
-
 
         public IActionResult DesignConsulting()
         {

@@ -48,5 +48,9 @@ public class ZelutBuyerRequestDtoValidtor : AbstractValidator<ZelutBuyerRequestD
 
         RuleFor(x => x.GoodsMetraj)
             .NotEmpty().WithMessage("متراژ موکت الزامی است");
+
+        RuleFor(x => x.KindOfGoods)
+            .NotEmpty()
+            .WithMessage("کاربری موکت الزامی است");
     }
 }

@@ -21,5 +21,5 @@ public class RestApiSaleInofDto
     public int GoodsCount { get; set; }
     public string GoodsSerial { get; set; }
     public string PictureFactor { get; set; }
-    public byte KindOfGoods { get; set; }
+    public string KindOfGoods { get; set; }
 }
