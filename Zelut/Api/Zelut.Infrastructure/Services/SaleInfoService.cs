@@ -56,7 +56,7 @@ public class SaleInfoService : ISaleInfoService
         }
 
 
-        //var smsResult = await _smsService.SendSms("پبام تستی", request.BuyerTel);
+        var smsResult = await _smsService.SendSms("پبام تستی", request.BuyerTel);
         return new Result
         {
             IsSuccess = true,
