@@ -60,7 +60,7 @@ public class CreateSaleInfoDto
     [Required(ErrorMessage = "فاکتور الزامی است.")]
     public IFormFile PictureFactor { get; set; }
 
-    [Required(ErrorMessage = "کاربری کوکت الزامی است.")]
+    [Required(ErrorMessage = "کاربری موکت الزامی است.")]
     public string KindOfGoods { get; set; }
 
     [MaxLength(250, ErrorMessage = "توضیحات حداکثر میتواند 250 کاراکتر باشد.")]

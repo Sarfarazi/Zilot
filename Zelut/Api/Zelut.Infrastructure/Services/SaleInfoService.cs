@@ -55,12 +55,12 @@ public class SaleInfoService : ISaleInfoService
             };
         }
 
-
-        var smsResult = await _smsService.SendSms("پبام تستی", request.BuyerTel);
+        var smsResult = await _smsService.SendSms(@"مشتری محترم، ضمن تشکر از انتخاب موکت زیلوت . لطفا جهت دریافت کمک هزینه نصب از طریق لینک ذیل اطلاعات کارت بانکی یا شماره شبای خود را ثبت کنید.
+                                                    https://zelut.ir/CashBack", request.BuyerTel);
         return new Result
         {
             IsSuccess = true,
-            Message = "عملیات ثبت اطلاعات با موفقیت ثبت شد."
+            Message = "عملیات ثبت اطلاعات با موفقیت ثبت شد لطفا برای ادامه فرایند روی لینکی که برای شما پیامک شد کلیک کنید."
         };
     }
     #endregion
