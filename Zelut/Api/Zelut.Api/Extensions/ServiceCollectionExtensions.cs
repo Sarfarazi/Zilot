@@ -2,6 +2,8 @@ using FluentValidation;
 using Zelut.Application.Configuration.Mapper;
 using Zelut.Application.Services;
 using Zelut.Application.Validations;
+using Zelut.Common.Helpers;
+using Zelut.Infrastructure.Repository;
 using Zelut.Infrastructure.Services;
 using Zelute.Application.Repository;
 
@@ -9,9 +11,10 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection RegisterServices(this IServiceCollection services)
     {
-        services.AddScoped(typeof(IRepository<>), typeof(Repository<>))
+        services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
                 .AddScoped<ISaleInfoService, SaleInfoService>()
-                .AddScoped<ISmsService, SmsService>();
+                .AddScoped<ISmsService, SmsService>()
+                .AddScoped<IDapperHelper, DapperHelper>();
 
         return services;
     }

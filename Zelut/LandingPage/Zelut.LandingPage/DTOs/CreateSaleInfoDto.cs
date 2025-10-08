@@ -62,4 +62,7 @@ public class CreateSaleInfoDto
 
     [Required(ErrorMessage = "کاربری کوکت الزامی است.")]
     public string KindOfGoods { get; set; }
+
+    [MaxLength(250, ErrorMessage = "توضیحات حداکثر میتواند 250 کاراکتر باشد.")]
+    public string? Description { get; set; }
 }

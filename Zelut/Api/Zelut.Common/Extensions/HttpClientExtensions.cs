@@ -46,17 +46,10 @@ public static class HttpClientExtensions
     private static async Task<T?> HandleResponse<T>(HttpResponseMessage response)
     {
         var content = await response.Content.ReadAsStringAsync();
-
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new HttpRequestException($"Request failed ({(int)response.StatusCode}): {content}");
-        }
-
         if (string.IsNullOrWhiteSpace(content))
         {
             return default;
         }
-
         return JsonSerializer.Deserialize<T>(content, _jsonOptions);
     }
     #endregion

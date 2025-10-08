@@ -22,4 +22,5 @@ public class RestApiSaleInofDto
     public string GoodsSerial { get; set; }
     public string PictureFactor { get; set; }
     public string KindOfGoods { get; set; }
+    public string? Description { get; set; }
 }

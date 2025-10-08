@@ -65,6 +65,14 @@ namespace Zelut.LandingPage.Controllers
                 this.SetAlert("شماره سریال های وارد شده دقیقا باید 8 رقم باشند.", "error");
                 return View();
             }
+
+            var serial_numbers_no_repetitive = new HashSet<string>(serial_numbers);
+            if(serial_numbers_no_repetitive.Count != serial_numbers.Count)
+            {
+                this.SetAlert("شماره سریال های وارد شده نباید تکراری باشند.", "error");
+                return View();
+            }
+
             #endregion
 
             #region UploadFile
@@ -96,6 +104,7 @@ namespace Zelut.LandingPage.Controllers
                 SellerName = request.SellerName,
                 SellerNameShop = request.SellerNameShop,
                 SellerTel = request.SellerTel,
+                Description = request.Description
             };
 
             var web_service_result = await _httpClient.RestApiPostAsync<RestApiSaleInofDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, rest_api_request);
@@ -106,7 +115,7 @@ namespace Zelut.LandingPage.Controllers
                 return View();
             }
 
-            this.SetAlert("عملیات ثبت اطلاعات با موفقیت ثبت شد.", "success");
+            this.SetAlert(web_service_result.Message, "success");
             return View();
         }
 
