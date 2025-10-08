@@ -10,4 +10,10 @@ public class ApplicationConfig
         SqlServer = configuration.GetSection("SqlServer").Get<SqlServerConfig>()!;
         SmsUrls = configuration.GetSection("SmsUrls").Get<SmsUrlsConfig>()!;
     }
+
+    public static void InitializeProductionApplicationConfig(IConfiguration configuration)
+    {
+        SqlServer = configuration.GetSection("SqlServerProduction").Get<SqlServerConfig>()!;
+        SmsUrls = configuration.GetSection("SmsUrls").Get<SmsUrlsConfig>()!;
+    }
 }

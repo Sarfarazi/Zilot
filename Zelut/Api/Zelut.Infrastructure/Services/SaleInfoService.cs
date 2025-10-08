@@ -55,7 +55,8 @@ public class SaleInfoService : ISaleInfoService
             };
         }
 
-        var smsResult = await _smsService.SendSms("پبام تستی", request.BuyerTel);
+
+        //var smsResult = await _smsService.SendSms("پبام تستی", request.BuyerTel);
         return new Result
         {
             IsSuccess = true,
@@ -71,7 +72,7 @@ public class SaleInfoService : ISaleInfoService
                            FROM ZelutBuyers AS z_buyer
                            CROSS APPLY string_split(z_buyer.GoodsSerial,'-') AS split";
 
-        var serial_numbers_fromDB = await _dapper.RunAsync<ZelutSerailNumber>(ApplicationConfig.SqlServer.CrmMainConnectionString, sql_query);
+        var serial_numbers_fromDB = await _dapper.RunAsync<ZelutSerailNumber>(ApplicationConfig.SqlServer.CrmConnectionString, sql_query);
         var serail_numbers_request = request.GoodsSerial.Split('-').ToList();
 
         var serial_number_exist = serail_numbers_request.FirstOrDefault(serial_number => serial_numbers_fromDB.Select(z => z.serial_number).Contains(serial_number));

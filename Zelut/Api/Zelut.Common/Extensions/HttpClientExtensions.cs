@@ -1,5 +1,5 @@
+using Newtonsoft.Json;
 using System.Text;
-using System.Text.Json;
 
 public static class HttpClientExtensions
 {
@@ -13,14 +13,14 @@ public static class HttpClientExtensions
 
     public static async Task<TResponse?> RestApiPostAsync<TRequest, TResponse>(this HttpClient client, string url, TRequest data, CancellationToken cancellationToken  = default)
     {
-        var content = new StringContent(JsonSerializer.Serialize(data, _jsonOptions), Encoding.UTF8, "application/json");
+        var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
         var response = await client.PostAsync(url, content, cancellationToken);
         return await HandleResponse<TResponse>(response);
     }
 
     public static async Task<TResponse?> RestApiPutAsync<TRequest, TResponse>(this HttpClient client, string url, TRequest data, CancellationToken cancellationToken = default)
     {
-        var content = new StringContent(JsonSerializer.Serialize(data, _jsonOptions), Encoding.UTF8, "application/json");
+        var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
         var response = await client.PutAsync(url, content, cancellationToken);
         return await HandleResponse<TResponse>(response);
     }
@@ -37,12 +37,6 @@ public static class HttpClientExtensions
     #endregion
 
     #region Private
-    private static readonly JsonSerializerOptions _jsonOptions = new()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        PropertyNameCaseInsensitive = true
-    };
-
     private static async Task<T?> HandleResponse<T>(HttpResponseMessage response)
     {
         var content = await response.Content.ReadAsStringAsync();
@@ -50,7 +44,7 @@ public static class HttpClientExtensions
         {
             return default;
         }
-        return JsonSerializer.Deserialize<T>(content, _jsonOptions);
+        return JsonConvert.DeserializeObject<T>(content);
     }
     #endregion
 }

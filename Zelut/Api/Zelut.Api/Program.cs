@@ -6,8 +6,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Initialize Application Config
-ApplicationConfig.InitializeApplicationConfig(builder.Configuration);
+// Initialize Application Configuration
+if(builder.Environment.IsDevelopment())
+{
+    ApplicationConfig.InitializeApplicationConfig(builder.Configuration);
+}
+
+if(builder.Environment.IsProduction())
+{
+    ApplicationConfig.InitializeProductionApplicationConfig(builder.Configuration);
+}
 
 // Register Service Collections Extensions
 builder.Services.RegisterSqlServer();
@@ -21,8 +29,8 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-// var development_mode = app.Environment.IsDevelopment();
-// var production_mode= app.Environment.IsProduction();
+var development_mode = app.Environment.IsDevelopment();
+var production_mode = app.Environment.IsProduction();
 
 app.UseSwagger();
 app.UseSwaggerUI();

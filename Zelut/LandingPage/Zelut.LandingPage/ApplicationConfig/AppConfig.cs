@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Zelut.LandingPage.ApplicationConfig;
 
 public static class AppConfig
@@ -6,5 +7,10 @@ public static class AppConfig
     public static void InitializeAppConfig(IConfiguration configuration)
     {
         RestApiConfig = configuration.GetSection("RestApi").Get<RestApiConfig>()!;
+    }
+
+    public static void InitializeProductionAppConfig(IConfiguration configuration)
+    {
+        RestApiConfig = configuration.GetSection("RestApiProduction").Get<RestApiConfig>()!;
     }
 }
