@@ -14,7 +14,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
                 .AddScoped<ISaleInfoService, SaleInfoService>()
                 .AddScoped<ISmsService, SmsService>()
-                .AddScoped<IDapperHelper, DapperHelper>();
+                .AddScoped<IDapperHelper, DapperHelper>()
+                .AddScoped<IProductService, ProductService>();
 
         return services;
     }

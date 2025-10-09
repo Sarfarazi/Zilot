@@ -1,0 +1,64 @@
+[
+  {
+    "nameCollection": "",
+    "nameModel": "",
+    "zelutDetail": [
+      {
+        "codeDaste": "",
+        "nameAvalieh": "",
+        "nameJadid": "",
+        "nameJadidEngelisi": "",
+        "sharh": "",
+        "noeBaft": "",
+        "jensNakh": "",
+        "tedadeRang": 0,
+        "backing": "",
+        "vaznehBacking": 0,
+        "rangeBacking": "",
+        "arzehRol": 0,
+        "zelutDetailColors": [
+          {
+            "rang": "",
+            "sharhKala": "",
+            "kodePalaz": "",
+            "itemDesription": "",
+            "geijeMucket": "",
+            "ertefaKol": 0,
+            "vaznehKol": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nameCollection": "",
+    "nameModel": "",
+    "zelutDetail": [
+      {
+        "codeDaste": "",
+        "nameAvalieh": "",
+        "nameJadid": "",
+        "nameJadidEngelisi": "",
+        "sharh": "",
+        "noeBaft": "",
+        "jensNakh": "",
+        "tedadeRang": 0,
+        "backing": "",
+        "vaznehBacking": 0,
+        "rangeBacking": "",
+        "arzehRol": 0,
+        "zelutDetailColors": [
+          {
+            "rang": "",
+            "sharhKala": "",
+            "kodePalaz": "",
+            "itemDesription": "",
+            "geijeMucket": "",
+            "ertefaKol": 0,
+            "vaznehKol": 0
+          }
+        ]
+      }
+    ]
+  }
+]

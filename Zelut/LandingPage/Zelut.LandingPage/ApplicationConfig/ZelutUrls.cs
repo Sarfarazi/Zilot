@@ -1,7 +1,7 @@
-﻿namespace Zelut.LandingPage.ApplicationConfig
+﻿namespace Zelut.LandingPage.ApplicationConfig;
+
+public class ZelutUrls
 {
-    public class ZelutUrls
-    {
-        public string CreateBuyerSellerUrl { get; set; }
-    }
+    public string CreateBuyerSellerUrl { get; set; }
+    public string GetProductsUrl { get; set; }
 }
