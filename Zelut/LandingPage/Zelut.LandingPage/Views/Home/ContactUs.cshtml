@@ -1,4 +1,8 @@
-﻿<section class="p-5 md:p-10 py-10 lg:p-20">
+﻿@using Zelut.LandingPage.DTOs
+@model ZelutContactUsDto
+
+
+<section class="p-5 md:p-10 py-10 lg:p-20">
     <div class="flex flex-col-reverse lg:flex-row bg-white shadow-xl items-stretch">
         <div class="flex-2 p-8 lg:p-16 md:text-lg">
             <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
@@ -29,13 +33,14 @@
 </section>
 
 <section class="px-10 lg:px-20 mb-10">
+    @await Component.InvokeAsync("Alert")
     <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
         تماس با ما
     </h2>
-    <form class="flex flex-col gap-8 py-10">
+    <form asp-controller="Home" asp-action="ContactUs" class="flex flex-col gap-8 py-10">
         <div class="flex flex-col md:flex-row gap-8">
             <div class="relative flex-1">
-                <input type="text"
+                <input asp-for="Name" type="text"
                        id="nameInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                        placeholder=" "
@@ -44,7 +49,7 @@
                        class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام *</label>
             </div>
             <div class="relative flex-1">
-                <input type="text"
+                <input asp-for="Family" type="text"
                        id="familyInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                        placeholder=" "
@@ -55,7 +60,7 @@
         </div>
         <div class="flex flex-col md:flex-row gap-8">
             <div class="relative flex-1">
-                <input type="tel"
+                <input asp-for="Mobile" type="tel"
                        id="phoneInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                        placeholder=" "
@@ -64,7 +69,7 @@
                        class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">شماره تماس *</label>
             </div>
             <div class="relative flex-1">
-                <input type="email"
+                <input asp-for="Email" type="email"
                        id="emailInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
                        placeholder=" " />
@@ -73,13 +78,13 @@
             </div>
         </div>
         <div class="relative flex-1">
-            <textarea id="textarea"
+            <input asp-for="Message" id="textarea"
                       class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                      placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"></textarea>
+                      placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"/>
             <label for="textarea"
                    class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">پیام شما</label>
         </div>
-        <button class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg rounded-md shadow-md self-center md:self-end">
+        <button type="submit" class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg rounded-md shadow-md self-center md:self-end">
             ارسال پیام
         </button>
     </form>

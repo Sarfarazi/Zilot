@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Runtime.ExceptionServices;
+using System.Threading.Tasks;
 using Zelut.LandingPage.DTOs;
 using Zelut.LandingPage.Extension;
 using Zelut.LandingPage.Helpers;
@@ -67,7 +67,7 @@ namespace Zelut.LandingPage.Controllers
             }
 
             var serial_numbers_no_repetitive = new HashSet<string>(serial_numbers);
-            if(serial_numbers_no_repetitive.Count != serial_numbers.Count)
+            if (serial_numbers_no_repetitive.Count != serial_numbers.Count)
             {
                 this.SetAlert("شماره سریال های وارد شده نباید تکراری باشند.", "error");
                 return View();
@@ -134,6 +134,32 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
+        [HttpPost()]
+        public async Task<IActionResult> ContactUs(ZelutContactUsDto contactUs)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errorMessage = ModelState
+                        .Where(ms => ms.Value.Errors.Count > 0)
+                        .SelectMany(ms => ms.Value.Errors)
+                        .Select(e => e.ErrorMessage)
+                        .FirstOrDefault();
+
+                this.SetAlert(errorMessage!, "error");
+                return View();
+            }
+
+            var web_service_api_rest_result = await _httpClient.RestApiPostAsync<ZelutContactUsDto, Result>(AppConfig.RestApiConfig.ZelutUrls.ContactUs, contactUs);
+            if (!web_service_api_rest_result.IsSuccess)
+            {
+                this.SetAlert(web_service_api_rest_result.Message, "error");
+                return View();
+            }
+
+            this.SetAlert(web_service_api_rest_result.Message, "success");
+            return View();
+        }
+
         public IActionResult Weblog()
         {
             return View();
@@ -179,10 +205,10 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        [HttpPost()]
-        public IActionResult CashBack()
-        {
-            return View();
-        }
+        //[HttpPost()]
+        //public IActionResult CashBack()
+        //{
+        //    return View();
+        //}
     }
 }
