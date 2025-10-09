@@ -173,5 +173,16 @@ namespace Zelut.LandingPage.Controllers
         {
             return PartialView();
         }
+
+        public IActionResult CashBack()
+        {
+            return View();
+        }
+
+        [HttpPost()]
+        public IActionResult CashBack()
+        {
+            return View();
+        }
     }
 }
