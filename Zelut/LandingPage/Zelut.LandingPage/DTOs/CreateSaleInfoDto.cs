@@ -60,6 +60,9 @@ public class CreateSaleInfoDto
     [Required(ErrorMessage = "فاکتور الزامی است.")]
     public IFormFile PictureFactor { get; set; }
 
+    [Required(ErrorMessage = "عکس سریال موکت الزامی است.")]
+    public IFormFile PictureSerial { get; set; }
+
     [Required(ErrorMessage = "کاربری موکت الزامی است.")]
     public string KindOfGoods { get; set; }
 

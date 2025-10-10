@@ -20,6 +20,7 @@ public class ZelutBuyers : BaseEntity
     public int? GoodsCount { get; set; }
     public string GoodsSerial { get; set; }
     public string PictureFactor { get; set; }
+    public string PictureSerial { get; set; }
     public string KindOfGoods { get; set; }
     public string? Description { get; set; }
     public string Ip { get; set; }

@@ -82,11 +82,19 @@ namespace Zelut.LandingPage.Controllers
                 this.SetAlert(uploadFactorResult.Message!, "error");
                 return View();
             }
+
+            var uploadPictureResult = await _fileHelper.UploadAsync(request.PictureSerial);
+            if (!uploadPictureResult.IsSuccess)
+            {
+                this.SetAlert(uploadPictureResult.Message!, "error");
+                return View();
+            }
             #endregion
 
             var rest_api_request = new RestApiSaleInofDto
             {
                 PictureFactor = uploadFactorResult.Data,
+                PictureSerial = uploadPictureResult.Data,
                 BuyerEmail = request.BuyerEmail,
                 BuyerFamily = request.BuyerFamily,
                 BuyerName = request.BuyerName,
@@ -107,6 +115,7 @@ namespace Zelut.LandingPage.Controllers
                 Description = request.Description
             };
 
+            // TODO : delete file uploaded from File upload folder
             var web_service_result = await _httpClient.RestApiPostAsync<RestApiSaleInofDto, Result>(AppConfig.RestApiConfig.ZelutUrls.CreateBuyerSellerUrl, rest_api_request);
 
             if (!web_service_result.IsSuccess)
