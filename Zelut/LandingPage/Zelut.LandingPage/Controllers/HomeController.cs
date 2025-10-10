@@ -59,7 +59,7 @@ namespace Zelut.LandingPage.Controllers
                 return View();
             }
 
-            var count_serial_numbers_less_than_eight_characters = serial_numbers.Where(sn => sn.Length < 8).Count();
+            var count_serial_numbers_less_than_eight_characters = serial_numbers.Where(sn => sn.Length > 8 || sn.Length < 8).Count();
             if (count_serial_numbers_less_than_eight_characters > 0)
             {
                 this.SetAlert("شماره سریال های وارد شده دقیقا باید 8 رقم باشند.", "error");
