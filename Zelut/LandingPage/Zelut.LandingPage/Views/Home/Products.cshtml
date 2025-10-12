@@ -1,4 +1,7 @@
-﻿<section class="lg:pb-16 px-10 lg:px-20 relative flex items-center bg-lightGray justify-end productsHeroSection">
+﻿@using Zelut.LandingPage.DTOs
+@model List<ZelutProductsWebResultDto>
+
+<section class="lg:pb-16 px-10 lg:px-20 relative flex items-center bg-lightGray justify-end productsHeroSection">
      <div class="hidden lg:flex lg:absolute right-0 lg:right-20 items-center justify-center overflow-hidden lg:h-full">
           <img src="~/images/productsCover.png" class="object-cover w-full" alt="slider" />
      </div>
@@ -412,4 +415,105 @@
                </div>
           </div>
      </div>
+
+    <section class="px-5 py-5">
+        <h2 class="text-2xl font-bold mb-4 text-green-700">لیست محصولات زلوت</h2>
+
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var productGroup in Model)
+            {
+                <div class="mb-10 border rounded shadow-sm p-4">
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">
+                        مجموعه: @productGroup.NameCollection - مدل: @productGroup.NameModel
+                    </h3>
+
+                    @if (productGroup.ZelutDetail != null && productGroup.ZelutDetail.Any())
+                    {
+                        <table class="table table-bordered table-striped w-100">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>کد دسته</th>
+                                    <th>نام اولیه</th>
+                                    <th>نام جدید</th>
+                                    <th>نام جدید انگلیسی</th>
+                                    <th>شرح</th>
+                                    <th>نوع بافت</th>
+                                    <th>جنس نخ</th>
+                                    <th>تعداد رنگ</th>
+                                    <th>Backing</th>
+                                    <th>وزن Backing</th>
+                                    <th>رنگ Backing</th>
+                                    <th>عرض رول</th>
+                                    <th>رنگ‌ها</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var detail in productGroup.ZelutDetail)
+                                {
+                                    <tr>
+                                        <td>@detail.CodeDaste</td>
+                                        <td>@detail.NameAvalieh</td>
+                                        <td>@detail.NameJadid</td>
+                                        <td>@detail.NameJadidEngelisi</td>
+                                        <td>@detail.Sharh</td>
+                                        <td>@detail.NoeBaft</td>
+                                        <td>@detail.JensNakh</td>
+                                        <td>@detail.TedadeRang</td>
+                                        <td>@detail.Backing</td>
+                                        <td>@detail.VaznehBacking</td>
+                                        <td>@detail.RangeBacking</td>
+                                        <td>@detail.ArzehRol</td>
+                                        <td>
+                                            @if (detail.ZelutDetailColors != null && detail.ZelutDetailColors.Any())
+                                            {
+                                                <table class="table table-sm table-bordered mt-2">
+                                                    <thead class="table-secondary">
+                                                        <tr>
+                                                            <th>رنگ</th>
+                                                            <th>شرح کالا</th>
+                                                            <th>کد پـالاز</th>
+                                                            <th>توضیح آیتم</th>
+                                                            <th>گیج موکت</th>
+                                                            <th>ارتفاع کل</th>
+                                                            <th>وزن کل</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var color in detail.ZelutDetailColors)
+                                                        {
+                                                            <tr>
+                                                                <td>@color.Rang</td>
+                                                                <td>@color.SharhKala</td>
+                                                                <td>@color.GeijeMucket</td>
+                                                                <td>@color.ErtefaKol</td>
+                                                                <td>@color.VaznehKol</td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted">فاقد رنگ</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">هیچ جزئیاتی برای این مجموعه وجود ندارد.</p>
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-danger">هیچ دیتایی برای نمایش وجود ندارد.</p>
+        }
+
+    </section>
 </section>

@@ -21,9 +21,16 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        public IActionResult Products()
+        public async Task<IActionResult> Products()
         {
-            return View();
+            var web_restApi_result = await _httpClient.RestApiGetAsync<ResultData<List<ZelutProductsWebResultDto>>>(AppConfig.RestApiConfig.ZelutUrls.GetProductsUrl);
+
+            if (!web_restApi_result.IsSuccess)
+            {
+                this.SetAlert(web_restApi_result.Message, "error");
+            }
+
+            return View(web_restApi_result.Data);
         }
 
         public IActionResult Product()
