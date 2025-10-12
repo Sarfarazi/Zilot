@@ -38,7 +38,6 @@ namespace Zelut.LandingPage.Controllers
         [Route("Product/{id}/{detail_id}")]
         public async Task<IActionResult> Product(int id, int detail_id)
         {
-            var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetProductDetilUrl, id, detail_id);
             var web_restApi_reuslt = await _httpClient.RestApiGetAsync<ResultData<ZelutProductDetail>>(string.Format(AppConfig.RestApiConfig.ZelutUrls.GetProductDetilUrl, id, detail_id));
 
             if (!web_restApi_reuslt.IsSuccess)
