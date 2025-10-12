@@ -53,7 +53,8 @@
             {
 
               @if (productGroup.ZelutDetail != null && productGroup.ZelutDetail.Any()){
-                    @foreach (var detail in productGroup.ZelutDetail){
+                    @foreach (var detail in productGroup.ZelutDetail)
+                    {
 
                      <div class="p-4">
                          <div class="flex-1 shadow-xl">
@@ -65,8 +66,10 @@
                                  <p class="my-5">@detail.TedadeRang رنگ</p>
                                  <div class="flex mb-5 py-3 px-1 overflow-x-scroll gap-3">
 
-                                    @if (detail.ZelutDetailColors != null && detail.ZelutDetailColors.Any()){
-                                                   @foreach (var color in detail.ZelutDetailColors){
+                                    @if (detail.ZelutDetailColors != null && detail.ZelutDetailColors.Any())
+                                    {
+                                                   @foreach (var color in detail.ZelutDetailColors)
+                                                   {
                                                         <div class="w-10 aspect-square rounded-sm shrink-0" style="background-color: #393939"></div>
                                                       }
                                              }
@@ -75,13 +78,14 @@
                                            }
                                
                                  </div>
-                                <a asp-controller="Home" asp-action="Product" asp-route-id="123" 
+                                <a asp-controller="Home" asp-action="Product" asp-route-id="@productGroup.Id" asp-route-detail_id="@detail.Id"
                                      class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-md">
                                      <p>مشخصات محصول</p>
                                 </a>
                               </div>
                        </div>
-                     </div> }
+                     </div> 
+                    }
           }
         else {
                      <p class="text-muted">هیچ جزئیاتی برای این مجموعه وجود ندارد.</p>
