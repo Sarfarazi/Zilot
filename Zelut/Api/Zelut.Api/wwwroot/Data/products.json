@@ -211,5 +211,179 @@
         ]
       }
     ]
+  },
+  {
+    "nameCollection": "زیلوت",
+    "nameModel": "اسپرت",
+    "zelutDetail": [
+      {
+        "codeDaste": "01",
+        "nameAvalieh": "کات اسپرت",
+        "nameJadid": "پالس",
+        "nameJadidEngelisi": "Florence",
+        "sharh": "کات کوتاه دو رنگ",
+        "noeBaft": "کات",
+        "jensNakh": "پلی پروپیلن",
+        "tedadeRang": 4,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نارنجی",
+            "sharhKala": "اسپرت-پالس-نارنجی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470
+          },
+          {
+            "rang": "کرم",
+            "sharhKala": "اسپرت-پالس-کرم",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "اسپرت-پالس-طوسی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470
+          },
+          {
+            "rang": "مشکی",
+            "sharhKala": "اسپرت-پالس-مشکی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nameCollection": "زیلوت",
+    "nameModel": "آفیس",
+    "zelutDetail": [
+      {
+        "codeDaste": "02",
+        "nameAvalieh": "لوپ چاپی فشرده",
+        "nameJadid": "کیش",
+        "nameJadidEngelisi": "Kish",
+        "sharh": "لوپ فشرده پلی آمید چاپی",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی آمید",
+        "tedadeRang": 6,
+        "backing": "نمد",
+        "vaznehBacking": 250,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 4,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نقره ای",
+            "sharhKala": "آفیس-کیش-نقره ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "آفیس-کیش-طوسی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          },
+          {
+            "rang": "زیتونی دودی",
+            "sharhKala": "آفیس-کیش-زیتونی دودی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          },
+          {
+            "rang": "کرم ",
+            "sharhKala": "آفیس-کیش-کرم",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          },
+          {
+            "rang": "شکلاتی",
+            "sharhKala": "آفیس-کیش-شکلاتی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          },
+          {
+            "rang": "آبی تیره",
+            "sharhKala": "آفیس-کیش-آبی تیره",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nameCollection": "زیلوت",
+    "nameModel": "آفیس",
+    "zelutDetail": [
+      {
+        "codeDaste": "05",
+        "nameAvalieh": "زبرا",
+        "nameJadid": "سانتورینی",
+        "nameJadidEngelisi": "Santorini",
+        "sharh": "لوپ مشابه نمونه با چیدمان ردیفی دو در یک  میان",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی پروپیلن",
+        "tedadeRang": 5,
+        "backing": "نمد",
+        "vaznehBacking": 0,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "طوسی",
+            "sharhKala": "آفیس-سانتورینی-طوسی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570
+          },
+          {
+            "rang": "نقره ای",
+            "sharhKala": "آفیس-سانتورینی-نقره ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570
+          },
+          {
+            "rang": "دودی",
+            "sharhKala": "آفیس-سانتورینی-دودی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570
+          },
+          {
+            "rang": "سرمه ای",
+            "sharhKala": "آفیس-سانتورینی-سرمه ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570
+          },
+          {
+            "rang": "بژ",
+            "sharhKala": "آفیس-سانتورینی-بژ",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570
+          }
+        ]
+      }
+    ]
   }
 ]

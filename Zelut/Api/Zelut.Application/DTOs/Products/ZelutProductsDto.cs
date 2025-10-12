@@ -30,6 +30,6 @@ public class ZelutDetailColors
     public string Rang { get; set; }
     public string SharhKala { get; set; }
     public string GeijeMucket { get; set; }
-    public int ErtefaKol { get; set; }
+    public double ErtefaKol { get; set; }
     public int VaznehKol { get; set; }
 }
