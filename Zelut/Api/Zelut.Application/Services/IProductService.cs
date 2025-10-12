@@ -2,7 +2,8 @@
 
 namespace Zelut.Application.Services;
 
-public interface    IProductService
+public interface IProductService
 {
-   Task<ResultData<List<ZelutProductsDto>>> GetProducts();
+    Task<ResultData<ZelutProductDetail>> GetProduct(int id, int detail_id);
+    Task<ResultData<List<ZelutProductsDto>>> GetProducts();
 }

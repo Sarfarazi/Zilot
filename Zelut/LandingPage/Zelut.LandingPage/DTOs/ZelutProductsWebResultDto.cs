@@ -2,6 +2,7 @@
 
 public class ZelutProductsWebResultDto
 {
+    public int Id { get; set; }
     public string NameCollection { get; set; }
     public string NameModel { get; set; }
     public List<ZelutProductDetailDto> ZelutDetail { get; set; }
@@ -9,6 +10,7 @@ public class ZelutProductsWebResultDto
 
 public class ZelutProductDetailDto
 {
+    public int Id { get; set; }
     public string CodeDaste { get; set; }
     public string NameAvalieh { get; set; }
     public string NameJadid { get; set; }
