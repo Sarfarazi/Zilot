@@ -45,7 +45,7 @@ namespace Zelut.LandingPage.Controllers
                 this.SetAlert(web_restApi_reuslt.Message, "error");
             }
 
-            return View();
+            return View(web_restApi_reuslt.Data);
         }
 
         public IActionResult SalesInfo()
