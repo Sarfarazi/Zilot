@@ -20,7 +20,8 @@ public class ZelutProductDetailDto
     public string Backing { get; set; }
     public int VaznehBacking { get; set; }
     public string RangeBacking { get; set; }
-    public int ArzehRol { get; set; }
+    public double ArzehRol { get; set; }
+    public double ToleRol { get; set; }
     public List<ZelutDetailColors> ZelutDetailColors { get; set; }
 }
 
@@ -28,9 +29,7 @@ public class ZelutDetailColors
 {
     public string Rang { get; set; }
     public string SharhKala { get; set; }
-    public string KodePalaz { get; set; }
-    public string ItemDesription { get; set; }
     public string GeijeMucket { get; set; }
-    public double ErtefaKol { get; set; }
-    public long VaznehKol { get; set; }
+    public int ErtefaKol { get; set; }
+    public int VaznehKol { get; set; }
 }
