@@ -1,9 +1,11 @@
 [
   {
+    "id": 1,
     "nameCollection": "زیلوت",
     "nameModel": "مینیمال",
     "zelutDetail": [
       {
+        "id": 1,
         "codeDaste": "01",
         "nameAvalieh": "لوپ مینیمال",
         "nameJadid": "سکوت",
@@ -56,6 +58,7 @@
         ]
       },
       {
+        "id": 2,
         "codeDaste": "02",
         "nameAvalieh": "کات مینیمال",
         "nameJadid": "آرام",
@@ -110,10 +113,12 @@
     ]
   },
   {
+    "id": 2,
     "nameCollection": "زیلوت",
     "nameModel": "کلاسیک",
     "zelutDetail": [
       {
+        "id": 1,
         "codeDaste": "01",
         "nameAvalieh": "لوپ تایل",
         "nameJadid": "فلورانس",
@@ -166,6 +171,7 @@
         ]
       },
       {
+        "id": 2,
         "codeDaste": "02",
         "nameAvalieh": "لوپ اقتصادی",
         "nameJadid": "آتن",
@@ -213,10 +219,12 @@
     ]
   },
   {
+    "id": 3,
     "nameCollection": "زیلوت",
     "nameModel": "اسپرت",
     "zelutDetail": [
       {
+        "id": 1,
         "codeDaste": "01",
         "nameAvalieh": "کات اسپرت",
         "nameJadid": "پالس",
@@ -264,10 +272,12 @@
     ]
   },
   {
+    "id": 4,
     "nameCollection": "زیلوت",
     "nameModel": "آفیس",
     "zelutDetail": [
       {
+        "id": 1,
         "codeDaste": "02",
         "nameAvalieh": "لوپ چاپی فشرده",
         "nameJadid": "کیش",
@@ -325,14 +335,9 @@
             "vaznehKol": 1550
           }
         ]
-      }
-    ]
-  },
-  {
-    "nameCollection": "زیلوت",
-    "nameModel": "آفیس",
-    "zelutDetail": [
+      },
       {
+        "id": 1,
         "codeDaste": "05",
         "nameAvalieh": "زبرا",
         "nameJadid": "سانتورینی",

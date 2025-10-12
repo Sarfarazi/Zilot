@@ -21,6 +21,7 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
+        [HttpGet()]
         public async Task<IActionResult> Products()
         {
             var web_restApi_result = await _httpClient.RestApiGetAsync<ResultData<List<ZelutProductsWebResultDto>>>(AppConfig.RestApiConfig.ZelutUrls.GetProductsUrl);
@@ -33,8 +34,17 @@ namespace Zelut.LandingPage.Controllers
             return View(web_restApi_result.Data);
         }
 
-        public IActionResult Product()
+        [HttpGet()]
+        [Route("{id}/{detail_id}")]
+        public async Task<IActionResult> Product(int id, int detail_id)
         {
+            var web_restApi_reuslt = await _httpClient.RestApiGetAsync<ResultData<ZelutProductDetail>>(string.Format(AppConfig.RestApiConfig.ZelutUrls.GetProductDetilUrl, id, detail_id));
+
+            if (!web_restApi_reuslt.IsSuccess)
+            {
+                this.SetAlert(web_restApi_reuslt.Message, "error");
+            }
+
             return View();
         }
 

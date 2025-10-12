@@ -5,4 +5,5 @@ public class ZelutUrls
     public string CreateBuyerSellerUrl { get; set; }
     public string GetProductsUrl { get; set; }
     public string ContactUs { get; set; }
+    public string GetProductDetilUrl { get; internal set; }
 }
