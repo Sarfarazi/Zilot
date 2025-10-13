@@ -57,7 +57,7 @@ public class ProductService : IProductService
         };
     }
 
-    public async Task<ResultData<List<ZelutProductsDto>>> GetProducts()
+    public async Task<ResultData<List<ZelutProductsDto>>> GetProducts(int category_id)
     {
         var file_path = Path.Combine(_environment.WebRootPath, "Data", "products.json");
         if (!File.Exists(file_path))
@@ -71,6 +71,11 @@ public class ProductService : IProductService
 
         var json_content = await File.ReadAllTextAsync(file_path);
         var result = JsonConvert.DeserializeObject<List<ZelutProductsDto>>(json_content);
+
+        if(category_id != 0)
+        {
+            result = result!.Where(r => r.Id == category_id).ToList();
+        }
 
         return new ResultData<List<ZelutProductsDto>>
         {

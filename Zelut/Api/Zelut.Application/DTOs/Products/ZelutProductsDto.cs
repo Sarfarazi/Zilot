@@ -1,4 +1,6 @@
-﻿namespace Zelut.Application.DTOs.Products;
+﻿using Microsoft.EntityFrameworkCore.Design;
+
+namespace Zelut.Application.DTOs.Products;
 
 public class ZelutProductsDto
 {
@@ -34,4 +36,5 @@ public class ZelutDetailColors
     public string GeijeMucket { get; set; }
     public double ErtefaKol { get; set; }
     public int VaznehKol { get; set; }
+    public string Hex { get; set; }
 }

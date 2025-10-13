@@ -21,10 +21,11 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        [HttpGet()]
-        public async Task<IActionResult> Products()
+        [HttpGet("Products/{category_id?}")]
+        public async Task<IActionResult> Products(int? category_id = null)
         {
-            var web_restApi_result = await _httpClient.RestApiGetAsync<ResultData<List<ZelutProductsWebResultDto>>>(AppConfig.RestApiConfig.ZelutUrls.GetProductsUrl);
+            var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetProductsUrl, category_id.HasValue ? category_id : 0);
+            var web_restApi_result = await _httpClient.RestApiGetAsync<ResultData<List<ZelutProductsWebResultDto>>>(url);
 
             if (!web_restApi_result.IsSuccess)
             {
@@ -34,8 +35,7 @@ namespace Zelut.LandingPage.Controllers
             return View(web_restApi_result.Data);
         }
 
-        [HttpGet()]
-        [Route("Product/{id}/{detail_id}")]
+        [HttpGet("Product/{id}/{detail_id}")]
         public async Task<IActionResult> Product(int id, int detail_id)
         {
             var web_restApi_reuslt = await _httpClient.RestApiGetAsync<ResultData<ZelutProductDetail>>(string.Format(AppConfig.RestApiConfig.ZelutUrls.GetProductDetilUrl, id, detail_id));

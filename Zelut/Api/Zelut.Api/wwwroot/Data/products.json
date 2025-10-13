@@ -25,35 +25,40 @@
             "sharhKala": "مینیمال-سکوت-نقره ای",
             "geijeMucket": "1/8",
             "ertefaKol": 7.5,
-            "vaznehKol": 1760
+            "vaznehKol": 1760,
+            "hex": "#D9D9D9"
           },
           {
             "rang": "کرم متالیک",
             "sharhKala": "مینیمال -سکوت-کرم متالیک",
             "geijeMucket": "1/8",
             "ertefaKol": 7.5,
-            "vaznehKol": 1760
+            "vaznehKol": 1760,
+            "hex": "#D4C19C"
           },
           {
             "rang": "کرم",
             "sharhKala": "مینیمال -سکوت-کرم",
             "geijeMucket": "1/8",
             "ertefaKol": 7.5,
-            "vaznehKol": 1760
+            "vaznehKol": 1760,
+            "hex": "#B4A592"
           },
           {
             "rang": "طوسی",
             "sharhKala": "مینیمال -سکوت-طوسی",
             "geijeMucket": "1/8",
             "ertefaKol": 7.5,
-            "vaznehKol": 1760
+            "vaznehKol": 1760,
+            "hex": "#393939"
           },
           {
             "rang": "مشکی",
             "sharhKala": "مینیمال -سکوت-مشکی",
             "geijeMucket": "1/8",
             "ertefaKol": 7.5,
-            "vaznehKol": 1760
+            "vaznehKol": 1760,
+            "hex": "#000000"
           }
         ]
       },
@@ -78,35 +83,40 @@
             "sharhKala": "مینیمال-آرام-کرم نخودی",
             "geijeMucket": "1/8",
             "ertefaKol": 11,
-            "vaznehKol": 1950
+            "vaznehKol": 1950,
+            "hex": "#F5DEB3"
           },
           {
             "rang": "کرم شکلاتی",
             "sharhKala": "مینیمال-آرام-کرم شکلاتی",
             "geijeMucket": "1/8",
             "ertefaKol": 11,
-            "vaznehKol": 1950
+            "vaznehKol": 1950,
+            "hex": "#A0522D"
           },
           {
             "rang": "فیلی",
             "sharhKala": "مینیمال-آرام-فیلی",
             "geijeMucket": "1/8",
             "ertefaKol": 11,
-            "vaznehKol": 1950
+            "vaznehKol": 1950,
+            "hex": "#BEBEBE"
           },
           {
             "rang": "خاکستری",
             "sharhKala": "مینیمال-آرام-خاکستری",
             "geijeMucket": "1/8",
             "ertefaKol": 11,
-            "vaznehKol": 1950
+            "vaznehKol": 1950,
+            "hex": "#808080"
           },
           {
             "rang": "نقره ای",
             "sharhKala": "مینیمال-آرام-نقره ای",
             "geijeMucket": "1/8",
             "ertefaKol": 11,
-            "vaznehKol": 1950
+            "vaznehKol": 1950,
+            "hex": "#D9D9D9"
           }
         ]
       }
@@ -138,35 +148,41 @@
             "sharhKala": "کلاسیک- فلورانس- نقره ای",
             "geijeMucket": "1/8",
             "ertefaKol": 8,
-            "vaznehKol": 1780
+            "vaznehKol": 1780,
+            "hex": "#D9D9D9"
           },
           {
             "rang": "بژ",
             "sharhKala": "کلاسیک- فلورانس-بژ",
             "geijeMucket": "1/8",
             "ertefaKol": 8,
-            "vaznehKol": 1780
+            "vaznehKol": 1780,
+            "hex": "#F5F5DC"
           },
           {
             "rang": "کرم",
             "sharhKala": "کلاسیک- فلورانس-کرم",
             "geijeMucket": "1/8",
             "ertefaKol": 8,
-            "vaznehKol": 1780
+            "vaznehKol": 1780,
+            "hex": "#B4A592"
+
           },
           {
             "rang": "موشی",
             "sharhKala": "کلاسیک- فلورانس-موشی",
             "geijeMucket": "1/8",
             "ertefaKol": 8,
-            "vaznehKol": 1780
+            "vaznehKol": 1780,
+            "hex": "#F5F5DC"
           },
           {
             "rang": "خاکستری",
             "sharhKala": "کلاسیک- فلورانس-خاکستری",
             "geijeMucket": "1/8",
             "ertefaKol": 8,
-            "vaznehKol": 1780
+            "vaznehKol": 1780,
+            "hex": "#808080"
           }
         ]
       },
@@ -191,28 +207,32 @@
             "sharhKala": "کلاسیک-آتن-نقره ای",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1195
+            "vaznehKol": 1195,
+            "hex": "#D9D9D9"
           },
           {
             "rang": "طوسی",
             "sharhKala": "کلاسیک-آتن-طوسی",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1195
+            "vaznehKol": 1195,
+            "hex": "#393939"
           },
           {
             "rang": "موشی",
             "sharhKala": "کلاسیک-آتن-موشی",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1195
+            "vaznehKol": 1195,
+            "hex": "#F5F5DC"
           },
           {
             "rang": "کرم",
             "sharhKala": "کلاسیک-آتن-کرم",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1195
+            "vaznehKol": 1195,
+            "hex": "#B4A592"
           }
         ]
       }
@@ -244,28 +264,32 @@
             "sharhKala": "اسپرت-پالس-نارنجی",
             "geijeMucket": "5/32",
             "ertefaKol": 10,
-            "vaznehKol": 1470
+            "vaznehKol": 1470,
+            "hex": "#FFA500"
           },
           {
             "rang": "کرم",
             "sharhKala": "اسپرت-پالس-کرم",
             "geijeMucket": "5/32",
             "ertefaKol": 10,
-            "vaznehKol": 1470
+            "vaznehKol": 1470,
+            "hex": "#B4A592"
           },
           {
             "rang": "طوسی",
             "sharhKala": "اسپرت-پالس-طوسی",
             "geijeMucket": "5/32",
             "ertefaKol": 10,
-            "vaznehKol": 1470
+            "vaznehKol": 1470,
+            "hex": "#393939"
           },
           {
             "rang": "مشکی",
             "sharhKala": "اسپرت-پالس-مشکی",
             "geijeMucket": "5/32",
             "ertefaKol": 10,
-            "vaznehKol": 1470
+            "vaznehKol": 1470,
+            "hex": "#000000"
           }
         ]
       }
@@ -297,42 +321,48 @@
             "sharhKala": "آفیس-کیش-نقره ای",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#D9D9D9"
           },
           {
             "rang": "طوسی",
             "sharhKala": "آفیس-کیش-طوسی",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#393939"
           },
           {
             "rang": "زیتونی دودی",
             "sharhKala": "آفیس-کیش-زیتونی دودی",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#535857"
           },
           {
             "rang": "کرم ",
             "sharhKala": "آفیس-کیش-کرم",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#B4A592"
           },
           {
             "rang": "شکلاتی",
             "sharhKala": "آفیس-کیش-شکلاتی",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#411900"
           },
           {
             "rang": "آبی تیره",
             "sharhKala": "آفیس-کیش-آبی تیره",
             "geijeMucket": "1/10",
             "ertefaKol": 7.5,
-            "vaznehKol": 1550
+            "vaznehKol": 1550,
+            "hex": "#5E6575"
           }
         ]
       },
@@ -357,35 +387,40 @@
             "sharhKala": "آفیس-سانتورینی-طوسی",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1570
+            "vaznehKol": 1570,
+            "hex": "#393939"
           },
           {
             "rang": "نقره ای",
             "sharhKala": "آفیس-سانتورینی-نقره ای",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1570
+            "vaznehKol": 1570,
+            "hex": "#D9D9D9"
           },
           {
             "rang": "دودی",
             "sharhKala": "آفیس-سانتورینی-دودی",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1570
+            "vaznehKol": 1570,
+            "hex": "#A8A8A8"
           },
           {
             "rang": "سرمه ای",
             "sharhKala": "آفیس-سانتورینی-سرمه ای",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1570
+            "vaznehKol": 1570,
+            "hex": "#191970"
           },
           {
             "rang": "بژ",
             "sharhKala": "آفیس-سانتورینی-بژ",
             "geijeMucket": "1/10",
             "ertefaKol": 7,
-            "vaznehKol": 1570
+            "vaznehKol": 1570,
+            "hex": "#F5F5DC"
           }
         ]
       }

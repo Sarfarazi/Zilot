@@ -11,10 +11,10 @@ public class ProductController : BaseController
         _productService = productService;
     }
 
-    [HttpGet("product/get-products")]
-    public async Task<IActionResult> GetProducts()
+    [HttpGet("product/get-products/{category_id}")]
+    public async Task<IActionResult> GetProducts(int category_id)
     {
-        var result = await _productService.GetProducts();
+        var result = await _productService.GetProducts(category_id);
         if(!result.IsSuccess)
         {
             return BadRequest(result);
