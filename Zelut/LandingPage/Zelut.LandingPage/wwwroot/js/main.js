@@ -399,93 +399,14 @@ if (document.getElementById("productNames")) {
 }
 
 
+document.getElementById('copyLink').addEventListener('click', function(event) {
+    event.preventDefault(); // جلوگیری از رفتن به href
 
-// const renderBlogs = () => {
-//   let temp = Blogs.map((blog) => {
-//     return `
-//     <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
-//             <div class="flex flex-col">
-//                 <div class="flex-1">
-//                     <img src="/images/blog${blog.id}.png" alt="blog" class="w-full object-cover" />
-//                 </div>
-//                 <div class="flex-2 bg-whiteGreen">
-//                     <div class="p-5 flex flex-col">
-//                         <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
-//                             مجله زیلوت
-//                         </p>
-//                         <p class="text-lightGreen leading-relaxed mb-2">
-//                            ${blog.mainTitle}
-//                         </p>
-//                         <p class="text-sm leading-relaxed line-clamp-2">
-//                            ${blog.mainDesc}
-//                         </p>
-//                         <div class="flex items-center justify-between pt-3">
-//                             <div class="flex items-center gap-1">
-//                                 <img src="/images/edit.svg" alt="edit" />
-//                                 <p class="text-xs opacity-50">${blog.dateString}</p>
-//                             </div>
-//                             <a asp-controller="Home" asp-action="Article" href="/Home/Article?id=${blog.id}/${blog.urlTitle}"
-//                                 class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
-//                                 <img src="/images/moreArrow.png" alt="arrow" />
-//                             </a>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
+    const linkToCopy = this.getAttribute('data-link');
 
-//     `
-//   }).join("")
-
-//   if (document.querySelector(".weblogContainer"))
-//     document.querySelector(".weblogContainer").innerHTML = temp
-// }
-
-
-
-const renderBlogsInPage = () => {
-  let temp = Blogs.map((blog) => {
-    return `
-    <div class="p-4">
-        <div class="flex flex-col">
-            <div class="flex-1">
-                <img src="/images/blog${blog.id}.png" alt="blog" class="w-full object-cover" />
-            </div>
-            <div class="flex-2 bg-whiteGreen">
-                <div class="p-5 flex flex-col">
-                    <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
-                        مجله زیلوت
-                    </p>
-                    <p class="text-lightGreen leading-relaxed mb-2">
-                        ${blog.mainTitle}
-                    </p>
-                    <p class="text-sm leading-relaxed line-clamp-2">
-                         ${blog.mainDesc}
-                    </p>
-                    <div class="flex items-center justify-between pt-3">
-                        <div class="flex items-center gap-1">
-                            <img src="/images/edit.svg" alt="edit" />
-                            <p class="text-xs opacity-50">${blog.dateString}</p>
-                        </div>
-                         <a asp-controller="Home" asp-action="Article" href="/Home/Article?id=${blog.id}/${blog.urlTitle}"
-                            class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
-                            <img src="/images/moreArrow.png" alt="arrow" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    `
-  }).join("")
-
-
-  if (document.querySelector(".blogContainerPage"))
-    document.querySelector(".blogContainerPage").innerHTML = temp
-}
-
-renderBlogsInPage()
-// renderBlogs()
-
-
+    navigator.clipboard.writeText(linkToCopy).then(function() {
+        alert('لینک کپی شد!');
+    }).catch(function(err) {
+        alert('مشکلی پیش آمد: ' + err);
+    });
+});

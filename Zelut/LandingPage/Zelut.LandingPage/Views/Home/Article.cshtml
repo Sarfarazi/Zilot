@@ -2,31 +2,26 @@
 @model BlogDto;
 
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-12">
-    <h1>@Model.Id</h1>
-    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">عنوان مقاله
-    </h2>
+    <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">@Model.MainTitle
+    </h1>
     <div class="flex items-center justify-center gap-1 text-lightGreen text-lg lg:text-xl">
      <p>دسته بندی مقاله</p>
      |
      <p>نام نویسنده</p>
      |
-     <p>تاریخ بروزرسانی: 1404/01/02</p>
+     <p>تاریخ بروزرسانی: @Model.DateString</p>
     </div>
 </section>
 
 
-<section class="mb-12 flex items-center overflow-hidden newsHeroSection">
+<section class="flex items-center overflow-hidden newsHeroSection">
     <img src="~/images/newsSlider.jpg"
          alt="slider"
          class="w-full object-cover" />
 </section>
 
-<section class="px-5 md:px-10 lg:px-20 py-5 pb-20">
-   <p class="leading-loose text-justify text-lg">
-   شرکت زیلوت یک مجموعه تازه‌تأسیس در صنعت تولید موکت است که با هدف ارائه محصولاتی باکیفیت و مطابق با سلیقه روز، فعالیت خود را آغاز کرده است. ما باور داریم که زیبایی و راحتی فضاهای داخلی نقش مهمی در کیفیت زندگی دارد و به همین دلیل، تمرکز خود را بر تولید موکت‌هایی با طراحی مدرن و کیفیت بالا قرار داده‌ایم.<br />
-تیم زیلوت از نیروهای جوان و متخصص تشکیل شده که با بهره‌گیری از فناوری‌های نوین و خلاقیت در طراحی، تلاش می‌کنند محصولاتی متفاوت و متناسب با نیازهای متنوع مشتریان ارائه دهند. تنوع در طرح و رنگ از اولویت‌های ماست تا بتوانیم پاسخگوی سلیقه‌های مختلف در فضاهای مسکونی، اداری و تجاری باشیم.<br />
-چشم‌انداز ما تبدیل شدن به یکی از برندهای قابل اعتماد در بازار موکت است. ما با پایبندی به کیفیت، نوآوری و رضایت مشتریان، در مسیر توسعه گام برمی‌داریم و تلاش می‌کنیم در سال‌های آینده سهم قابل توجهی از بازار را به دست آوریم. زیلوت آماده همکاری با طراحان دکوراسیون، فروشگاه‌ها و پروژه‌های ساختمانی برای خلق فضاهایی زیباتر و کارآمدتر است.
-   </p>
+<section class="px-5 md:px-10 lg:px-20 py-5 pb-20 leading-loose text-justify articleBody">
+    @Html.Raw(Model.Description)
 </section>
 
 
@@ -127,106 +122,6 @@
        مقالات مرتبط
     </h2>
     <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll weblogContainer">
-        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
-            <div class="flex flex-col">
-                <div class="flex-1">
-                    <img src="~/images/blog1.png" alt="blog" class="w-full object-cover" />
-                </div>
-                <div class="flex-2 bg-whiteGreen">
-                    <div class="p-5 flex flex-col">
-                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
-                            مجله زیلوت
-                        </p>
-                        <p class="text-lightGreen leading-relaxed mb-2">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان ها
-                        </p>
-                        <p class="text-sm leading-relaxed">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است.
-                        </p>
-                        <div class="flex items-center justify-between pt-3">
-                            <div class="flex items-center gap-1">
-                                <img src="~/images/edit.svg" alt="edit" />
-                                <p class="text-xs opacity-50">۱۸ تیر ۱۴۰۴</p>
-                            </div>
-                            <a asp-controller="Home" asp-action="News"
-                                class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
-                                <img src="~/images/moreArrow.png" alt="arrow" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
-            <div class="flex flex-col">
-                <div class="flex-1">
-                    <img src="~/images/blog2.png" alt="blog" class="w-full object-cover" />
-                </div>
-                <div class="flex-2 bg-whiteGreen">
-                    <div class="p-5 flex flex-col">
-                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
-                            مجله زیلوت
-                        </p>
-                        <p class="text-lightGreen leading-relaxed mb-2">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان ها
-                        </p>
-                        <p class="text-sm leading-relaxed">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است.
-                        </p>
-                        <div class="flex items-center justify-between pt-3">
-                            <div class="flex items-center gap-1">
-                                <img src="~/images/edit.svg" alt="edit" />
-                                <p class="text-xs opacity-50">۶ بهمن ۱۴۰۲</p>
-                            </div>
-                            <a asp-controller="Home" asp-action="News"
-                                class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
-                                <img src="~/images/moreArrow.png" alt="arrow" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-4 md:max-w-1/3 shrink-0 max-w-4/5">
-            <div class="flex flex-col">
-                <div class="flex-1">
-                    <img src="~/images/blog3.png" alt="blog" class="w-full object-cover" />
-                </div>
-                <div class="flex-2 bg-whiteGreen">
-                    <div class="p-5 flex flex-col">
-                        <p class="text-lightGreen w-fit bg-pastelGreen px-3 py-1 rounded-sm text-xs mb-3">
-                            مجله زیلوت
-                        </p>
-                        <p class="text-lightGreen leading-relaxed mb-2">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان ها
-                        </p>
-                        <p class="text-sm leading-relaxed">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
-                            مجله در ستون و سطرآنچنان که لازم است.
-                        </p>
-                        <div class="flex items-center justify-between pt-3">
-                            <div class="flex items-center gap-1">
-                                <img src="~/images/edit.svg" alt="edit" />
-                                <p class="text-xs opacity-50">۱۱ خرداد ۱۴۰۰</p>
-                            </div>
-                            <a asp-controller="Home" asp-action="News"
-                                class="w-10 lg:w-14 p-3.5 lg:p-5 aspect-square rounded-md bg-lightGreen flex items-center justify-center">
-                                <img src="~/images/moreArrow.png" alt="arrow" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>  
+ @await Component.InvokeAsync("Blogs")
+     </div>
+</section> 

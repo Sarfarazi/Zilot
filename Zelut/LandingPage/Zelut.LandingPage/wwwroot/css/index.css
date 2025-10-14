@@ -17,6 +17,24 @@ a {
 }
 
 
+.articleBody p{
+  line-height: 2;
+  font-size: 18px;
+}
+
+.articleBody h2{
+  font-size: 23px;
+  color: var(--lightGreen);
+  margin-top: 2rem;
+  line-height: 2;
+  
+}
+
+.articleBody h3{
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
 
 /* For Chrome, Safari, and Edge */
 *::-webkit-scrollbar {
