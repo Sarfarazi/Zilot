@@ -32,8 +32,7 @@
         <p class="skew-x-24 pointer-events-none" style="text-align:center">همه</p>
     </a>
     <a asp-controller="Home" asp-action="Products" asp-route-category_id="1" data-category-id="1"
-        class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer @(current_category_id == "1" ? "currentProductCat" : "")"
-             onclick="productCategoryHandler('minimal')">
+        class="text-lightGreen bg-lightGray -skew-x-24 flex-1 flex items-center justify-center p-3 cursor-pointer @(current_category_id == "1" ? "currentProductCat" : "")">
             <p class="skew-x-24 pointer-events-none" style="text-align:center">مینیمــال</p>
     </a>
     <a asp-controller="Home" asp-action="Products" asp-route-category_id="2" data-category-id="2"
