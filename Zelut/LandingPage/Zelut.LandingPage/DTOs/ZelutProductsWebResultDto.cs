@@ -22,6 +22,7 @@ public class ZelutProductDetailDto
     public string Sharh { get; set; }
     public string NoeBaft { get; set; }
     public string JensNakh { get; set; }
+    public string Product_url { get; set; }
     public int TedadeRang { get; set; }
     public string Backing { get; set; }
     public int VaznehBacking { get; set; }
