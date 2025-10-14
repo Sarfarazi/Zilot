@@ -252,7 +252,7 @@ const renderTags = () => {
   document.getElementById("tagsContainer").innerHTML = tagsTemp
 }
 
-if (document.getElementById("hiddenInput").value) {
+if (document.getElementById("hiddenInput") && document.getElementById("hiddenInput").value) {
   var arr = document.getElementById("hiddenInput").value.split("-")
   serialNumbers = arr
   renderTags()
@@ -319,7 +319,7 @@ renderOptions()
 
 
 
-if (document.getElementById("hiddenProductCategory").value) {
+if (document.getElementById("hiddenProductCategory") && document.getElementById("hiddenProductCategory").value) {
   var ids = document.getElementById("hiddenProductCategory").value.split("-")
   var arr = []
   ids.map(id => {
@@ -384,7 +384,7 @@ const removeNameTag = (index) => {
 }
 
 
-if (document.getElementById("nameHiddenInput").value) {
+if (document.getElementById("nameHiddenInput") && document.getElementById("nameHiddenInput").value) {
   var arr = document.getElementById("nameHiddenInput").value.split("-")
   productsNames = arr
   renderNameTags()
