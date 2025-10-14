@@ -12,7 +12,7 @@ public class BlogsViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var web_sevrice_result = await _httpClient.RestApiGetAsync
+        //var web_sevrice_result = await _httpClient.RestApiGetAsync
         return View();
     }
 }
