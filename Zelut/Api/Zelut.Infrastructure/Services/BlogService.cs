@@ -14,7 +14,7 @@ public class BlogService : IBlogService
 
     public Task<ResultData<List<BlogDto>>> GetAll()
     {
-        var file_path = 
+        throw new NotImplementedException();
     }
 
     public Task<ResultData<BlogDto>> GetById(int id)
