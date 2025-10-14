@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Zelut.LandingPage.DTOs;
 
 namespace Zelut.LandingPage.Components;
 
@@ -12,7 +13,7 @@ public class BlogsViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        //var web_sevrice_result = await _httpClient.RestApiGetAsync
-        return View();
+        var web_sevrice_result = await _httpClient.RestApiGetAsync<ResultData<List<BlogDto>>>(AppConfig.RestApiConfig.ZelutUrls.GetBlogsUrl);
+        return View("Blog", web_sevrice_result.Data);
     }
 }
