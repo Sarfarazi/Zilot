@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using System.Threading.Tasks;
 using Zelut.LandingPage.DTOs;
 using Zelut.LandingPage.Extension;
@@ -191,9 +192,18 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        public IActionResult Article()
+        [HttpGet("article/{id}/{url_title}")]
+        public async Task<IActionResult> Article(int id, string url_title)
         {
-            return View();
+            var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetBlogUrl, id);
+            var web_service_api_result = await _httpClient.RestApiGetAsync<ResultData<BlogDto>>(url);
+            if(!web_service_api_result.IsSuccess)
+            {
+                this.SetAlert(web_service_api_result.Message,"error");
+                return View();
+            }
+
+            return View(web_service_api_result.Data);
         }
 
         public IActionResult Articles()
