@@ -1,12 +1,12 @@
 
 const Blogs = [
-    {
-        id: '1',
-        dateString: "۲۰ مهر ۱۴۰۴",
-        mainTitle: "انواع موکت برای خانه؛ راهنمای انتخاب بهترین گزینه",
-        urlTitle: "types-of-carpets-for-home",
-        mainDesc: "آیا به دنبال موکت مناسب برای خانه خود هستید؟ این سوال پرتکرار بسیاری از افراد است. انتخاب موکت به عوامل مختلفی بستگی دارد. عواملی مثل مکان مورد استفاده، سلیقه و بودجه شما. بسیاری از افراد می‌پرسند که بهترین نوع موکت برای پذیرایی چیست. برخی هم به دنبال موکت برای اتاق خواب هستند. در این مقاله به بررسی انواع موکت برای خانه می‌پردازیم. به شما کمک می‌کنیم بهترین انتخاب را داشته باشید. موکت‌ها به طور کلی به دو دست تافتینگ و نمدی تقسیم می‌شوند. هر کدام مزایا و معایب خود را دارند.",
-        desc: `
+  {
+    id: '1',
+    dateString: "۲۰ مهر ۱۴۰۴",
+    mainTitle: "انواع موکت برای خانه؛ راهنمای انتخاب بهترین گزینه",
+    urlTitle: "types-of-carpets-for-home",
+    mainDesc: "آیا به دنبال موکت مناسب برای خانه خود هستید؟ این سوال پرتکرار بسیاری از افراد است. انتخاب موکت به عوامل مختلفی بستگی دارد. عواملی مثل مکان مورد استفاده، سلیقه و بودجه شما. بسیاری از افراد می‌پرسند که بهترین نوع موکت برای پذیرایی چیست. برخی هم به دنبال موکت برای اتاق خواب هستند. در این مقاله به بررسی انواع موکت برای خانه می‌پردازیم. به شما کمک می‌کنیم بهترین انتخاب را داشته باشید. موکت‌ها به طور کلی به دو دست تافتینگ و نمدی تقسیم می‌شوند. هر کدام مزایا و معایب خود را دارند.",
+    desc: `
         <h2>موکت‌های پرز بلند و پرز کوتاه؛ کدام بهتر است؟</h2>
         <p>انتخاب بین موکت پرز بلند و پرز کوتاه به نیاز شما بستگی دارد. موکت‌های پرز بلند نرمی و راحتی زیادی دارند. برای اتاق خواب و فضاهای کم‌تردد مناسب‌اند. موکت پرز بلند عایق خوبی در برابر صدا و گرما است. این ویژگی برای ایجاد فضایی آرام مهم است. با این حال، تمیز کردن آن‌ها کمی سخت‌تر است. گرد و غبار و ذرات ریز به راحتی در پرزهای بلند نفوذ می‌کنند.</p>
         <p>موکت‌های پرز کوتاه و لوپ دوام بیشتری دارند. تمیز کردن آن‌ها آسان‌تر است. این نوع موکت‌ها برای فضاهای پرتردد مثل راهرو و پذیرایی ایده‌آل هستند. موکت‌های پرز کوتاه معمولاً از الیاف مصنوعی ساخته می‌شوند. الیاف مصنوعی مثل پلی‌پروپیلن یا نایلون مقاومت زیادی در برابر لکه و رطوبت دارند. الیاف پلی آمید مقاومت بالایی در برابر تردد دارند. این موکت‌ها تنوع طرح و رنگ بیشتری دارند.</p>
@@ -25,14 +25,14 @@ const Blogs = [
         <h2>انواع موکت زیلوت برای خانه</h2>
         <p>موکت آرام از خانواده مینیمال، با بافت کات پایل (Cut Pile) و نخ پلی‌آمید (Nylon)، لطافت و گرمای خاصی دارد که آن را به انتخابی ممتاز برای فضاهای خانگی تبدیل می‌کند. ضخامت حدود ۱۱ میلی‌متر و وزن بالا (بیش از ۱۸۵۰ گرم بر متر مربع)  حس نرمی و لوکسی را زیر پا ایجاد می‌کند. سطح مخملی و رنگ‌های گرم و کرم‌خاکی این مدل، فضای خانه را دلنشین و آرام می‌سازد. اگر به دنبال موکتی هستید که هم دوام داشته باشد و هم حس راحتی به خانه ببخشد، «آرام» انتخابی بی‌نقص است. </p>
         `
-    },
-    {
-        id: '2',
-        dateString: "۲۰ مهر ۱۴۰۴",
-        urlTitle: "best-carpet-colors-for-living-room",
-        mainTitle: "بهترین رنگ موکت برای پذیرایی؛ راهنمای انتخاب رنگ مناسب",
-        mainDesc:"آیا می‌خواهید بدانید که بهترین رنگ موکت برای پذیرایی چیست؟ این سوال بسیاری از افراد است. انتخاب رنگ موکت به عوامل زیادی بستگی دارد. این عوامل شامل دکوراسیون، نور و اندازه فضا هستند. برخی از افراد می‌پرسند که بهترین رنگ موکت برای سالن پذیرایی کدام است. در این مقاله، ما به این سوالات پاسخ می‌دهیم. ما به شما کمک می‌کنیم تا بهترین انتخاب را داشته باشید. موکت یک عنصر مهم در دکوراسیون خانه است. رنگ مناسب، زیبایی و هماهنگی خانه را بیشتر می‌کند.",
-        desc: `
+  },
+  {
+    id: '2',
+    dateString: "۲۰ مهر ۱۴۰۴",
+    urlTitle: "best-carpet-colors-for-living-room",
+    mainTitle: "بهترین رنگ موکت برای پذیرایی؛ راهنمای انتخاب رنگ مناسب",
+    mainDesc: "آیا می‌خواهید بدانید که بهترین رنگ موکت برای پذیرایی چیست؟ این سوال بسیاری از افراد است. انتخاب رنگ موکت به عوامل زیادی بستگی دارد. این عوامل شامل دکوراسیون، نور و اندازه فضا هستند. برخی از افراد می‌پرسند که بهترین رنگ موکت برای سالن پذیرایی کدام است. در این مقاله، ما به این سوالات پاسخ می‌دهیم. ما به شما کمک می‌کنیم تا بهترین انتخاب را داشته باشید. موکت یک عنصر مهم در دکوراسیون خانه است. رنگ مناسب، زیبایی و هماهنگی خانه را بیشتر می‌کند.",
+    desc: `
         <h2>عوامل مؤثر در انتخاب بهترین رنگ موکت برای پذیرایی</h2>
         <p>بهترین رنگ موکت برای خانه شما به چندین عامل وابسته است. این عوامل را باید قبل از خرید در نظر بگیرید.</p>
         <h3>اندازه و نور فضای پذیرایی</h3>
@@ -58,14 +58,14 @@ const Blogs = [
         <h2>بهترین رنگ موکت زیلوت برای پذیرایی</h2>
         <p>در پذیرایی که نور و جلوه بصری اهمیت بیشتری دارد، مدل‌های Classic  زیلوت با رنگ‌های خنثی نظیر بژ، کرم و طوسی پیشنهاد می‌شوند. این مدل‌ها دارای بافت لوپ (Loop) و جنس مقاوم پلی‌آمید هستند که دوام و ماندگاری بالایی دارند. رنگ‌های ملایم آن‌ها با مبلمان و دیوارهای مدرن به‌خوبی هماهنگ شده و فضا را روشن‌تر و لوکس‌تر نشان می‌دهد. با موکت‌های کلاسیک زیلوت، پذیرایی خود را به گالریی از سادگی و شکوه تبدیل کنید؛ ترکیبی از دوام، زیبایی و هماهنگی با هر سبک دکور. </p>
         `
-    },
-    {
-        id:'3',
-        dateString: "۲۰ مهر ۱۴۰۴",
-        urlTitle: "carpet-buying-guide-smart-tips",
-        mainTitle: "راهنمای خرید موکت؛ نکات مهم برای یک انتخاب هوشمندانه",
-        mainDesc: "بسیاری از افراد می‌پرسند چگونه موکت بخریم؟ و راهنمای خرید موکت خوب چیست؟ این سوالات پرتکرار هستند. انتخاب موکت به عوامل مختلفی بستگی دارد. عواملی مثل جنس، نوع پرز و کاربرد آن. موکت‌ها تنوع زیادی دارند. شما باید با توجه به نیاز خود بهترین گزینه را انتخاب کنید. در این مقاله به شما راهنمای خرید موکت را کامل ارائه می‌دهیم. ما به شما کمک می‌کنیم تا بهترین تصمیم را بگیرید.",
-        desc: `
+  },
+  {
+    id: '3',
+    dateString: "۲۰ مهر ۱۴۰۴",
+    urlTitle: "carpet-buying-guide-smart-tips",
+    mainTitle: "راهنمای خرید موکت؛ نکات مهم برای یک انتخاب هوشمندانه",
+    mainDesc: "بسیاری از افراد می‌پرسند چگونه موکت بخریم؟ و راهنمای خرید موکت خوب چیست؟ این سوالات پرتکرار هستند. انتخاب موکت به عوامل مختلفی بستگی دارد. عواملی مثل جنس، نوع پرز و کاربرد آن. موکت‌ها تنوع زیادی دارند. شما باید با توجه به نیاز خود بهترین گزینه را انتخاب کنید. در این مقاله به شما راهنمای خرید موکت را کامل ارائه می‌دهیم. ما به شما کمک می‌کنیم تا بهترین تصمیم را بگیرید.",
+    desc: `
         <h2>بررسی انواع موکت: پرز بلند یا پرز کوتاه؟</h2>
         <p>انتخاب بین موکت پرز بلند و پرز کوتاه اولین قدم است. هر کدام مزایا و معایب خود را دارند.</p>
         <h3>راهنمای خرید موکت پرز بلند</h3>
@@ -88,7 +88,7 @@ const Blogs = [
         <h3>موکت های زیلوت، یک انتخاب هوشمندانه</h3>
         <p>در هنگام خرید موکت، باید به کاربری فضا، نوع بافت و جنس نخ توجه کنید. برای فضاهای پرتردد مانند ادارات و سالن‌ها، دسته‌های کلاسیک  و  آفیس زیلوت بهترین انتخاب‌اند. مدل‌های اسپرت با بافت لوپ و جنس پلی‌آمید، استحکام بالا و ظاهر مرتب خود را در طول زمان حفظ می‌کنند. مدل‌های آفیس نیز با وزن و تراکم بالا، مخصوص محیط‌های اداری طراحی شده‌اند و در برابر فشار و رفت‌وآمد زیاد مقاوم‌اند. با انتخاب هوشمندانه از میان مجموعه‌های زیلوت، سال‌ها بدون نگرانی از افت کیفیت، از زیبایی و دوام موکت خود لذت ببرید.</p>
         `
-    }
+  }
 ]
 
 
@@ -101,7 +101,7 @@ const searchBoxToggle = () => {
 }
 
 const searchBar = document.querySelector(".searchBtn")
-searchBar.addEventListener("click" , searchBoxToggle)
+searchBar.addEventListener("click", searchBoxToggle)
 
 
 const collectionTitles = document.querySelectorAll(".collection-title");
@@ -188,8 +188,8 @@ const aboutHandler = (index,) => {
 };
 
 const changeColorHandler = () => {
-  if(document.querySelector(".currentColor"))
-  document.querySelector(".currentColor").classList.remove("currentColor");
+  if (document.querySelector(".currentColor"))
+    document.querySelector(".currentColor").classList.remove("currentColor");
   event.target.classList.add("currentColor");
 };
 
@@ -223,7 +223,6 @@ if (document.getElementById("serialNumbers")) {
 }
 
 
-
 const addTagInput = () => {
   const input = document.getElementById("serialNumbers")
   let val = input.value
@@ -253,6 +252,13 @@ const renderTags = () => {
   document.getElementById("tagsContainer").innerHTML = tagsTemp
 }
 
+if (document.getElementById("hiddenInput").value) {
+  var arr = document.getElementById("hiddenInput").value.split("-")
+  serialNumbers = arr
+  renderTags()
+}
+
+
 const removeTag = (index) => {
   serialNumbers.splice(index, 1)
   document.getElementById("hiddenInput").value = serialNumbers.join("-")
@@ -267,17 +273,17 @@ const openSelectHandler = () => {
 
 
 const selectOption = (option, e) => {
-  if(selectedKindOfGoods.find(item => item.id == option)){
-    selectedKindOfGoods.splice(selectedKindOfGoods.findIndex((item) => item.id == option) , 1)
-  }else{
+  if (selectedKindOfGoods.find(item => item.id == option)) {
+    selectedKindOfGoods.splice(selectedKindOfGoods.findIndex((item) => item.id == option), 1)
+  } else {
     selectedKindOfGoods.push({
-      "id":+option,
+      "id": +option,
       "value": productCategoryList.find(item => item.id == option).value
     })
   }
 
-  let selectedItems= selectedKindOfGoods.map(item => item.value).join(" , ")
-  let selectedIds= selectedKindOfGoods.map(item => item.id).join("-")
+  let selectedItems = selectedKindOfGoods.map(item => item.value).join(" , ")
+  let selectedIds = selectedKindOfGoods.map(item => item.id).join("-")
   document.getElementById("productCategory").value = selectedItems
   document.getElementById("hiddenProductCategory").value = selectedIds
   event.target.classList.toggle("selectedOption")
@@ -299,7 +305,7 @@ window.addEventListener("click", (e) => {
 
 const renderOptions = () => {
   let temp = productCategoryList.map((item) => {
-    return ` <div class="w-full p-3 py-4 bg-white hover:bg-pastelGreen cursor-pointer duration-300 text-lg" onclick="selectOption('${item.id}')">
+    return ` <div class="w-full p-3 py-4 bg-white hover:bg-pastelGreen cursor-pointer duration-300 text-lg" id="selectOption${item.id}" onclick="selectOption('${item.id}')">
                                 ${item.value}
                             </div>`
   }).join("")
@@ -309,6 +315,25 @@ const renderOptions = () => {
 }
 
 renderOptions()
+
+
+
+
+if (document.getElementById("hiddenProductCategory").value) {
+  var ids = document.getElementById("hiddenProductCategory").value.split("-")
+  var arr = []
+  ids.map(id => {
+     arr.push({
+      "id": +id,
+      "value": productCategoryList.find(item => item.id == id).value
+    })
+    document.getElementById(`selectOption${id}`).classList.add("selectedOption")
+  })
+  selectedKindOfGoods = arr
+  let selectedItems = selectedKindOfGoods.map(item => item.value).join(" , ")
+  document.getElementById("productCategory").value = selectedItems
+}
+
 
 
 
@@ -359,6 +384,14 @@ const removeNameTag = (index) => {
 }
 
 
+if (document.getElementById("nameHiddenInput").value) {
+  var arr = document.getElementById("nameHiddenInput").value.split("-")
+  productsNames = arr
+  renderNameTags()
+}
+
+
+
 if (document.getElementById("productNames")) {
   document.getElementById("productNames").addEventListener("blur", () => {
     addNameTagInput()
@@ -404,8 +437,8 @@ const renderBlogs = () => {
     `
   }).join("")
 
-  if(document.querySelector(".weblogContainer"))
-  document.querySelector(".weblogContainer").innerHTML = temp
+  if (document.querySelector(".weblogContainer"))
+    document.querySelector(".weblogContainer").innerHTML = temp
 }
 
 
@@ -448,8 +481,8 @@ const renderBlogsInPage = () => {
   }).join("")
 
 
-  if(document.querySelector(".blogContainerPage"))
-  document.querySelector(".blogContainerPage").innerHTML = temp
+  if (document.querySelector(".blogContainerPage"))
+    document.querySelector(".blogContainerPage").innerHTML = temp
 }
 
 renderBlogsInPage()
