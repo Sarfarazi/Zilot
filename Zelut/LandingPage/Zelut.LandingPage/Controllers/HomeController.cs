@@ -192,7 +192,7 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        [HttpGet("article/{id}/{url_title}")]
+        [HttpGet("article/{id}/{url_title}", Name ="article")]
         public async Task<IActionResult> Article(int id, string url_title)
         {
             var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetBlogUrl, id);
