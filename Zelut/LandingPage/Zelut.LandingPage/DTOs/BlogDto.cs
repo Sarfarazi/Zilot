@@ -6,5 +6,6 @@ public class BlogDto
     public string DateString { get; set; }
     public string MainTitle { get; set; }
     public string MainDescription { get; set; }
+    public string UrlTitle { get; set; }
     public string Description { get; set; }
 }
