@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Design;
+using Newtonsoft.Json;
 
 namespace Zelut.Application.DTOs.Products;
 
@@ -7,6 +8,8 @@ public class ZelutProductsDto
     public int Id { get; set; }
     public string NameCollection { get; set; }
     public string NameModel { get; set; }
+    public string Description { get; set; }
+    public string EnglishName { get; set; }
     public List<ZelutProductDetailDto> ZelutDetail { get; set; }
 }
 
