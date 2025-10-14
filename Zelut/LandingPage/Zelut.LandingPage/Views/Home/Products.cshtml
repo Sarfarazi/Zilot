@@ -4,6 +4,8 @@
 
 @{
     var current_category_id = Context.Request.RouteValues["category_id"]?.ToString();
+    var product_category = Model.FirstOrDefault(s =>s .Id == int.Parse(current_category_id ?? "0"));
+    var product_name = "محصولات";
 }
 
 <section class="lg:pb-16 px-10 lg:px-20 relative flex items-center bg-lightGray justify-end productsHeroSection">
@@ -15,7 +17,13 @@
 
         <div class="mb-5 flex flex-col items-center w-max mx-auto">
             <h1 class="text-green text-2xl md:text-3xl lg:text-5xl font-medium" id="productHeadTitle">
-                محصـولات
+            @if(product_category is not null)
+            {
+                @product_category.NameModel 
+            }
+            else{
+                @product_name;
+            }
             </h1>
             <p id="productHeadSubtitle" class="self-end text-lg"></p>
         </div>
