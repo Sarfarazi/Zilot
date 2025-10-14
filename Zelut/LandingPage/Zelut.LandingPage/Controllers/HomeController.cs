@@ -65,7 +65,7 @@ namespace Zelut.LandingPage.Controllers
                     .FirstOrDefault();
 
                 this.SetAlert(errorMessage!, "error");
-                return View();
+                return View(request);
             }
 
             #region CheckSerialNumber
@@ -73,21 +73,21 @@ namespace Zelut.LandingPage.Controllers
             if (serial_numbers.Count != request.GoodsCount)
             {
                 this.SetAlert("شماره سریال های وارد شده با تعداد مورد نظر هم خوانی ندارد.", "error");
-                return View();
+                return View(request);
             }
 
             var count_serial_numbers_less_than_eight_characters = serial_numbers.Where(sn => sn.Length > 8 || sn.Length < 8).Count();
             if (count_serial_numbers_less_than_eight_characters > 0)
             {
                 this.SetAlert("شماره سریال های وارد شده دقیقا باید 8 رقم باشند.", "error");
-                return View();
+                return View(request);
             }
 
             var serial_numbers_no_repetitive = new HashSet<string>(serial_numbers);
             if (serial_numbers_no_repetitive.Count != serial_numbers.Count)
             {
                 this.SetAlert("شماره سریال های وارد شده نباید تکراری باشند.", "error");
-                return View();
+                return View(request);
             }
 
             #endregion
@@ -97,14 +97,14 @@ namespace Zelut.LandingPage.Controllers
             if (!uploadFactorResult.IsSuccess)
             {
                 this.SetAlert(uploadFactorResult.Message!, "error");
-                return View();
+                return View(request);
             }
 
             var uploadPictureResult = await _fileHelper.UploadAsync(request.PictureSerial);
             if (!uploadPictureResult.IsSuccess)
             {
                 this.SetAlert(uploadPictureResult.Message!, "error");
-                return View();
+                return View(request);
             }
             #endregion
 
@@ -138,7 +138,7 @@ namespace Zelut.LandingPage.Controllers
             if (!web_service_result.IsSuccess)
             {
                 this.SetAlert(web_service_result.Message, "error");
-                return View();
+                return View(request);
             }
 
             this.SetAlert(web_service_result.Message, "success");
