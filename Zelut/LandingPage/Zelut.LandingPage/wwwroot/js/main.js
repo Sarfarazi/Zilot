@@ -96,13 +96,6 @@ let serialNumbers = []
 let productsNames = []
 let selectedKindOfGoods = []
 
-const searchBoxToggle = () => {
-  document.querySelector(".searchBox").classList.toggle("hidden")
-}
-
-const searchBar = document.querySelector(".searchBtn")
-searchBar.addEventListener("click", searchBoxToggle)
-
 
 const collectionTitles = document.querySelectorAll(".collection-title");
 const collectionSubMenus = document.querySelectorAll(
@@ -323,7 +316,7 @@ if (document.getElementById("hiddenProductCategory") && document.getElementById(
   var ids = document.getElementById("hiddenProductCategory").value.split("-")
   var arr = []
   ids.map(id => {
-     arr.push({
+    arr.push({
       "id": +id,
       "value": productCategoryList.find(item => item.id == id).value
     })
@@ -398,15 +391,20 @@ if (document.getElementById("productNames")) {
   })
 }
 
-
-document.getElementById('copyLink').addEventListener('click', function(event) {
-    event.preventDefault(); // جلوگیری از رفتن به href
+if (document.getElementById('copyLink')) {
+  document.getElementById('copyLink').addEventListener('click', function (event) {
+    event.preventDefault();
 
     const linkToCopy = this.getAttribute('data-link');
 
-    navigator.clipboard.writeText(linkToCopy).then(function() {
-        alert('لینک کپی شد!');
-    }).catch(function(err) {
-        alert('مشکلی پیش آمد: ' + err);
+    navigator.clipboard.writeText(linkToCopy).then(function () {
+      document.getElementById("copiedTag").classList.remove("hidden")
+      setTimeout(() => {
+        document.getElementById("copiedTag").classList.add("hidden")
+
+      }, 1200);
+    }).catch(function (err) {
+      alert('مشکلی پیش آمد: ' + err);
     });
-});
+  });
+}

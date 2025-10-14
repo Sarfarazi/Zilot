@@ -4,7 +4,8 @@
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20 bg-lightGray">
     <div class="bg-white shadow-xl p-10 flex flex-col lg:flex-row gap-10 relative">
         <div class="absolute left-5 p-3 lg:p-0 left-10 cursor-pointer">
-                <a  href="#" id="copyLink" data-link="https://example.com/article/123/">
+                <a  href="#" id="copyLink" data-link="@Model.ZelutDetail.Product_url">
+                <p class="absolute z-10 bg-pastelGreen rounded-md hidden p-2 text-lg w-max -top-2 -left-2" id="copiedTag">لینک کپی شد</p>
                 <img src="~/images/icons/share.svg" alt="share" />
                 </a>
         </div>
