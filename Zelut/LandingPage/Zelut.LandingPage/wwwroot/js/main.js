@@ -96,6 +96,13 @@ let serialNumbers = []
 let productsNames = []
 let selectedKindOfGoods = []
 
+const searchBoxToggle = () => {
+  document.querySelector(".searchBox").classList.toggle("hidden")
+}
+
+const searchBar = document.querySelector(".searchBtn")
+searchBar.addEventListener("click" , searchBoxToggle)
+
 
 const collectionTitles = document.querySelectorAll(".collection-title");
 const collectionSubMenus = document.querySelectorAll(
@@ -447,3 +454,5 @@ const renderBlogsInPage = () => {
 
 renderBlogsInPage()
 renderBlogs()
+
+

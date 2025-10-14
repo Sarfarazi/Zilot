@@ -17,6 +17,7 @@ a {
 }
 
 
+
 /* For Chrome, Safari, and Edge */
 *::-webkit-scrollbar {
   display: none;
@@ -425,7 +426,11 @@ body.no-scroll {
   color: #242424;
 }
 
-.alert-error img{
+.alert-error .submitIcon{
+  display: none;
+}
+
+.alert-success .errorIcon{
   display: none;
 }
 
