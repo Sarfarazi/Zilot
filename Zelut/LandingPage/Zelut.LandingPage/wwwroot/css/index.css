@@ -456,3 +456,11 @@ body.no-scroll {
 .alert-error button{
   background-color: var(--error);
 }
+
+
+.creditCard{
+  aspect-ratio: 1.59/1;
+  border-radius: 1.8rem;
+  width: 90%;
+  background: linear-gradient(14deg , var(--green), var(--lightGreen));
+}
