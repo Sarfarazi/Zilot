@@ -99,17 +99,7 @@ public class ProductService : IProductService
         var json_content = await File.ReadAllTextAsync(file_path);
         var products = JsonConvert.DeserializeObject<List<ZelutProductsDto>>(json_content);
 
-        var result = products.Where(p => p.NameModel.StartsWith(search) || p.ZelutDetail.Any(detail => detail.NameJadid.Contains(search)))
-            .Select(p => new ZelutProductsDto
-            {
-                Id = p.Id,
-                NameCollection = p.NameCollection,
-                NameModel = p.NameModel,
-                Description = p.Description,
-                EnglishName = p.EnglishName,
-                ZelutDetail = p.ZelutDetail.Where(detail => detail.NameJadid.StartsWith(search)).ToList()
-            }).ToList();
-
+        var result = products.Where(p => p.NameModel.StartsWith(search) || p.ZelutDetail.Any(detail => detail.NameJadid.Contains(search))).ToList();
         return new ResultData<List<ZelutProductsDto>>
         {
             IsSuccess = true,
