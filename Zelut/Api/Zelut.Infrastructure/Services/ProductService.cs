@@ -83,4 +83,38 @@ public class ProductService : IProductService
             Message = string.Empty
         };
     }
+
+    public async Task<ResultData<List<ZelutProductsDto>>> SearchProducts(string search)
+    {
+        var file_path = Path.Combine(_environment.WebRootPath, "Data", "products.json");
+        if (!File.Exists(file_path))
+        {
+            return new ResultData<List<ZelutProductsDto>>
+            {
+                IsSuccess = false,
+                Message = "محصولی یافت نشد."
+            };
+        }
+
+        var json_content = await File.ReadAllTextAsync(file_path);
+        var products = JsonConvert.DeserializeObject<List<ZelutProductsDto>>(json_content);
+
+        var result = products.Where(p => p.NameModel.StartsWith(search) || p.ZelutDetail.Any(detail => detail.NameJadid.Contains(search)))
+            .Select(p => new ZelutProductsDto
+            {
+                Id = p.Id,
+                NameCollection = p.NameCollection,
+                NameModel = p.NameModel,
+                Description = p.Description,
+                EnglishName = p.EnglishName,
+                ZelutDetail = p.ZelutDetail.Where(detail => detail.NameJadid.StartsWith(search)).ToList()
+            }).ToList();
+
+        return new ResultData<List<ZelutProductsDto>>
+        {
+            IsSuccess = true,
+            Data= result,
+            Message = string.Empty
+        };
+    }
 }
