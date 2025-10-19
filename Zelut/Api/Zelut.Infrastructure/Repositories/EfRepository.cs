@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Expressions;
 using Zelute.Application.Repository;
 
 public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
@@ -22,9 +23,10 @@ public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         return _dbSet.AsQueryable();
     }
-    public DbSet<TEntity> GetDbSet()
+    public async Task<TEntity?> GetAsync(Expression<Func<TEntity,bool>> predicate)
     {
-        return _dbSet;
+        var entity = await _dbSet.FirstOrDefaultAsync(predicate);
+        return entity;
     }
     public async Task<TEntity> Add(TEntity entity)
     {

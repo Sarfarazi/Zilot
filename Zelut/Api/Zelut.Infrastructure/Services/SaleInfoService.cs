@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Zelut.Application.DTOs;
+using Zelut.Application.DTOs.ZelutBuyer;
 using Zelut.Application.Services;
 using Zelut.Common.Helpers;
 using Zelut.Domain.Entities;
@@ -61,6 +62,14 @@ public class SaleInfoService : ISaleInfoService
         {
             IsSuccess = true,
             Message = "عملیات ثبت اطلاعات با موفقیت ثبت شد لطفا برای ادامه فرایند روی لینکی که برای شما پیامک شد کلیک کنید."
+        };
+    }
+    public async Task<ResultData<ZelutBuyerDto>> GetByPhoneNumber(string phoneNumber)
+    {
+        //var zelut_buyer = await _saleCustomerInfoRepository.
+        return new ResultData<ZelutBuyerDto>
+        {
+
         };
     }
     #endregion

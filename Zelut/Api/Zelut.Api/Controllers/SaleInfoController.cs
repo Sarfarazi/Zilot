@@ -20,4 +20,19 @@ public class SaleInfoController : BaseController
 
         return Ok(result);
     }
+
+    [HttpPost]
+    [Route("sale-info/add-card-info")]
+    public async Task<IActionResult> AddCardInfo([FromBody] ZelutBuyerCardInfoDto request)
+    {
+        var buyer_info = await _saleInfoService.GetByPhoneNumber(request.PhoneNumber);
+        return Ok();
+    }
+}
+
+public class ZelutBuyerCardInfoDto
+{
+    public string CardNumber { get; set; }
+    public string ShebaNumber { get; set; }
+    public string PhoneNumber { get; set; }
 }
