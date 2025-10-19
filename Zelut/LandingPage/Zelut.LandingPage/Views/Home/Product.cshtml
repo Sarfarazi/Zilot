@@ -11,35 +11,53 @@
         </div>
         <div class="flex-3">
             <div class="overflow-hidden aspect-square">
-                <img src="~/images/products/Cut-B.png"
+                <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/01.jpg"
                      alt="product"
+                     id="mainImage"
                      class="min-w-full min-h-full object-cover" />
             </div>
             <div class="flex gap-4 pt-4">
-                <div class="flex-1 aspect-square max-w-24 overflow-hidden cursor-pointer">
-                    <img src="~/images/products/Cut-B.png"
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                    <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/01.jpg" onerror="this.style.display='none';"
                          alt="thumbnail"
-                         class="min-w-full min-h-full object-cover" />
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
                 </div>
-                <div class="flex-1 aspect-square max-w-24 overflow-hidden cursor-pointer">
-                    <img src="~/images/products/Cut-B.png"
-                         alt="thumbnail"
-                         class="min-w-full min-h-full object-cover" />
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/02.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail" 
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
                 </div>
-                <div class="flex-1 aspect-square max-w-24 overflow-hidden cursor-pointer">
-                    <img src="~/images/products/Cut-B.png"
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/03.jpg" onerror="this.style.display='none';"
                          alt="thumbnail"
-                         class="min-w-full min-h-full object-cover" />
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
                 </div>
-                <div class="flex-1 aspect-square max-w-24 overflow-hidden cursor-pointer">
-                    <img src="~/images/products/Cut-B.png"
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/04.jpg" onerror="this.style.display='none';"
                          alt="thumbnail"
-                         class="min-w-full min-h-full object-cover" />
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
                 </div>
-                <div class="flex-1 aspect-square max-w-24 overflow-hidden cursor-pointer">
-                    <img src="~/images/products/Cut-B.png"
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/05.jpg" onerror="this.style.display='none';"
                          alt="thumbnail"
-                         class="min-w-full min-h-full object-cover" />
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                 <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/06.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                 <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/07.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
                 </div>
             </div>
         </div>
@@ -65,7 +83,7 @@
                 </tr>
                 <tr>
                     <td class="py-1.5 pe-10">ضخامت کل:</td>
-                    <td class="text-end py-2 ps-10">0 میلی‌متر</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.ZelutDetailColors[0].ErtefaKol میلی‌متر</td>
                 </tr>
             </table>
             <div class="flex gap-2 items-center pb-2">

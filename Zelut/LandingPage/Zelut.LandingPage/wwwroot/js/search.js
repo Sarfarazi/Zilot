@@ -8,8 +8,6 @@ const searchBar = document.querySelector(".searchBtn")
 searchBar.addEventListener("click", searchBoxToggle)
 
 
-
-
 // let Products = []
 
 // async function searchHandler() {

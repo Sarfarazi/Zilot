@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    
 }
-
 
 <section class="lg:mb-12 md:px-10 lg:px-20 relative flex items-center heroSection">
     <div class="absolute bg-glassyWhite p-6 items-center justify-center z-10 hidden lg:flex left-3 -bottom-10 md:left-8 lg:left-16 -translate-y-1/3 scrollBtn cursor-pointer"
@@ -26,7 +26,7 @@
     </div>
 </section>
 
-<section class="px-5 py-10 md:px-10 lg:p-20 relative flex items-stretch justify-center flex-wrap">
+<section class="px-5 py-10 md:px-10 lg:p-20 lg:mb-12 md:mb-8 relative flex items-stretch justify-center flex-wrap">
     <div class="absolute bg-lightGray h-1/2 w-full top-0 left-0 -z-10"></div>
 
     <a asp-controller="Home" asp-action="Products" asp-route-category_id="4" class="p-3 shrink-0 w-1/2 md:w-auto">
@@ -82,121 +82,6 @@
     </a>
 </section>
 
-<section class="px-5 md:px-10 lg:px-20 mb-20">
-    <h2 class="text-2xl lg:text-3xl text-lightGreen text-center">
-        دسته بندی محصولات
-    </h2>
-    <div class="flex items-center justify-center gap-10 my-10 categoryNav">
-        <p onclick="homeCategoryHandler('all')" class="currentCategory">همه</p>
-        <p onclick="homeCategoryHandler('home')">خانگی</p>
-        <p onclick="homeCategoryHandler('hotel')">هتلی</p>
-        <p onclick="homeCategoryHandler('office')">اداری</p>
-        <p onclick="homeCategoryHandler('store')">تجاری</p>
-    </div>
-
-    <div class="flex flex-col md:flex-row gap-5 justify-center">
-        <div class="flex flex-col gap-5 flex-1">
-            <div class="flex gap-5">
-                <a asp-controller="Home" asp-action="Product" asp-route-id="4" asp-route-detail_id="1" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Pamchal.png" alt="Pamchal" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            OFFICE/Kish
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/Baran-9106.png" alt="baran" class="w-full object-cover" />
-                    </div>
-                </a>
-                <a asp-controller="Home" asp-action="Product" asp-route-id="1" asp-route-detail_id="2" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Cut-B.png" alt="cut-b" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            MINIMAL/Aram
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/cutbThumb.png" alt="cut-b" class="w-full object-cover" />
-                    </div>
-                </a>
-            </div>
-            <div class="flex gap-5">
-                <a asp-controller="Home" asp-action="Product" asp-route-id="2" asp-route-detail_id="1" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Pouneh.png" alt="Pouneh" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            CLASSIC/Florence
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/pouneh_9150.png" alt="pouneh_9150" class="w-full object-cover" />
-                    </div>
-                </a>
-                <a asp-controller="Home" asp-action="Product" asp-route-id="4" asp-route-detail_id="2" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Shabnam.png" alt="Shabnam" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            OFFICE/Bali
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/CUTB-03.png" alt="Shabnam" class="w-full object-cover" />
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="flex flex-col gap-5 flex-1">
-            <div class="flex gap-5">
-                <a asp-controller="Home" asp-action="Product" asp-route-id="2" asp-route-detail_id="2" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Raash.png" alt="raash" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            CLASSIC/Athens
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/raashthumb.png" alt="raash" class="w-full object-cover" />
-                    </div>
-                </a>
-                <a asp-controller="Home" asp-action="Product" asp-route-id="3" asp-route-detail_id="1" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Almas.png" alt="Almas" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            SPORTS/Tapesh
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/Almas-5474.png" alt="Almas" class="w-full object-cover" />
-                    </div>
-                </a>
-            </div>
-            <div class="flex gap-5">
-                <a asp-controller="Home" asp-action="Product" asp-route-id="3" asp-route-detail_id="1" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/Yaas.png" alt="yaas" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            SPORTS/Casual
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/yaas-5423.png" alt="yaas" class="w-full object-cover" />
-                    </div>
-                </a>
-                <a asp-controller="Home" asp-action="Product" asp-route-id="1" asp-route-detail_id="1" class="flex-1 flex flex-col">
-                    <div class="flex items-end justify-center overflow-hidden max-h-48 relative">
-                        <img src="~/images/category/zibaSport.png" alt="zibaSport" class="w-full object-cover" />
-                        <h3 class="text-lg text-white text-center absolute mb-5">
-                            MINIMAL/Sokoot
-                        </h3>
-                    </div>
-                    <div class="max-h-24 flex items-center justify-center overflow-hidden mt-0.5">
-                        <img src="~/images/category/zibaSportThumb.png" alt="zibaSport" class="w-full object-cover" />
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="px-5 md:px-10 lg:px-20 mb-20">
     <h2 class="text-2xl lg:text-3xl text-lightGreen mb-10">معرفی زیلوت</h2>
@@ -219,7 +104,7 @@
                     تولیدکننده نیستیم؛ بلکه نماینده‌ی نسلی تازه از کیفیت و خلاقیت در صنعت موکت هستیم و مطمئن هستیم
                     به‌زودی نام زیلوت مترادف با تحول و پیشرفت در این بازار خواهد شد.
                 </p>
-                <a href="#" class="px-8 py-4 shadow-lg bg-lightGray self-end">بیشتر بدانید</a>
+                <a asp-controller="Home" asp-action="AboutUs" class="px-8 py-4 shadow-lg bg-lightGray self-end">بیشتر بدانید</a>
             </div>
         </div>
 

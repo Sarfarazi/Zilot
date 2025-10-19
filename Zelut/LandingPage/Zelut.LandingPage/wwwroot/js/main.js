@@ -408,3 +408,17 @@ if (document.getElementById('copyLink')) {
     });
   });
 }
+
+
+const selectThumbnail = () => {
+  let newSrc = event.target.getAttribute("src")
+  document.getElementById("mainImage").setAttribute("src" , newSrc )
+}
+
+
+const allThumbnails = document.querySelectorAll(".thumbnailItem")
+
+
+for(let item of allThumbnails){
+  console.log(item.getAttribute("src"))
+}
