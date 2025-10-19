@@ -238,7 +238,7 @@ namespace Zelut.LandingPage.Controllers
 
         public IActionResult CashBack()
         {
-            return View();
+            return PartialView();
         }
 
         //[HttpPost()]
