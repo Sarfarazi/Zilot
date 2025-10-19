@@ -8,8 +8,9 @@
           <img src="~/images/pattern.png" alt="pettern" class="absolute right-0 top-0 h-full opacity-50">
 
           <p class="mb-1 self-start lg:ps-5 text-white text-lg">شماره کارت</p>
-          <form action="#" class="w-full flex flex-col gap-5 z-20">
-          <input type="hidden" name="phoneNumber" value="09123456789">
+          @* <form asp-controller="Home" asp-action="CashBack"> *@
+           <div class="w-full flex flex-col gap-5 z-20">
+             <input type="hidden" name="phoneNumber" value="09123456789">
            <div class="text-white font-bold flex items-center tracking-wider justify-center gap-2 md:gap-3 text-2xl lg:px-5 lg:text-4xl text-left w-full" dir="ltr">
              <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
              <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
@@ -22,7 +23,8 @@
                <input type="text" maxlength="24" placeholder="شماره شبا" class="w-full p-2 pb-0 border-1 rounded-sm focus-visible:border-2 focus-visible:outline-0"">
              </div>
            </div>
-          </form>
+           </div>
+          @* </form> *@
 
 
           <p class="text-white font-bold text-2xl lg:text-3xl absolute top-4/5 right-8 md:right-12">نام و نام خانوادگی</p>
