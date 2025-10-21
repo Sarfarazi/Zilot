@@ -192,14 +192,14 @@ namespace Zelut.LandingPage.Controllers
             return View();
         }
 
-        [HttpGet("article/{id}/{url_title}", Name ="article")]
+        [HttpGet("article/{id}/{url_title}", Name = "article")]
         public async Task<IActionResult> Article(int id, string url_title)
         {
             var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetBlogUrl, id);
             var web_service_api_result = await _httpClient.RestApiGetAsync<ResultData<BlogDto>>(url);
-            if(!web_service_api_result.IsSuccess)
+            if (!web_service_api_result.IsSuccess)
             {
-                this.SetAlert(web_service_api_result.Message,"error");
+                this.SetAlert(web_service_api_result.Message, "error");
                 return View();
             }
 
@@ -236,15 +236,32 @@ namespace Zelut.LandingPage.Controllers
             return PartialView();
         }
 
-        public IActionResult CashBack()
+        [HttpGet("cash-back/{id}")]
+        public async Task<IActionResult> CashBack(long id)
         {
-            return PartialView();
+            var url = string.Format(AppConfig.RestApiConfig.ZelutUrls.GetBuyerByIdUrl, id);
+            var zelut_buyer = await _httpClient.RestApiGetAsync<ResultData<ZelutBuyerDto>>(url);
+            if (!zelut_buyer.IsSuccess)
+            {
+                this.SetAlert(zelut_buyer.Message, "error");
+                return PartialView();
+            }
+
+            return PartialView(zelut_buyer);
         }
 
-        //[HttpPost()]
-        //public IActionResult CashBack()
-        //{
-        //    return View();
-        //}
+        [HttpPost("cash-back")]
+        public async Task<IActionResult> CashBack([FromForm] ZelutBuyerCardInfoDtoWebServiceRequest request)
+        {
+            var insert_card_info_result = await _httpClient.RestApiPostAsync<ZelutBuyerCardInfoDtoWebServiceRequest, Result>(AppConfig.RestApiConfig.ZelutUrls.AddCartInfoUrl, request);
+            if (!insert_card_info_result.IsSuccess)
+            {
+                this.SetAlert(insert_card_info_result.Message, "error");
+                return PartialView();
+            }
+
+            this.SetAlert(insert_card_info_result.Message, "success");
+            return PartialView();
+        }
     }
 }

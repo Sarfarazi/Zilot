@@ -1,8 +1,14 @@
-﻿namespace Zelut.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Zelut.Domain.Entities;
 
 public class ZelutBuyers : BaseEntity
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; set; }
+    public DateTime? UpdateDate { get; set; }
     public string BuyerName { get; set; }
     public string BuyerFamily { get; set; }
     public string BuyerTel { get; set; }
@@ -23,5 +29,7 @@ public class ZelutBuyers : BaseEntity
     public string PictureSerial { get; set; }
     public string KindOfGoods { get; set; }
     public string? Description { get; set; }
+    public string? CartNo { get; set; }
+    public string? ShebaNo { get; set; }
     public string Ip { get; set; }
 }
