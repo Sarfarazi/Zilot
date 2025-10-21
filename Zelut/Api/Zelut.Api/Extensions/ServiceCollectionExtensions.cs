@@ -2,8 +2,7 @@ using FluentValidation;
 using Zelut.Application.Configuration.Mapper;
 using Zelut.Application.Services;
 using Zelut.Application.Validations;
-using Zelut.Common.Helpers;
-using Zelut.Infrastructure.Repository;
+using Zelut.Common.Helpers.Dapper;
 using Zelut.Infrastructure.Services;
 using Zelute.Application.Repository;
 

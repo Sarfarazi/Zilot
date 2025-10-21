@@ -1,6 +1,6 @@
 ﻿using Dapper;
 
-namespace Zelut.Common.Helpers;
+namespace Zelut.Common.Helpers.Dapper;
 
 public interface IDapperHelper
 {
