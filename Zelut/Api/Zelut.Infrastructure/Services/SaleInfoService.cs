@@ -61,8 +61,8 @@ public class SaleInfoService : ISaleInfoService
 
         #region SendSms
         var smsResult = await _smsService.SendSms($@"مشتری محترم، ضمن تشکر از انتخاب موکت زیلوت . لطفا جهت دریافت کمک هزینه نصب از طریق لینک ذیل اطلاعات کارت بانکی یا شماره شبای خود را ثبت کنید.
-                                                    https://zelut.ir/CashBack/{zelutBuyer.Id}", request.BuyerTel);
-        if(!smsResult.IsSuccess)
+                                                    https://zelut.ir/cash-back/{zelutBuyer.Id}", request.BuyerTel);
+        if (!smsResult.IsSuccess)
         {
             return new Result
             {
@@ -80,9 +80,8 @@ public class SaleInfoService : ISaleInfoService
     }
     public async Task<Result> AddCardBuyerInfo(ZelutBuyerCardInfoDto buyerCardInfo)
     {
-        var buyer_result = await GetById(buyerCardInfo.Id);
-        var buyer = buyer_result.Data;
-        if (buyer is null) return new Result { IsSuccess = false, Message = buyer_result.Message };
+        var buyer = await _saleCustomerInfoRepository.GetAsync(buyer => buyer.Id == buyerCardInfo.Id);
+        if (buyer is null) return new Result { IsSuccess = false, Message = "خریداری با این اطلاعات وجود ندارد." };
 
         buyer.CartNo = buyerCardInfo.CartNumber;
         buyer.ShebaNo = buyerCardInfo.ShebaNumber;
@@ -120,6 +119,14 @@ public class SaleInfoService : ISaleInfoService
                 UpdateDate = buyer.UpdateDate
             }).FirstOrDefaultAsync();
 
+        if (zelut_buyer.ShebaNo != null)
+        {
+            return new ResultData<ZelutBuyerDto>
+            {
+                Message = "اطلاعات کارت شما قبلا ثبت شده است.",
+                IsSuccess = false
+            };
+        }
 
         if (zelut_buyer is null) return new ResultData<ZelutBuyerDto> { IsSuccess = false, Message = "خریداری با این شماره موبایل موجود نیست." };
 

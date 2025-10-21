@@ -244,24 +244,31 @@ namespace Zelut.LandingPage.Controllers
             if (!zelut_buyer.IsSuccess)
             {
                 this.SetAlert(zelut_buyer.Message, "error");
-                return PartialView();
+                return PartialView(new ZelutBuyerDto());
             }
 
-            return PartialView(zelut_buyer);
+            return PartialView(zelut_buyer.Data);
         }
 
-        [HttpPost("cash-back")]
-        public async Task<IActionResult> CashBack([FromForm] ZelutBuyerCardInfoDtoWebServiceRequest request)
+        [HttpPost("cash-back/{id}")]
+        public async Task<IActionResult> CashBack(long id, ZelutBuyerDto request)
         {
-            var insert_card_info_result = await _httpClient.RestApiPostAsync<ZelutBuyerCardInfoDtoWebServiceRequest, Result>(AppConfig.RestApiConfig.ZelutUrls.AddCartInfoUrl, request);
+            ZelutBuyerCardInfoDtoWebServiceRequest rest_api_request = new()
+            {
+                Id = id,
+                CartNumber = request.CartNo,
+                ShebaNumber = request.ShebaNo
+            };
+
+            var insert_card_info_result = await _httpClient.RestApiPostAsync<ZelutBuyerCardInfoDtoWebServiceRequest, Result>(AppConfig.RestApiConfig.ZelutUrls.AddCartInfoUrl, rest_api_request);
             if (!insert_card_info_result.IsSuccess)
             {
                 this.SetAlert(insert_card_info_result.Message, "error");
-                return PartialView();
+                return PartialView(new ZelutBuyerDto());
             }
 
             this.SetAlert(insert_card_info_result.Message, "success");
-            return PartialView();
+            return PartialView(new ZelutBuyerDto());
         }
     }
 }
