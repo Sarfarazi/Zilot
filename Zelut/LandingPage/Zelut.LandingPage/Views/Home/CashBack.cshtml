@@ -9,17 +9,17 @@
 
         <p class="mb-1 self-start lg:ps-5 text-white text-lg">شماره کارت</p>
 
-        <form asp-controller="Home" asp-action="CashBack" method="post" enctype="multipart/form-data">
+        <form asp-controller="Home" asp-action="CashBack" method="post" enctype="multipart/form-data" class="relative z-20">
             <div class="w-full flex flex-col gap-5 z-20">
-                @*             <div class="text-white font-bold flex items-center tracking-wider justify-center gap-2 md:gap-3 text-2xl lg:px-5 lg:text-4xl text-left w-full" dir="ltr">
-                <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
-                <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
-                <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
-                <input type="text" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
-            </div> *@
-                <div class="w-full border-1 text-white flex flex-col gap-5 z-50">
-                    <input asp-for="CartNo" type="text">
+                <div class="text-white font-bold flex items-center tracking-wider justify-center gap-2 md:gap-3 text-2xl lg:px-5 lg:text-4xl text-left w-full" dir="ltr">
+                    <input type="text" onkeydown="handleKeyDown()" id="cardNo1" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" id="cardNo2" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" id="cardNo3" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" id="cardNo4" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
                 </div>
+             
+                    <input asp-for="CartNo" type="hidden" id="cartNo">
+           
                 <div class="text-white font-medium tracking-wider flex items-center justify-evenly text-2xl lg:text-3xl text-left w-full lg:px-5" dir="ltr">
                     <div class="flex w-full items-center justify-end gap-1">
                         <p class="pt-2">IR</p>
@@ -36,14 +36,43 @@
 
         <p class="text-white font-bold text-2xl lg:text-3xl absolute top-4/5 right-8 md:right-12">
             <span>
-                نام و نام خانوادگی:
-            </span>
-            <span>
-                @Model.BuyerName + @Model.BuyerFamily
+                @Model.BuyerName @Model.BuyerFamily
             </span>
         </p>
     </div>
 </section>
+
+
+<script defer>
+
+const concatCardNumber = () => {
+  const no1 = document.getElementById("cardNo1").value
+  const no2 = document.getElementById("cardNo2").value
+  const no3 = document.getElementById("cardNo3").value
+  const no4 = document.getElementById("cardNo4").value
+
+  document.getElementById("cartNo").value = no1 + no2 + no3 + no4
+
+}
+
+
+const handleKeyDown = () => {
+    const allowedKeys = [
+      "Backspace",
+      "ArrowLeft",
+      "ArrowRight",
+    ];
+
+    // اگر کلید عددی یا یکی از allowedKeys بود، اجازه بده
+    if (
+      (event.key >= "0" && event.key <= "9") || allowedKeys.includes(event.key)
+    ) {
+        concatCardNumber()
+        return;
+    }
+event.preventDefault();
+}
+</script>
 
 <script src="~/js/tailwind.js"></script>
 <link rel="stylesheet" href="~/css/index.css" />
