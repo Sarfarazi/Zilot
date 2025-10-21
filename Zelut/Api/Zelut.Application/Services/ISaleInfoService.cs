@@ -3,5 +3,6 @@ using Zelut.Application.DTOs.ZelutBuyer;
 public interface ISaleInfoService
 {
     Task<Result> CretaeSaleInfo(ZelutBuyerRequestDto request);
-    Task<ResultData<ZelutBuyerDto>> GetByPhoneNumber(string phoneNumber); 
+    Task<Result> AddCardBuyerInfo(ZelutBuyerCardInfoDto buyerCardInfo);
+    Task<ResultData<ZelutBuyerDto>> GetById(long id);
 }

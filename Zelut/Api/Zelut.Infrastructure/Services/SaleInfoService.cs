@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection.Metadata.Ecma335;
 using Zelut.Application.DTOs;
 using Zelut.Application.DTOs.ZelutBuyer;
 using Zelut.Application.Services;
@@ -56,20 +59,75 @@ public class SaleInfoService : ISaleInfoService
             };
         }
 
-        var smsResult = await _smsService.SendSms(@"مشتری محترم، ضمن تشکر از انتخاب موکت زیلوت . لطفا جهت دریافت کمک هزینه نصب از طریق لینک ذیل اطلاعات کارت بانکی یا شماره شبای خود را ثبت کنید.
-                                                    https://zelut.ir/CashBack", request.BuyerTel);
+        #region SendSms
+        var smsResult = await _smsService.SendSms($@"مشتری محترم، ضمن تشکر از انتخاب موکت زیلوت . لطفا جهت دریافت کمک هزینه نصب از طریق لینک ذیل اطلاعات کارت بانکی یا شماره شبای خود را ثبت کنید.
+                                                    https://zelut.ir/CashBack/{zelutBuyer.Id}", request.BuyerTel);
+        if(!smsResult.IsSuccess)
+        {
+            return new Result
+            {
+                IsSuccess = false,
+                Message = "پیامک ثبت اطلاعات با موفقیت ارسال نشد."
+            };
+        }
+        #endregion
+
         return new Result
         {
             IsSuccess = true,
             Message = "عملیات ثبت اطلاعات با موفقیت ثبت شد لطفا برای ادامه فرایند روی لینکی که برای شما پیامک شد کلیک کنید."
         };
     }
-    public async Task<ResultData<ZelutBuyerDto>> GetByPhoneNumber(string phoneNumber)
+    public async Task<Result> AddCardBuyerInfo(ZelutBuyerCardInfoDto buyerCardInfo)
     {
-        //var zelut_buyer = await _saleCustomerInfoRepository.
+        var buyer_result = await GetById(buyerCardInfo.Id);
+        var buyer = buyer_result.Data;
+        if (buyer is null) return new Result { IsSuccess = false, Message = buyer_result.Message };
+
+        buyer.CartNo = buyerCardInfo.CartNumber;
+        buyer.ShebaNo = buyerCardInfo.ShebaNumber;
+        buyer.UpdateDate = DateTime.Now;
+        var save_result = await _saleCustomerInfoRepository.SaveChangesAsync();
+
+        if (!save_result.IsSuccess)
+        {
+            return new Result
+            {
+                IsSuccess = false,
+                Message = save_result.Message
+            };
+        }
+
+        return new Result
+        {
+            IsSuccess = true,
+            Message = "اطلاعات کارت شما با موفقیت ثبت شد."
+        };
+    }
+    public async Task<ResultData<ZelutBuyerDto>> GetById(long id)
+    {
+        var zelut_buyer = await _saleCustomerInfoRepository
+            .AsQueryable()
+            .Where(zelutBuyer => zelutBuyer.Id == id)
+            .Select(buyer => new ZelutBuyerDto
+            {
+                Id = buyer.Id,
+                BuyerTel = buyer.BuyerTel,
+                BuyerName = buyer.BuyerName,
+                BuyerFamily = buyer.BuyerFamily,
+                CartNo = buyer.CartNo,
+                ShebaNo = buyer.ShebaNo,
+                UpdateDate = buyer.UpdateDate
+            }).FirstOrDefaultAsync();
+
+
+        if (zelut_buyer is null) return new ResultData<ZelutBuyerDto> { IsSuccess = false, Message = "خریداری با این شماره موبایل موجود نیست." };
+
         return new ResultData<ZelutBuyerDto>
         {
-
+            IsSuccess = true,
+            Data = zelut_buyer,
+            Message = string.Empty
         };
     }
     #endregion

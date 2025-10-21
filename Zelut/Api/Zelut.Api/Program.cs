@@ -4,9 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("landing-cors", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:5089", "https://localhost:7100")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -15,14 +15,15 @@ builder.Services.AddCors(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDataProtection();
 
 // Initialize Application Configuration
-if(builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
     ApplicationConfig.InitializeApplicationConfig(builder.Configuration);
 }
 
-if(builder.Environment.IsProduction())
+if (builder.Environment.IsProduction())
 {
     ApplicationConfig.InitializeProductionApplicationConfig(builder.Configuration);
 }
@@ -45,7 +46,7 @@ var production_mode = app.Environment.IsProduction();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseCors("AllowAll");
+app.UseCors("landing-cors");
 
 app.UseHttpsRedirection();
 

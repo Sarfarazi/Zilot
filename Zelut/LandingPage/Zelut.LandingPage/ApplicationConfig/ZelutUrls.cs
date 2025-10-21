@@ -8,4 +8,6 @@ public class ZelutUrls
     public string GetProductsUrl { get; set; }
     public string ContactUs { get; set; }
     public string GetProductDetilUrl { get; set; }
+    public string GetBuyerByIdUrl { get; set; }
+    public string AddCartInfoUrl { get; set; }
 }

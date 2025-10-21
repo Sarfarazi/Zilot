@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 using Zelute.Application.Repository;
@@ -63,7 +63,7 @@ public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
             return new Result
             {
                 IsSuccess = false,
-                Message = "???? ??? ???????."
+                Message = "اطلاعات با موفقیت ثبت نشد، لطفا دوباره تلاش کنید."
             };
         }
     }

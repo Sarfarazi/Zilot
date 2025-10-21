@@ -1,8 +1,7 @@
-﻿namespace Zelut.Application.DTOs.ZelutBuyer;
+﻿namespace Zelut.LandingPage.DTOs;
 
 public class ZelutBuyerDto
 {
-    public long Id { get; set; }
     public string BuyerName { get; set; }
     public string BuyerFamily { get; set; }
     public string BuyerTel { get; set; }
