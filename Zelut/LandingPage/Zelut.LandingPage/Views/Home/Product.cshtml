@@ -4,10 +4,9 @@
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20 bg-lightGray">
     <div class="bg-white shadow-xl p-10 flex flex-col lg:flex-row gap-10 relative">
         <div class="absolute left-5 p-3 lg:p-0 left-10 cursor-pointer">
-                <a  href="#" id="copyLink" data-link="@Model.ZelutDetail.Product_url">
-                <p class="absolute z-10 bg-pastelGreen rounded-md hidden p-2 text-lg w-max -top-2 -left-2" id="copiedTag">لینک کپی شد</p>
-                <img src="~/images/icons/share.svg" alt="share" />
-                </a>
+                <div id="shareProductBtn" class="bg-white p-2 cursor-pointer">
+                  <img src="~/images/icons/share.svg" alt="share" />
+                </div>
         </div>
         <div class="flex-3">
             <div class="overflow-hidden aspect-square">
@@ -134,3 +133,52 @@
         </div>
     </div>
 </section>
+
+
+<script>
+const btn = document.getElementById('shareProductBtn');
+
+btn.addEventListener('click', async () => {
+  const url = window.location.href;
+  const title = document.title || 'لینک';
+  const text = `این صفحه رو ببین: ${title}`;
+
+  // 1) اگر مرورگر از Web Share API پشتیبانی کند — بهترین تجربه روی موبایل/کجاهایی که موجود است
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text, url });
+      return;
+    } catch (err) {
+      // کاربر ممکن است cancel کرده یا خطا رخ داده باشد — ادامه به فِالبک
+      console.warn('share failed:', err);
+    }
+  }
+
+  // 2) فالبک: تلاش برای کپی به کلیپ‌بورد (Clipboard API)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(url);
+      return;
+    } catch (err) {
+      console.warn('clipboard write failed:', err);
+    }
+  }
+
+  // 3) فالبک قدیمی‌تر: document.execCommand (برای مرورگرهای خیلی قدیمی)
+  const tmp = document.createElement('input');
+  tmp.style.position = 'absolute';
+  tmp.style.left = '-9999px';
+  tmp.value = url;
+  document.body.appendChild(tmp);
+  tmp.select();
+  try {
+    const ok = document.execCommand('copy');
+  } catch (err) {
+  }
+  document.body.removeChild(tmp);
+
+  // 4) به‌عنوان گزینه بیشتر: نمایش پنجرهٔ انتخاب اشتراک (مثال: توییتر/فیس‌بوک)
+  // اگر خواستی می‌تونی لینک‌های آماده باز کنی:
+  // window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+});
+</script>

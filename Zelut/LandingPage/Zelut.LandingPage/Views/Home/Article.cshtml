@@ -1,13 +1,13 @@
 @using Zelut.LandingPage.DTOs
 @model BlogDto;
 
-<section class="px-5 md:px-10 lg:px-20 py-5 pb-12">
+<section class="px-5 md:px-10 lg:px-20 py-5 pb-12" id="hhhhhh">
     <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">@Model.MainTitle
     </h1>
     <div class="flex items-center justify-center gap-1 text-lightGreen text-lg lg:text-xl">
      <p>دسته بندی مقاله</p>
      |
-     <p>نام نویسنده</p>
+     <p>تیم تولید محتوای زیلوت</p>
      |
      <p>تاریخ بروزرسانی: @Model.DateString</p>
     </div>
@@ -19,12 +19,11 @@
          alt="slider"
          class="w-full object-cover" />
 </section>
-
-<section class="px-5 md:px-10 lg:px-20 py-5 pb-20 leading-loose text-justify articleBody">
-    @Html.Raw(Model.Description)
+<section class="px-10 lg:px-20 mb-20 mt-20 text-lg">
+    <p class="leading-loose text-justify">
+      @Model.MainDescription
+    </p>
 </section>
-
-
   <table class="w-full text-center max-w-7xl mx-auto text-lg border-separate border-spacing-2 mt-10 mb-20 priceTable">
         <thead class="mb-5">
             <th class="md:w-1/2 bg-pastelGreen text-lightGreen texl-lg md:text-xl py-4 px-2">فهرست مطالب
@@ -48,20 +47,11 @@
         
         </tbody>
     </table>
+<section class="px-5 md:px-10 lg:px-20 py-5 pb-20 leading-loose text-justify articleBody">
+  <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">@Model.MainTitle
+    </h1>
+    @Html.Raw(Model.Description)
 
-
-<section class="px-10 lg:px-20 mb-10 text-lg">
-    <h2 class="text-3xl text-lightGreen mb-6">عنوان این بخش</h2>
-    <p class="leading-loose text-justify">
-       شرکت زیلوت یک مجموعه تازه‌تأسیس در صنعت تولید موکت است که با هدف ارائه محصولاتی باکیفیت و مطابق با سلیقه روز، فعالیت خود را آغاز کرده است. ما باور داریم که زیبایی و راحتی فضاهای داخلی نقش مهمی در کیفیت زندگی دارد و به همین دلیل، تمرکز خود را بر تولید موکت‌هایی با طراحی مدرن و کیفیت بالا قرار داده‌ایم.
-    </p>
-    <p class="leading-loose text-justify">
-       تیم زیلوت از نیروهای جوان و متخصص تشکیل شده که با بهره‌گیری از فناوری‌های نوین و خلاقیت در طراحی، تلاش می‌کنند محصولاتی متفاوت و متناسب با نیازهای متنوع مشتریان ارائه دهند. تنوع در طرح و رنگ از اولویت‌های ماست تا بتوانیم پاسخگوی سلیقه‌های مختلف در فضاهای مسکونی، اداری و تجاری باشیم.
-
-    </p>
-    <p class="leading-loose text-justify">
-      چشم‌انداز ما تبدیل شدن به یکی از برندهای قابل اعتماد در بازار موکت است. ما با پایبندی به کیفیت، نوآوری و رضایت مشتریان، در مسیر توسعه گام برمی‌داریم و تلاش می‌کنیم در سال‌های آینده سهم قابل توجهی از بازار را به دست آوریم. زیلوت آماده همکاری با طراحان دکوراسیون، فروشگاه‌ها و پروژه‌های ساختمانی برای خلق فضاهایی زیباتر و کارآمدتر است.
-    </p>
     <div class="flex items-center gap-3 mt-10">
     <p>امتیاز مقاله <span>3/5</span></p>
     <div class="flex items-center mb-2" dir="ltr">
@@ -76,9 +66,10 @@
 
 
 
+
 <div class="px-10 lg:px-20 mb-20 text-lg flex flex-col md:flex-row items-stretch gap-4 text-center">
-    <a href="#" class="bg-lightGreen text-white flex-1 p-3">دانلود PDF مقاله</a>
-    <a href="#" class="bg-lightGreen text-white flex-1 p-3">اشتراک گذاری</a>
+    <div class="bg-lightGreen text-white flex-1 p-3 cursor-pointer" id="downloadPDF">دانلود PDF مقاله</div>
+    <div class="bg-lightGreen text-white flex-1 p-3 cursor-pointer" id="shareBtn">اشتراک گذاری</div>
 </div>
 
 
@@ -125,3 +116,53 @@
  @await Component.InvokeAsync("Blogs")
      </div>
 </section> 
+<script src="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+
+<script defer>
+const btn = document.getElementById('shareBtn');
+
+btn.addEventListener('click', async () => {
+  const url = window.location.href;
+  const title = document.title || 'لینک';
+  const text = `این صفحه رو ببین: ${title}`;
+
+  // 1) اگر مرورگر از Web Share API پشتیبانی کند — بهترین تجربه روی موبایل/کجاهایی که موجود است
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text, url });
+      return;
+    } catch (err) {
+      // کاربر ممکن است cancel کرده یا خطا رخ داده باشد — ادامه به فِالبک
+      console.warn('share failed:', err);
+    }
+  }
+
+  // 2) فالبک: تلاش برای کپی به کلیپ‌بورد (Clipboard API)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(url);
+      return;
+    } catch (err) {
+      console.warn('clipboard write failed:', err);
+    }
+  }
+
+  // 3) فالبک قدیمی‌تر: document.execCommand (برای مرورگرهای خیلی قدیمی)
+  const tmp = document.createElement('input');
+  tmp.style.position = 'absolute';
+  tmp.style.left = '-9999px';
+  tmp.value = url;
+  document.body.appendChild(tmp);
+  tmp.select();
+  try {
+    const ok = document.execCommand('copy');
+  } catch (err) {
+  }
+  document.body.removeChild(tmp);
+
+  // 4) به‌عنوان گزینه بیشتر: نمایش پنجرهٔ انتخاب اشتراک (مثال: توییتر/فیس‌بوک)
+  // اگر خواستی می‌تونی لینک‌های آماده باز کنی:
+  // window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+});
+
+</script>

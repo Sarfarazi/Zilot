@@ -391,24 +391,6 @@ if (document.getElementById("productNames")) {
   })
 }
 
-if (document.getElementById('copyLink')) {
-  document.getElementById('copyLink').addEventListener('click', function (event) {
-    event.preventDefault();
-
-    const linkToCopy = this.getAttribute('data-link');
-
-    navigator.clipboard.writeText(linkToCopy).then(function () {
-      document.getElementById("copiedTag").classList.remove("hidden")
-      setTimeout(() => {
-        document.getElementById("copiedTag").classList.add("hidden")
-
-      }, 1200);
-    }).catch(function (err) {
-      alert('مشکلی پیش آمد: ' + err);
-    });
-  });
-}
-
 
 const selectThumbnail = () => {
   let newSrc = event.target.getAttribute("src")
