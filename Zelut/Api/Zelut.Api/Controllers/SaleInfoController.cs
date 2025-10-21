@@ -47,4 +47,11 @@ public class SaleInfoController : BaseController
 
         return Ok(insert_buyer_card_info_result);
     }
+
+    [HttpGet()]
+    [Route("sale-info/get-zelut-buyers")]
+    public async Task<IActionResult> GetZelutBuyers()
+    {
+        return Ok();
+    }
 }

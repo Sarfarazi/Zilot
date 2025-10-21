@@ -7,7 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using Zelut.Application.DTOs;
 using Zelut.Application.DTOs.ZelutBuyer;
 using Zelut.Application.Services;
-using Zelut.Common.Helpers;
+using Zelut.Common.Helpers.Dapper;
 using Zelut.Domain.Entities;
 using Zelute.Application.Repository;
 
