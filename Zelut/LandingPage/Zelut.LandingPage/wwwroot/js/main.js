@@ -404,3 +404,5 @@ const allThumbnails = document.querySelectorAll(".thumbnailItem")
 for(let item of allThumbnails){
   console.log(item.getAttribute("src"))
 }
+
+
