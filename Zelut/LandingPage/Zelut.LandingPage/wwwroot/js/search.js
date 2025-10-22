@@ -18,7 +18,7 @@ searchInput.addEventListener("keyup", () => {
 
 
 const searchHandler = (value) => {
-  fetch(`http://localhost:5067/search-products/${value.trim()}`)
+  fetch(`https://api.zelut.ir/search-products/${value.trim()}`)
     .then(res => res.json())
     .then(data => renderSearchResult(data))
 }
