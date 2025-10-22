@@ -253,6 +253,18 @@ namespace Zelut.LandingPage.Controllers
         [HttpPost("cash-back/{id}")]
         public async Task<IActionResult> CashBack(long id, ZelutBuyerDto request)
         {
+            if (!ModelState.IsValid)
+            {
+                var errorMessage = ModelState
+                    .Where(ms => ms.Value.Errors.Count > 0)
+                    .SelectMany(ms => ms.Value.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .FirstOrDefault();
+
+                this.SetAlert(errorMessage!, "error-chashBack");
+                return View(request);
+            }
+
             ZelutBuyerCardInfoDtoWebServiceRequest rest_api_request = new()
             {
                 Id = id,
