@@ -100,7 +100,7 @@ public class SaleInfoService : ISaleInfoService
         return new Result
         {
             IsSuccess = true,
-            Message = "اطلاعات کارت شما با موفقیت ثبت شد."
+            Message = @"مشتری محترم اطلاعات حساب شما با موفقیت ثبت شد. کارشناسان ما پس از بررسی و تایید اطلاعات شما، مبلغ جایزه نقدی را به حساب شما واریز می نمایند."
         };
     }
     public async Task<ResultData<ZelutBuyerDto>> GetById(long id)
@@ -121,9 +121,10 @@ public class SaleInfoService : ISaleInfoService
 
         if (zelut_buyer.ShebaNo != null)
         {
+            var message = @"مشتری محترم قبلا اطلاعات حساب شما برای این شماره فاکتور و سریال محصول به ثبت رسیده است .";
             return new ResultData<ZelutBuyerDto>
             {
-                Message = "اطلاعات کارت شما قبلا ثبت شده است.",
+                Message = message,
                 IsSuccess = false
             };
         }
