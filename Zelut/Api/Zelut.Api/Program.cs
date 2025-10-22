@@ -6,7 +6,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("landing-cors", policy =>
     {
-        policy.WithOrigins("http://localhost:5089", "https://localhost:7100")
+        policy.WithOrigins("http://localhost:5089", "https://localhost:7100","https://zelut.ir")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
