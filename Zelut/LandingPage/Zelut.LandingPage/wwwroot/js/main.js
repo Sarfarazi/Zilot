@@ -335,6 +335,9 @@ const closeModal = (state) => {
   if (state == "success") {
     location.href = "/"
   }
+  if(state == "error-chashBack"){
+    location.href = "/"
+  }
 }
 
 
@@ -406,3 +409,35 @@ for(let item of allThumbnails){
 }
 
 
+
+
+
+//cash back
+
+const concatCardNumber = () => {
+  const no1 = document.getElementById("cardNo1").value
+  const no2 = document.getElementById("cardNo2").value
+  const no3 = document.getElementById("cardNo3").value
+  const no4 = document.getElementById("cardNo4").value
+
+  document.getElementById("cartNo").value = no1 + no2 + no3 + no4
+
+}
+
+
+const handleKeyDown = () => {
+    const allowedKeys = [
+      "Backspace",
+      "Tab",
+      "ArrowLeft",
+      "ArrowRight",
+    ];
+
+    // اگر کلید عددی یا یکی از allowedKeys بود، اجازه بده
+    if (
+      (event.key >= "0" && event.key <= "9") || allowedKeys.includes(event.key)
+    ) {
+        return;
+    }
+event.preventDefault();
+}

@@ -17,20 +17,20 @@ a {
 }
 
 
-.articleBody p{
+.articleBody p {
   line-height: 2;
   font-size: 18px;
 }
 
-.articleBody h2{
+.articleBody h2 {
   font-size: 23px;
   color: var(--lightGreen);
   margin-top: 2rem;
   line-height: 2;
-  
+
 }
 
-.articleBody h3{
+.articleBody h3 {
   font-size: 18px;
   margin-top: 1rem;
 }
@@ -428,11 +428,11 @@ body.no-scroll {
   display: flex;
 }
 
-.priceTable tr:nth-child(even) td{
+.priceTable tr:nth-child(even) td {
   background-color: lightgray;
 }
 
-.selectedOption{
+.selectedOption {
   background-color: var(--pastelGreen);
 }
 
@@ -441,26 +441,32 @@ body.no-scroll {
   border-color: var(--error);
 }
 
-.alert-error p{
+.alert-error p {
   color: #242424;
 }
 
-.alert-error .submitIcon{
+.alert-error .submitIcon {
   display: none;
 }
 
-.alert-success .errorIcon{
+.alert-success .errorIcon {
   display: none;
 }
 
-.alert-error button{
+.alert-error button {
   background-color: var(--error);
 }
 
 
-.creditCard{
+.creditCard {
   aspect-ratio: 1.59/1;
   border-radius: 1.8rem;
   width: 90%;
-  background: linear-gradient(14deg , var(--green), var(--lightGreen));
+  background: linear-gradient(14deg, var(--green), var(--lightGreen));
+}
+
+.chashbackPage {
+  background-image: url(../images/slider.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -243,7 +243,7 @@ namespace Zelut.LandingPage.Controllers
             var zelut_buyer = await _httpClient.RestApiGetAsync<ResultData<ZelutBuyerDto>>(url);
             if (!zelut_buyer.IsSuccess)
             {
-                this.SetAlert(zelut_buyer.Message, "error");
+                this.SetAlert(zelut_buyer.Message, "error-chashBack");
                 return PartialView(new ZelutBuyerDto());
             }
 
@@ -263,7 +263,7 @@ namespace Zelut.LandingPage.Controllers
             var insert_card_info_result = await _httpClient.RestApiPostAsync<ZelutBuyerCardInfoDtoWebServiceRequest, Result>(AppConfig.RestApiConfig.ZelutUrls.AddCartInfoUrl, rest_api_request);
             if (!insert_card_info_result.IsSuccess)
             {
-                this.SetAlert(insert_card_info_result.Message, "error");
+                this.SetAlert(insert_card_info_result.Message, "error-chashBack");
                 return PartialView(new ZelutBuyerDto());
             }
 
