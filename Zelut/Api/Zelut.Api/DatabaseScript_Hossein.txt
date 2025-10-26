@@ -1,6 +1,6 @@
 ﻿date: 2025-10-26 sunday
 
-CREATE TABLE BlogComments(
+CREATE TABLE ZelutBlogComments(
 	Id BIGINT IDENTITY(1,1) PRIMARY KEY,
 	SaveDate DATETIME NOT NULL,
 	BlogId INT NOT NULL,
