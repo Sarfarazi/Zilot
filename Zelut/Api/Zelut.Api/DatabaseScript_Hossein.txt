@@ -71,3 +71,8 @@ CREATE TABLE BlogComments
     [Name] NVARCHAR(150) NOT NULL,
     [Email] NVARCHAR(100) NULL
 );
+
+------------------------------------
+
+ALTER TABLE Buyers
+DROP COLUMN PictureSerial;
