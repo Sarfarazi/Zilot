@@ -10,4 +10,5 @@ public class ZelutUrls
     public string GetProductDetilUrl { get; set; }
     public string GetBuyerByIdUrl { get; set; }
     public string AddCartInfoUrl { get; set; }
+    public string SendBlogCommentUrl { get; set; }
 }
