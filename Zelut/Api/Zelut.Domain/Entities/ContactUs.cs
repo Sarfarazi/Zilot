@@ -1,6 +1,6 @@
 ﻿namespace Zelut.Domain.Entities;
 
-public class ZelutContactUs : BaseEntity
+public class ContactUs : BaseEntity
 {
     public int Id { get; set; }
     public string? Name { get; set; }

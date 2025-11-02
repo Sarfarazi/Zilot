@@ -7,7 +7,7 @@ public class MapperProfile : Profile
 {
     public MapperProfile()
     {
-        CreateMap<ZelutBuyerRequestDto, ZelutBuyers>();
-        CreateMap<CreateContactUsDto, ZelutContactUs>();
+        CreateMap<ZelutBuyerRequestDto, Buyers>();
+        CreateMap<CreateContactUsDto, ContactUs>();
     }
 }

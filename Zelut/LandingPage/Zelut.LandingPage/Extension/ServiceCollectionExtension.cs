@@ -1,5 +1,5 @@
 using Zelut.Common.Helpers.Dapper;
-using Zelut.LandingPage.Helpers;
+using Zelut.Common.Helpers.File;
 
 public static class ServiceCollectionExtensions
 {
@@ -10,13 +10,17 @@ public static class ServiceCollectionExtensions
             client.BaseAddress = new Uri(AppConfig.RestApiConfig.BaseZelutApiAddress);
         });
 
+        services.AddHttpClient("file-service", client =>
+        {
+            client.BaseAddress = new Uri(AppConfig.FileUrls.BaseUrl);
+        });
+
         return services;
     }
 
-    public static IServiceCollection RegisterApplicationService(this IServiceCollection services)
+    public static IServiceCollection RegisterServices(this IServiceCollection services)
     {
-        services.AddScoped<IFileHelper, FileHelper>()
-            .AddScoped<IDapperHelper, DapperHelper>();
+        services.AddScoped<IFileHelper, FileHelper>();
         return services;
     }
 }

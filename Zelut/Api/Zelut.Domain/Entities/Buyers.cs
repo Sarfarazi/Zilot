@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zelut.Domain.Entities;
 
-public class ZelutBuyers : BaseEntity
+public class Buyers : BaseEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,14 +19,13 @@ public class ZelutBuyers : BaseEntity
     public string? SellerEmail { get; set; }
     public string InstalerName { get; set; }
     public string InstalerFamily { get; set; }
-    public string InstallerTel { get; set; }
-    public string? InstallerEmail { get; set; }
+    public string InstalerTel { get; set; }
+    public string? InstalerEmail { get; set; }
     public string GoodsName { get; set; }
     public int GoodsMetraj { get; set; }
     public int? GoodsCount { get; set; }
     public string GoodsSerial { get; set; }
     public string PictureFactor { get; set; }
-    public string PictureSerial { get; set; }
     public string KindOfGoods { get; set; }
     public string? Description { get; set; }
     public string? CartNo { get; set; }

@@ -38,7 +38,7 @@ public class ZelutBuyerRequestDtoValidtor : AbstractValidator<ZelutBuyerRequestD
             .NotEmpty().WithMessage("نام کارشناس نصب الزامی است")
             .MaximumLength(50).WithMessage("نام کارشناس نصب حداکثر باید 50 کاراکتر باشد");
 
-        RuleFor(x => x.InstallerTel)
+        RuleFor(x => x.InstalerTel)
             .NotEmpty().WithMessage("شماره همراه کارشناس نصب الزامی است")
             .Matches(@"^09\d{9}$").WithMessage("شماره همراه کارشناس نصب وارد شده معتبر نیست.");
 

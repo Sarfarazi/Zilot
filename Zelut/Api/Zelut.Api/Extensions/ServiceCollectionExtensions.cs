@@ -1,13 +1,25 @@
+using Azure.Core.Pipeline;
 using FluentValidation;
 using Zelut.Application.Configuration.Mapper;
 using Zelut.Application.Services;
 using Zelut.Application.Validations;
 using Zelut.Common.Helpers.Dapper;
+using Zelut.Common.Helpers.File;
 using Zelut.Infrastructure.Services;
 using Zelute.Application.Repository;
 
 public static class ServiceCollectionExtensions
 {
+    public static IServiceCollection RegisterHttpClients(this IServiceCollection services)
+    {
+        services.AddHttpClient("asanak-sms", client =>
+        {
+            client.BaseAddress = new Uri(ApplicationConfig.SmsUrls.Asanak.Url);
+        });
+
+        return services;
+    }
+
     public static IServiceCollection RegisterServices(this IServiceCollection services)
     {
         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>))
@@ -16,7 +28,8 @@ public static class ServiceCollectionExtensions
                 .AddScoped<IDapperHelper, DapperHelper>()
                 .AddScoped<IProductService, ProductService>()
                 .AddScoped<IContactUsService, ContactUsService>()
-                .AddScoped<IBlogService, BlogService>();
+                .AddScoped<IBlogService, BlogService>()
+                .AddScoped<IFileHelper, FileHelper>();
 
         return services;
     }
@@ -36,15 +49,6 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection RegisterFluentValidation(this IServiceCollection services)
     {
         services.AddValidatorsFromAssemblyContaining<ZelutBuyerRequestDtoValidtor>();
-        return services;
-    }
-
-    public static IServiceCollection RegisterHttpClients(this IServiceCollection services)
-    {
-        services.AddHttpClient("asanak-sms", client =>
-        {
-            client.BaseAddress = new Uri(ApplicationConfig.SmsUrls.Asanak.Url);
-        });
         return services;
     }
 }

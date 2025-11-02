@@ -14,7 +14,7 @@ using Zelute.Application.Repository;
 public class SaleInfoService : ISaleInfoService
 {
     #region Field
-    private readonly IRepository<ZelutBuyers> _saleCustomerInfoRepository;
+    private readonly IRepository<Buyers> _saleCustomerInfoRepository;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly ISmsService _smsService;
     private readonly IDapperHelper _dapper;
@@ -22,7 +22,7 @@ public class SaleInfoService : ISaleInfoService
     #endregion
 
     #region Ctor
-    public SaleInfoService(IRepository<ZelutBuyers> saleCustomerInfoRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor, IDapperHelper dapper, ISmsService smsService)
+    public SaleInfoService(IRepository<Buyers> saleCustomerInfoRepository, IMapper mapper, IHttpContextAccessor httpContextAccessor, IDapperHelper dapper, ISmsService smsService)
     {
         _mapper = mapper;
         _saleCustomerInfoRepository = saleCustomerInfoRepository;
@@ -45,7 +45,7 @@ public class SaleInfoService : ISaleInfoService
             };
         }
 
-        var zelutBuyer = _mapper.Map<ZelutBuyers>(request);
+        var zelutBuyer = _mapper.Map<Buyers>(request);
         var ip = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
         zelutBuyer.Ip = ip;
         await _saleCustomerInfoRepository.Add(zelutBuyer);
@@ -144,8 +144,8 @@ public class SaleInfoService : ISaleInfoService
     private async Task<Result> CheckSerialNumberExist(ZelutBuyerRequestDto request)
     {
         var sql_query = @$"SELECT split.value AS serial_number
-                           FROM ZelutBuyers AS z_buyer
-                           CROSS APPLY string_split(z_buyer.GoodsSerial,'-') AS split";
+                           FROM Buyers AS buyer
+                           CROSS APPLY string_split(buyer.GoodsSerial,'-') AS split";
 
         var serial_numbers_fromDB = await _dapper.RunAsync<ZelutSerailNumber>(ApplicationConfig.SqlServer.CrmConnectionString, sql_query);
         var serail_numbers_request = request.GoodsSerial.Split('-').ToList();

@@ -15,7 +15,7 @@ if(builder.Environment.IsProduction())
 builder.Services.AddControllersWithViews();
 
 builder.Services.RegisterHttpClient();
-builder.Services.RegisterApplicationService();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 

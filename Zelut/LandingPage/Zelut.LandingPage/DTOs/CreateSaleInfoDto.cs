@@ -40,7 +40,7 @@ public class CreateSaleInfoDto
 
     [Required(ErrorMessage = "شماره تماس نصاب الزامی است.")]
     [RegularExpression(@"^09\d{9}$", ErrorMessage = "شماره تماس نصاب باید یک شماره موبایل معتبر باشد.")]
-    public string InstallerTel { get; set; }
+    public string InstalerTel { get; set; }
 
     public string? InstallerEmail { get; set; }
 
@@ -59,9 +59,6 @@ public class CreateSaleInfoDto
 
     [Required(ErrorMessage = "فاکتور الزامی است.")]
     public IFormFile PictureFactor { get; set; }
-
-    [Required(ErrorMessage = "عکس سریال موکت الزامی است.")]
-    public IFormFile PictureSerial { get; set; }
 
     [Required(ErrorMessage = "کاربری موکت الزامی است.")]
     public string KindOfGoods { get; set; }

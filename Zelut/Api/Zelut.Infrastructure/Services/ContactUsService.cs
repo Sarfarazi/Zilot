@@ -10,9 +10,9 @@ namespace Zelut.Infrastructure.Services;
 public class ContactUsService : IContactUsService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly IRepository<ZelutContactUs> _contactUsRepository;
+    private readonly IRepository<ContactUs> _contactUsRepository;
     private readonly IMapper _mapper;
-    public ContactUsService(IHttpContextAccessor httpContextAccessor, IRepository<ZelutContactUs> contactUsRepository, IMapper mapper)
+    public ContactUsService(IHttpContextAccessor httpContextAccessor, IRepository<ContactUs> contactUsRepository, IMapper mapper)
     {
         _httpContextAccessor = httpContextAccessor;
         _contactUsRepository = contactUsRepository;
@@ -21,7 +21,7 @@ public class ContactUsService : IContactUsService
 
     public async Task<Result> InsertContactUs(CreateContactUsDto contactUs)
     {
-        var zelutContactUs = _mapper.Map<ZelutContactUs>(contactUs);
+        var zelutContactUs = _mapper.Map<ContactUs>(contactUs);
         var ip = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
         zelutContactUs.Ip = ip;
 

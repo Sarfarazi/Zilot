@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Threading.Tasks;
+using Zelut.Common.Helpers.File;
 using Zelut.LandingPage.DTOs;
 using Zelut.LandingPage.Extension;
-using Zelut.LandingPage.Helpers;
 
 namespace Zelut.LandingPage.Controllers
 {
@@ -94,25 +94,18 @@ namespace Zelut.LandingPage.Controllers
             #endregion
 
             #region UploadFile
-            var uploadFactorResult = await _fileHelper.UploadAsync(request.PictureFactor);
+            var uploadFactorResult = await _fileHelper.UploadFileAsync(request.PictureFactor);
             if (!uploadFactorResult.IsSuccess)
             {
                 this.SetAlert(uploadFactorResult.Message!, "error");
                 return View(request);
             }
 
-            var uploadPictureResult = await _fileHelper.UploadAsync(request.PictureSerial);
-            if (!uploadPictureResult.IsSuccess)
-            {
-                this.SetAlert(uploadPictureResult.Message!, "error");
-                return View(request);
-            }
             #endregion
 
             var rest_api_request = new RestApiSaleInofDto
             {
                 PictureFactor = uploadFactorResult.Data,
-                PictureSerial = uploadPictureResult.Data,
                 BuyerEmail = request.BuyerEmail,
                 BuyerFamily = request.BuyerFamily,
                 BuyerName = request.BuyerName,
@@ -124,7 +117,7 @@ namespace Zelut.LandingPage.Controllers
                 InstalerFamily = request.InstalerFamily,
                 InstalerName = request.InstalerName,
                 InstallerEmail = request.InstallerEmail,
-                InstallerTel = request.InstallerTel,
+                InstalerTel = request.InstalerTel,
                 KindOfGoods = request.KindOfGoods,
                 SellerEmail = request.SellerEmail,
                 SellerName = request.SellerName,
@@ -138,6 +131,7 @@ namespace Zelut.LandingPage.Controllers
 
             if (!web_service_result.IsSuccess)
             {
+                await _fileHelper.DeleteFileAsync(uploadFactorResult.Data!);
                 this.SetAlert(web_service_result.Message, "error");
                 return View(request);
             }
