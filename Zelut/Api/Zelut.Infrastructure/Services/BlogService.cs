@@ -11,10 +11,11 @@ namespace Zelut.Infrastructure.Services;
 public class BlogService : IBlogService
 {
     private readonly IHostingEnvironment _environment;
-    private readonly IRepository<ZelutBlogComments> _blogCommentsRepository;
-    public BlogService(IHostingEnvironment environment)
+    private readonly IRepository<BlogComments> _blogCommentsRepository;
+    public BlogService(IHostingEnvironment environment, IRepository<BlogComments> blogCommentsRepository)
     {
         _environment = environment;
+        _blogCommentsRepository = blogCommentsRepository;
     }
 
     public async Task<ResultData<List<BlogDto>>> GetAll()
@@ -75,7 +76,7 @@ public class BlogService : IBlogService
 
     public async Task<Result> SendComment(SendCommentBlogRequest request)
     {
-        ZelutBlogComments blog_comment = new()
+        BlogComments blog_comment = new()
         {
             BlogId = request.BlogId,
             Description = request.Description,

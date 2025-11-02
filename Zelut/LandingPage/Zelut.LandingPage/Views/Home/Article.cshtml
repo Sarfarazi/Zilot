@@ -1,27 +1,28 @@
 @using Zelut.LandingPage.DTOs
-@model BlogDto;
+@model BlogViewModel;
+
 
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-12" id="hhhhhh">
-    <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">@Model.MainTitle
+    <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">@Model.Blog.MainTitle
     </h1>
     <div class="flex items-center justify-center gap-1 text-lightGreen text-lg lg:text-xl">
      <p>دسته بندی مقاله</p>
      |
      <p>تیم تولید محتوای زیلوت</p>
      |
-     <p>تاریخ بروزرسانی: @Model.DateString</p>
+     <p>تاریخ بروزرسانی: @Model.Blog.DateString</p>
     </div>
 </section>
 
 
 <section class="flex items-end overflow-hidden newsHeroSection">
-    <img src="~/images/blogs/blogDetail@(@Model.Id).jpg"
+    <img src="~/images/blogs/blogDetail@(@Model.Blog.Id).jpg"
          alt="slider"
          class="w-full object-cover" />
 </section>
 <section class="px-10 lg:px-20 mb-20 mt-20 text-lg">
     <p class="leading-loose text-justify">
-      @Model.MainDescription
+      @Model.Blog.MainDescription
     </p>
 </section>
   <table class="w-full text-center max-w-7xl mx-auto text-lg border-separate border-spacing-2 mt-10 mb-20 priceTable">
@@ -48,9 +49,9 @@
         </tbody>
     </table>
 <section class="px-5 md:px-10 lg:px-20 py-5 pb-20 leading-loose text-justify articleBody">
-  <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">@Model.MainTitle
+  <h1 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">@Model.Blog.MainTitle
     </h1>
-    @Html.Raw(Model.Description)
+    @Html.Raw(Model.Blog.Description)
 
     <div class="flex items-center gap-3 mt-10">
     <p>امتیاز مقاله <span>3/5</span></p>
@@ -74,21 +75,24 @@
 
 
 <section class="px-10 lg:px-20 mb-10">
-    <form class="flex flex-col gap-8 py-10">
+    @await Component.InvokeAsync("Alert")
+    <form asp-controller="Home" asp-action="Article" asp-route_id="@Model.Blog.Id" asp-route_url_title="@Model.Blog.UrlTitle" class="flex flex-col gap-8 py-10">
  
         <div class="relative flex-1">
-            <textarea id="textarea"
-                      class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                      placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"></textarea>
-            <label for="textarea"
-                   class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-16 start-1">شما اولین نفری باشید که نظر می‌دهید!</label>
+                <textarea id="textarea"
+                          asp-for="@Model.CommentRequest.Description"
+                          class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                          placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"></textarea>
+                <label for="textarea"
+                       class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-16 start-1">شما اولین نفری باشید که نظر می‌دهید!</label>
         </div>
         <div class="flex flex-col md:flex-row gap-8">
             <div class="relative flex-1">
                 <input type="text"
                        id="suggestionNameInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                       placeholder=" "/>
+                       placeholder=" "
+                       asp-for="@Model.CommentRequest.Name"/>
                 <label for="suggestionNameInput"
                        class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام</label>
             </div>
@@ -96,7 +100,8 @@
                 <input type="email"
                        id="emailInput"
                        class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
-                       placeholder=" " />
+                       placeholder=" " 
+                       asp-for="@Model.CommentRequest.Email" />
                 <label for="emailInput"
                        class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
             </div>

@@ -1,6 +1,6 @@
 ﻿namespace Zelut.Domain.Entities;
 
-public class ZelutBlogComments : BaseEntity
+public class BlogComments : BaseEntity
 {
     public long Id { get; set; }
     public int BlogId { get; set; }
