@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Zelut.Application.DTOs.Blog;
 using Zelut.Application.Services;
 
 namespace Zelut.Api.Controllers;
@@ -27,6 +28,18 @@ public class BlogController : BaseController
     public async Task<IActionResult> GetById(int id)
     {
         var result = await _blogService.GetById(id);
+        if (!result.IsSuccess)
+        {
+            return BadRequest(result);
+        }
+
+        return Ok(result);
+    }
+
+    [HttpPost("blog/send-comment")]
+    public async Task<IActionResult> SendComment([FromBody] SendCommentBlogRequest request)
+    {
+        var result = await _blogService.SendComment(request);
         if (!result.IsSuccess)
         {
             return BadRequest(result);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper.Internal.Mappers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Threading.Tasks;
 using Zelut.Common.Helpers.File;
@@ -198,6 +199,28 @@ namespace Zelut.LandingPage.Controllers
             }
 
             return View(web_service_api_result.Data);
+        }
+
+        [HttpPost("article/{id}/{url_title}", Name = "article")]
+        public async Task<IActionResult> Article(int id, string url_title, SendPaperCommentRequest request)
+        {
+            SendPaperCommentApiRequest api_request = new()
+            {
+                BlogId = id,
+                Description = request.Description,
+                Email = request.Email,
+                Name = request.Name
+            };
+
+            var send_paper_comment_api_result = await _httpClient.RestApiPostAsync<SendPaperCommentApiRequest, Result>(AppConfig.RestApiConfig.ZelutUrls.SendBlogCommentUrl, api_request);
+            if (!send_paper_comment_api_result.IsSuccess)
+            {
+                this.SetAlert(send_paper_comment_api_result.Message, "error");
+                return View();
+            }
+
+            this.SetAlert(send_paper_comment_api_result.Message, "success");
+            return View();
         }
 
         public IActionResult Articles()

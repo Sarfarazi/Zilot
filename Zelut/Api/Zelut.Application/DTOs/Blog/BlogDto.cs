@@ -1,4 +1,4 @@
-﻿namespace Zelut.Application.DTOs;
+﻿namespace Zelut.Application.DTOs.Blog;
 
 public class BlogDto
 {
