@@ -1,0 +1,110 @@
+﻿<section class="mb-12 flex items-center overflow-hidden newsHeroSection">
+    <img src="~/images/newsSlider.jpg"
+         alt="slider"
+         class="w-full object-cover" />
+</section>
+
+<section class="px-10 lg:px-20 mb-10 text-lg">
+    <h2 class="text-3xl text-lightGreen mb-6">لانچ برند زیلوت</h2>
+    <p class="leading-loose text-justify">
+        شرکت زیلوت یک مجموعه تازه‌تأسیس در صنعت تولید موکت است که با هدف ارائه
+        محصولاتی باکیفیت و مطابق با سلیقه روز، فعالیت خود را آغاز کرده است. ما
+        باور داریم که زیبایی و راحتی فضاهای داخلی نقش مهمی در کیفیت زندگی دارد و
+        به همین دلیل، تمرکز خود را بر تولید موکت‌هایی با طراحی مدرن و کیفیت بالا
+        قرار داده‌ایم.
+    </p>
+    <p class="leading-loose text-justify">
+        تیم زیلوت از نیروهای جوان و متخصص تشکیل شده که با بهره‌گیری از
+        فناوری‌های نوین و خلاقیت در طراحی، تلاش می‌کنند محصولاتی متفاوت و متناسب
+        با نیازهای متنوع مشتریان ارائه دهند. تنوع در طرح و رنگ از اولویت‌های
+        ماست تا بتوانیم پاسخگوی سلیقه‌های مختلف در فضاهای مسکونی، اداری و تجاری
+        باشیم.
+    </p>
+    <p class="leading-loose text-justify">
+        چشم‌انداز ما تبدیل شدن به یکی از برندهای قابل اعتماد در بازار موکت است.
+        ما با پایبندی به کیفیت، نوآوری و رضایت مشتریان، در مسیر توسعه گام
+        برمی‌داریم و تلاش می‌کنیم در سال‌های آینده سهم قابل توجهی از بازار را به
+        دست آوریم. زیلوت آماده همکاری با طراحان دکوراسیون، فروشگاه‌ها و
+        پروژه‌های ساختمانی برای خلق فضاهایی زیباتر و کارآمدتر است.
+    </p>
+    <div class="flex justify-end items-center gap-2 opacity-50 py-5">
+        <img src="~/images/icons/calender.svg" alt="icon" />
+        <p>بروزرسانی تاریخ ۱۴۰۴/۰۸/۲۲ ساعت ۱۴:۴۲</p>
+    </div>
+</section>
+
+<section class="px-6 lg:px-16 mb-10">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-6 px-4">
+        آلبوم تصاویر
+    </h2>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aspect-square bg-lightGray flex items-center justify-center"></div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll weblogContainer">
+ @await Component.InvokeAsync("Blogs")
+     </div>
+</section> 
+
+<script>
+    var swiper = new Swiper(".swiper", {
+      slidesPerView:
+        window.innerWidth <= 760 ? (window.innerWidth <= 500 ? 1 : 2) : 3,
+      direction: getDirection(),
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      on: {
+        resize: function () {
+          swiper.changeDirection(getDirection());
+        },
+      },
+    });
+
+    function getDirection() {
+      var windowWidth = window.innerWidth;
+      var direction = "horizontal";
+
+      return direction;
+    }
+</script>

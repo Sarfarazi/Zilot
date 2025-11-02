@@ -1,0 +1,20 @@
+
+[
+    {
+        "id": 1,
+        "product-name": "",
+        "main-image": "",
+        "category": "",
+        "group": "",
+        "images": [],
+        "colors": [],
+        "data-table": {
+            "texture":"",
+            "yarn": "",
+            "back": "",
+            "width": "",
+            "thickness": ""
+        },
+        "features": []
+    }
+]

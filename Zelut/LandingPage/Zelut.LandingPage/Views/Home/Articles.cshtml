@@ -1,0 +1,16 @@
+<section class="p-1 md:p-6 py-8 lg:p-16 grid gap-y-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 blogContainerPage">
+     @await Component.InvokeAsync("BlogsInPage")
+</section>
+
+<div class="flex items-center justify-center gap-6 m-10">
+    <div class="bg-white shadow-xl rounded-full flex items-center justify-center w-14 h-14 p-5 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 33" class="rotate-90">
+            <path d="m12 31v-28.5m0 0 10 10m-10-10-10 10" stroke="#000" stroke-linecap="round" stroke-width="3" />
+        </svg>
+    </div>
+    <div class="bg-white shadow-xl rounded-full flex items-center justify-center w-14 h-14 p-5 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 33" class="-rotate-90">
+            <path d="m12 31v-28.5m0 0 10 10m-10-10-10 10" stroke="#000" stroke-linecap="round" stroke-width="3" />
+        </svg>
+    </div>
+</div>

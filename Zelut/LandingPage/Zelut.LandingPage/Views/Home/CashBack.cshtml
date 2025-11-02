@@ -1,0 +1,51 @@
+@using Zelut.LandingPage.DTOs
+@model ZelutBuyerDto;
+
+@await Component.InvokeAsync("Alert")
+<section class="w-full h-full flex items-center justify-center chashbackPage" dir="rtl">
+    <div class="max-w-2xl bg-lightGreen creditCard shadow-xl flex flex-col items-center justify-center p-6 md:p-8 md:px-10 relative overflow-hidden">
+        <img src="~/images/icons/diamonds.svg" alt="pattern" class="absolute left-6 md:left-8 z-10 top-6 md:top-8 w-16 lg:w-24" />
+        <img src="~/images/pattern.png" alt="pettern" class="absolute right-0 top-0 h-full opacity-50">
+
+        <p class="mb-1 self-start lg:ps-5 text-white text-lg">شماره کارت</p>
+
+        <form asp-controller="Home" asp-action="CashBack" method="post" enctype="multipart/form-data" class="relative z-10">
+            <div class="w-full flex flex-col gap-5">
+                <div class="text-white font-bold flex items-center tracking-wider justify-center gap-2 md:gap-3 text-2xl lg:px-5 lg:text-4xl text-left w-full" dir="ltr">
+                    <input type="text" onkeydown="handleKeyDown()" onkeyup="concatCardNumber()" id="cardNo1" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" onkeyup="concatCardNumber()" id="cardNo2" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" onkeyup="concatCardNumber()" id="cardNo3" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                    <input type="text" onkeydown="handleKeyDown()" onkeyup="concatCardNumber()" id="cardNo4" placeholder="0000" maxlength="4" class="flex-1 border-1 w-full rounded-sm text-center p-2 pb-0 leading-tight focus-visible:border-2 focus-visible:outline-0">
+                </div>
+
+                <input asp-for="CartNo" type="hidden" id="cartNo">
+
+                <div class="text-white font-medium tracking-wider flex items-center justify-evenly text-2xl lg:text-3xl text-left w-full lg:px-5" dir="ltr">
+                    <div class="flex w-full items-center justify-end gap-1">
+                        <p class="pt-2">IR</p>
+                        <input asp-for="ShebaNo" type="text" maxlength="24" placeholder="شماره شبا" class="w-full p-2 pb-0 border-1 rounded-sm focus-visible:border-2 focus-visible:outline-0">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="text-white font-bold text-2xl flex items-center justify-between lg:text-3xl top-4/5 right-8 md:right-12">
+                        <span>
+                            @Model.BuyerName @Model.BuyerFamily
+                        </span>
+                    </div>
+                    <button type="submit"
+                            class="w-fit bg-lightGreen self-center text-center text-white p-1 px-10 text-lg cursor-pointer rounded-md shadow-md">
+                        ارسال اطلاعات
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+</section>
+
+<script src="~/js/tailwind.js"></script>
+<script src="~/js/main.js" defer></script>
+<link rel="stylesheet" href="~/css/index.css" />

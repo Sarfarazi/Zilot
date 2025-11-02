@@ -1,0 +1,452 @@
+[
+  {
+    "id": 0,
+    "nameCollection": "",
+    "nameModel": "",
+    "description": "محصولات زیلوت در چهار دسته‌ی مینیمال، اسپرت، کلاسیک و آفیس عرضه می‌شوند تا پاسخگوی سبک‌های متنوع زندگی و نیازهای مختلف باشند. این موکت‌ها با استفاده از مواد اولیه مرغوب و تکنولوژی روز تولید شده و دارای ویژگی‌هایی چون ضد الکتریسیته، ضد اشتعال و آنتی باکتریال و  همچنین قابلیت آنتی استاتیک شدن را دارند ؛ مزایایی که علاوه بر دوام و ایمنی بالا، محیطی سالم، شیک و متناسب با هر نوع دکوراسیون ایجاد می‌کنند.",
+    "englishName": "محصولات",
+    "zelutDetail": []
+  },
+  {
+    "id": 1,
+    "nameCollection": "زیلوت",
+    "description": "محصولات مینیمال زیلوت با طراحی ساده، شیک و هماهنگ با سبک‌های مدرن، انتخابی هوشمندانه برای فضاهایی هستند که به دنبال زیبایی آرام و بدون اغراق‌اند. این مجموعه با استفاده از مواد اولیه مرغوب و تکنولوژی روز تولید شده و علاوه بر ظاهر چشم‌نواز، از دوام و کیفیت بالا برخوردار است. موکت‌های مینیمال زیلوت در رنگ‌ها و بافت‌های متنوع عرضه می‌شوند تا به‌راحتی با هر نوع دکوراسیون مدرن سازگار شوند و فضایی یکدست، آرام و دلنشین ایجاد کنند. اگر به دنبال ترکیبی از سادگی، ظرافت و کارایی هستید، محصولات مینیمال زیلوت بهترین انتخاب برای شما خواهند بود.",
+    "nameModel": "مینیمال",
+    "englishName": "MINIMAL",
+    "zelutDetail": [
+      {
+        "id": 1,
+        "codeDaste": "01",
+        "nameAvalieh": "لوپ مینیمال",
+        "nameJadid": "سکوت",
+        "nameJadidEngelisi": "Sokoot",
+        "sharh": "لوپ تک رنگ",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی پروپیلن",
+        "product_url":"https://zelut.ir/Product/1/1",
+        "tedadeRang": 5,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نقره ای",
+            "sharhKala": "مینیمال-سکوت-نقره ای",
+            "geijeMucket": "1/8",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1760,
+            "hex": "#D9D9D9"
+          },
+          {
+            "rang": "کرم متالیک",
+            "sharhKala": "مینیمال -سکوت-کرم متالیک",
+            "geijeMucket": "1/8",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1760,
+            "hex": "#D4C19C"
+          },
+          {
+            "rang": "کرم",
+            "sharhKala": "مینیمال -سکوت-کرم",
+            "geijeMucket": "1/8",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1760,
+            "hex": "#B4A592"
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "مینیمال -سکوت-طوسی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1760,
+            "hex": "#393939"
+          },
+          {
+            "rang": "مشکی",
+            "sharhKala": "مینیمال -سکوت-مشکی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1760,
+            "hex": "#000000"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "codeDaste": "02",
+        "nameAvalieh": "کات مینیمال",
+        "nameJadid": "آرام",
+        "nameJadidEngelisi": "Aram",
+        "sharh": "کات تک رنگ",
+        "noeBaft": "کات",
+        "jensNakh": "پلی پروپیلن",
+        "product_url": "https://zelut.ir/Product/1/2",
+        "tedadeRang": 5,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "کرم نخودی",
+            "sharhKala": "مینیمال-آرام-کرم نخودی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 11,
+            "vaznehKol": 1950,
+            "hex": "#F5DEB3"
+          },
+          {
+            "rang": "کرم شکلاتی",
+            "sharhKala": "مینیمال-آرام-کرم شکلاتی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 11,
+            "vaznehKol": 1950,
+            "hex": "#A0522D"
+          },
+          {
+            "rang": "فیلی",
+            "sharhKala": "مینیمال-آرام-فیلی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 11,
+            "vaznehKol": 1950,
+            "hex": "#BEBEBE"
+          },
+          {
+            "rang": "خاکستری",
+            "sharhKala": "مینیمال-آرام-خاکستری",
+            "geijeMucket": "1/8",
+            "ertefaKol": 11,
+            "vaznehKol": 1950,
+            "hex": "#808080"
+          },
+          {
+            "rang": "نقره ای",
+            "sharhKala": "مینیمال-آرام-نقره ای",
+            "geijeMucket": "1/8",
+            "ertefaKol": 11,
+            "vaznehKol": 1950,
+            "hex": "#D9D9D9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nameCollection": "زیلوت",
+    "description": "محصولات کلاسیک زیلوت، نمادی از اصالت، وقار و ماندگاری هستند؛ انتخابی ایده‌آل برای فضاهایی با سبک سنتی، رسمی و مجلل. این مجموعه با بهره‌گیری از مواد اولیه مرغوب و فناوری روز تولید شده و علاوه بر زیبایی چشم‌نواز، از دوام و مقاومت بالا برخوردار است. طرح‌ها و بافت‌های کلاسیک زیلوت، با جزئیات دقیق و رنگ‌های اصیل، فضایی پرشکوه و متمایز می‌آفرینند و تجربه‌ای ترکیبی از شیک بودن و آرامش پایدار را به محیط هدیه می‌دهند.",
+    "nameModel": "کلاسیک",
+    "englishName": "CLASSIC",
+    "zelutDetail": [
+      {
+        "id": 1,
+        "codeDaste": "01",
+        "nameAvalieh": "لوپ تایل",
+        "nameJadid": "فلورانس",
+        "nameJadidEngelisi": "Florence",
+        "sharh": "لوپ تایل با ابعاد 10 در 10",
+        "noeBaft": "لوپ",
+        "product_url": "https://zelut.ir/Product/2/1",
+        "jensNakh": "پلی پروپیلن",
+        "tedadeRang": 5,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نقره ای",
+            "sharhKala": "کلاسیک- فلورانس- نقره ای",
+            "geijeMucket": "1/8",
+            "ertefaKol": 8,
+            "vaznehKol": 1780,
+            "hex": "#D9D9D9"
+          },
+          {
+            "rang": "بژ",
+            "sharhKala": "کلاسیک- فلورانس-بژ",
+            "geijeMucket": "1/8",
+            "ertefaKol": 8,
+            "vaznehKol": 1780,
+            "hex": "#F5F5DC"
+          },
+          {
+            "rang": "کرم",
+            "sharhKala": "کلاسیک- فلورانس-کرم",
+            "geijeMucket": "1/8",
+            "ertefaKol": 8,
+            "vaznehKol": 1780,
+            "hex": "#B4A592"
+
+          },
+          {
+            "rang": "موشی",
+            "sharhKala": "کلاسیک- فلورانس-موشی",
+            "geijeMucket": "1/8",
+            "ertefaKol": 8,
+            "vaznehKol": 1780,
+            "hex": "#F5F5DC"
+          },
+          {
+            "rang": "خاکستری",
+            "sharhKala": "کلاسیک- فلورانس-خاکستری",
+            "geijeMucket": "1/8",
+            "ertefaKol": 8,
+            "vaznehKol": 1780,
+            "hex": "#808080"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "codeDaste": "02",
+        "nameAvalieh": "لوپ اقتصادی",
+        "nameJadid": "آتن",
+        "nameJadidEngelisi": "Athens",
+        "sharh": "لوپ سبک",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی آمید",
+        "product_url": "https://zelut.ir/Product/2/2",
+        "tedadeRang": 4,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نقره ای",
+            "sharhKala": "کلاسیک-آتن-نقره ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1195,
+            "hex": "#D9D9D9"
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "کلاسیک-آتن-طوسی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1195,
+            "hex": "#393939"
+          },
+          {
+            "rang": "موشی",
+            "sharhKala": "کلاسیک-آتن-موشی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1195,
+            "hex": "#F5F5DC"
+          },
+          {
+            "rang": "کرم",
+            "sharhKala": "کلاسیک-آتن-کرم",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1195,
+            "hex": "#B4A592"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nameCollection": "زیلوت",
+    "description": "محصولات اسپرت زیلوت با طراحی جوان‌پسند، پرانرژی و خلاقانه، بهترین انتخاب برای فضاهایی هستند که به دنبال تحرک، تنوع و سرزندگی‌اند. این مجموعه با استفاده از رنگ‌ها و طرح‌های متنوع، امکان ایجاد فضایی پویا و متفاوت را فراهم می‌کند و هم‌زمان از کیفیت و مقاومت بالایی برخوردار است.موکت‌های اسپرت زیلوت علاوه بر ظاهر جذاب و مدرن، با دوام بالا و ویژگی‌های کاربردی خود، برای محیط‌های پررفت‌وآمد و خلاقانه ایده‌آل هستند. اگر به دنبال محیطی الهام‌بخش و متفاوت هستید، انتخاب محصولات اسپرت زیلوت تجربه‌ای تازه و پرانرژی برایتان رقم خواهد زد.",
+    "nameModel": "اسپرت",
+    "englishName": "SPORT",
+    "zelutDetail": [
+      {
+        "id": 1,
+        "codeDaste": "01",
+        "nameAvalieh": "کات اسپرت",
+        "nameJadid": "پالس",
+        "nameJadidEngelisi": "Florence",
+        "sharh": "کات کوتاه دو رنگ",
+        "noeBaft": "کات",
+        "jensNakh": "پلی پروپیلن",
+        "product_url": "https://zelut.ir/Product/3/1",
+        "tedadeRang": 4,
+        "backing": "نمد",
+        "vaznehBacking": 120,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نارنجی",
+            "sharhKala": "اسپرت-پالس-نارنجی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470,
+            "hex": "#FFA500"
+          },
+          {
+            "rang": "کرم",
+            "sharhKala": "اسپرت-پالس-کرم",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470,
+            "hex": "#B4A592"
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "اسپرت-پالس-طوسی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470,
+            "hex": "#393939"
+          },
+          {
+            "rang": "مشکی",
+            "sharhKala": "اسپرت-پالس-مشکی",
+            "geijeMucket": "5/32",
+            "ertefaKol": 10,
+            "vaznehKol": 1470,
+            "hex": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nameCollection": "زیلوت",
+    "description": "محصولات آفیس زیلوت با طراحی کاربردی، مقاوم و شیک، انتخابی ایده‌آل برای دفاتر و محیط‌های کاری حرفه‌ای هستند. این مجموعه با استفاده از مواد باکیفیت و فناوری روز تولید شده و علاوه بر ظاهر مدرن، دوام بالا و راحتی استفاده را تضمین می‌کند.موکت‌های آفیس زیلوت با طرح‌ها و رنگ‌های متنوع و کلاسیک، محیط کاری را به فضایی منظم، حرفه‌ای و دلنشین تبدیل می‌کنند و تجربه‌ای از کارایی، زیبایی و آسایش را همزمان برای کاربران فراهم می‌آورند.",
+    "nameModel": "آفیس",
+    "englishName": "OFFICE",
+    "zelutDetail": [
+      {
+        "id": 1,
+        "codeDaste": "02",
+        "nameAvalieh": "لوپ چاپی فشرده",
+        "nameJadid": "کیش",
+        "nameJadidEngelisi": "Kish",
+        "sharh": "لوپ فشرده پلی آمید چاپی",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی آمید",
+        "tedadeRang": 6,
+        "product_url": "https://zelut.ir/Product/4/1",
+        "backing": "نمد",
+        "vaznehBacking": 250,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 4,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "نقره ای",
+            "sharhKala": "آفیس-کیش-نقره ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#D9D9D9"
+          },
+          {
+            "rang": "طوسی",
+            "sharhKala": "آفیس-کیش-طوسی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#393939"
+          },
+          {
+            "rang": "زیتونی دودی",
+            "sharhKala": "آفیس-کیش-زیتونی دودی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#535857"
+          },
+          {
+            "rang": "کرم ",
+            "sharhKala": "آفیس-کیش-کرم",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#B4A592"
+          },
+          {
+            "rang": "شکلاتی",
+            "sharhKala": "آفیس-کیش-شکلاتی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#411900"
+          },
+          {
+            "rang": "آبی تیره",
+            "sharhKala": "آفیس-کیش-آبی تیره",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7.5,
+            "vaznehKol": 1550,
+            "hex": "#5E6575"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "codeDaste": "05",
+        "nameAvalieh": "زبرا",
+        "nameJadid": "سانتورینی",
+        "nameJadidEngelisi": "Santorini",
+        "sharh": "لوپ مشابه نمونه با چیدمان ردیفی دو در یک  میان",
+        "noeBaft": "لوپ",
+        "jensNakh": "پلی پروپیلن",
+        "product_url": "https://zelut.ir/Product/4/2",
+        "tedadeRang": 5,
+        "backing": "نمد",
+        "vaznehBacking": 0,
+        "rangeBacking": "ملانژ",
+        "arzehRol": 3,
+        "toleRol": 12,
+        "zelutDetailColors": [
+          {
+            "rang": "طوسی",
+            "sharhKala": "آفیس-سانتورینی-طوسی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570,
+            "hex": "#393939"
+          },
+          {
+            "rang": "نقره ای",
+            "sharhKala": "آفیس-سانتورینی-نقره ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570,
+            "hex": "#D9D9D9"
+          },
+          {
+            "rang": "دودی",
+            "sharhKala": "آفیس-سانتورینی-دودی",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570,
+            "hex": "#A8A8A8"
+          },
+          {
+            "rang": "سرمه ای",
+            "sharhKala": "آفیس-سانتورینی-سرمه ای",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570,
+            "hex": "#191970"
+          },
+          {
+            "rang": "بژ",
+            "sharhKala": "آفیس-سانتورینی-بژ",
+            "geijeMucket": "1/10",
+            "ertefaKol": 7,
+            "vaznehKol": 1570,
+            "hex": "#F5F5DC"
+          }
+        ]
+      }
+    ]
+  }
+]

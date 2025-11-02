@@ -1,8 +1,133 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<a asp-controller="Home" asp-action="SalesInfo">
+       <img src="~/images/animationTicket.svg" class="fixed bottom-10 lg:bottom-2/4 min-w-32 max-w-xs z-40 animationCta" alt="cta" style="width: 10%;">
+</a>
+
+
+
+<section class="lg:mb-12 md:px-10 lg:px-20 relative flex items-center heroSection">
+    <div class="absolute bg-glassyWhite p-6 items-center justify-center z-10 hidden lg:flex left-3 -bottom-10 md:left-8 lg:left-16 -translate-y-1/3 scrollBtn cursor-pointer"
+        onclick="scrollDown()">
+        <img src="~/images/icons/arrow.svg" alt="arrow" class="rotate-180" />
+    </div>
+    <div onclick="scrollDown()"
+        class="hidden lg:flex lg:absolute -z-10 left-0 lg:left-20 items-center justify-center overflow-hidden lg:h-full">
+        <img src="~/images/slider.png" class="object-cover w-full" alt="slider" />
+    </div>
+    <div class="w-1/2 h-full flex items-center heroPatternContainer">
+        <div
+            class="bg-glassyWhite relative p-5 md:p-10 lg:py-16 lg:px-10 xl:py-20 xl:pe-16 xl:ps-56 lg:w-5/6 backdrop-blur-md">
+            <img src="~/images/icons/diamonds.svg" alt="pattern" class="absolute -top-16 hidden lg:block" />
+            <h1 class="text-green text-xl md:text-2xl lg:text-4xl mb-5 leading-relaxed font-medium">
+                انتخابی هوشمندانه برای طراحی مدرن خانه شما
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl">
+                با الهام از طبیعت، ساخته شده برای سبک زندگی ایرانی.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="px-5 py-10 md:px-10 lg:p-20 lg:mb-12 md:mb-8 relative flex items-stretch justify-center flex-wrap">
+    <div class="absolute bg-lightGray h-1/2 w-full top-0 left-0 -z-10"></div>
+
+    <a asp-controller="Home" asp-action="Products" asp-route-category_id="4" class="p-3 shrink-0 w-1/2 max-w-xs md:w-auto">
+        <div class="flex items-end justify-center relative overflow-hidden">
+            <img src="~/images/office-01.jpg" alt="office" class="w-full" />
+            <div class="absolute w-full text-center mb-2">
+                <h2 class="text-2xl lg:text-4xl text-white mb-4 categoryTitle">OFFICE</h2>
+                <div class="bg-glassyWhite backdrop-blur-lg flex items-center justify-end gap-2 px-3 py-2 lg:p-4">
+                    <p>مشاهده</p>
+                    <img src="~/images/icons/showIcon.svg" alt="icon" />
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a asp-controller="Home" asp-action="Products" asp-route-category_id="3" class="p-3 shrink-0 w-1/2 max-w-xs md:w-auto">
+        <div class="flex items-end justify-center relative overflow-hidden">
+            <img src="~/images/sports-01.jpg" alt="sports" class="w-full" />
+            <div class="absolute w-full text-center mb-2">
+                <h2 class="text-2xl lg:text-4xl text-white mb-4 categoryTitle">SPORTS</h2>
+                <div class="bg-glassyWhite backdrop-blur-lg flex items-center justify-end gap-2 px-3 py-2 lg:p-4">
+                    <p>مشاهده</p>
+                    <img src="~/images/icons/showIcon.svg" alt="icon" />
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a asp-controller="Home" asp-action="Products" asp-route-category_id="2" class="p-3 shrink-0 w-1/2 max-w-xs md:w-auto">
+        <div class="flex items-end justify-center relative overflow-hidden">
+            <img src="~/images/classic-01.jpg" alt="classic" class="w-full" />
+            <div class="absolute w-full text-center mb-2">
+                <h2 class="text-2xl lg:text-4xl text-white mb-4 categoryTitle">CLASSIC</h2>
+                <div class="bg-glassyWhite backdrop-blur-lg flex items-center justify-end gap-2 px-3 py-2 lg:p-4">
+                    <p>مشاهده</p>
+                    <img src="~/images/icons/showIcon.svg" alt="icon" />
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a asp-controller="Home" asp-action="Products" asp-route-category_id="1" class="p-3 shrink-0 w-1/2 max-w-xs md:w-auto">
+        <div class="flex items-end justify-center relative overflow-hidden">
+            <img src="~/images/minimal-01.jpg" alt="minimal" class="w-full" />
+            <div class="absolute w-full text-center mb-2">
+                <h2 class="text-2xl lg:text-4xl text-white mb-4 categoryTitle">MINIMAL</h2>
+                <div class="bg-glassyWhite backdrop-blur-lg flex items-center justify-end gap-2 px-3 py-2 lg:p-4">
+                    <p>مشاهده</p>
+                    <img src="~/images/icons/showIcon.svg" alt="icon" />
+                </div>
+            </div>
+        </div>
+    </a>
+</section>
+
+
+<section class="px-5 md:px-10 lg:px-20 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-10">معرفی زیلوت</h2>
+    <div class="flex flex-col-reverse lg:flex-row bg-whiteGreen items-stretch">
+        <div class="flex-1 flex items-center justify-center">
+            <div class="p-8 lg:p-16 flex flex-col">
+                <h3 class="text-xl lg:text-2xl text-lightGreen">
+                    به دنیای زیلوت خوش آمدید!
+                </h3>
+                <p class="py-5 leading-loose text-justify text-lg">
+                    زیلوت یک برند جوان و نوآور در صنعت موکت است که با نگاهی تازه و رویکردی متفاوت وارد بازار شده است. ما
+                    معتقدیم موکت تنها یک کفپوش نیست؛ بلکه بخشی از شخصیت، زیبایی و راحتی فضاست.<br />
+                    محصولات زیلوت با استفاده از متریال باکیفیت و بهره‌گیری از فناوری روز دنیا تولید می‌شوند و ویژگی‌هایی
+                    چون دوام بالا، آنتی باکتریال بودن، ضد‌اشتعال و قابلیت آنتی استاتیک بودن را در کنار طراحی مدرن و تنوع
+                    رنگ و طرح ارائه می‌دهند.<br />
+                    آنچه زیلوت را متمایز می‌کند، ترکیب نوآوری، کیفیت و توجه به جزئیات است؛ ارزش‌هایی که باعث می‌شوند
+                    محصولات ما نه تنها پاسخگوی نیازهای روزمره باشند، بلکه تجربه‌ای متفاوت و ماندگار برای مشتریان خلق
+                    کنند.<br />
+                    انتخاب زیلوت، انتخابی مطمئن برای کسانی است که به دنبال موکتی شیک، بادوام و کاربردی هستند. ما فقط یک
+                    تولیدکننده نیستیم؛ بلکه نماینده‌ی نسلی تازه از کیفیت و خلاقیت در صنعت موکت هستیم و مطمئن هستیم
+                    به‌زودی نام زیلوت مترادف با تحول و پیشرفت در این بازار خواهد شد.
+                </p>
+                <a asp-controller="Home" asp-action="AboutUs" class="px-8 py-4 shadow-lg bg-lightGray self-end">بیشتر بدانید</a>
+            </div>
+        </div>
+
+        <div class="flex-1 w-full">
+            <img src="~/images/aboutZelut.jpg" alt="zelut" class="min-w-full min-h-full object-cover" />
+        </div>
+    </div>
+</section>
+
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll weblogContainer">
+ @await Component.InvokeAsync("Blogs")
+     </div>
+</section> 
+ 

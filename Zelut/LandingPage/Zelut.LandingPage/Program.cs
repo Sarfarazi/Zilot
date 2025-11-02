@@ -1,7 +1,21 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Initialize application config
+if(builder.Environment.IsDevelopment())
+{
+    AppConfig.InitializeAppConfig(builder.Configuration);
+}
+
+if(builder.Environment.IsProduction())
+{
+    AppConfig.InitializeProductionAppConfig(builder.Configuration);
+}
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.RegisterHttpClient();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 

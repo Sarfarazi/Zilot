@@ -1,0 +1,112 @@
+﻿@using Zelut.LandingPage.DTOs
+@model ZelutContactUsDto
+
+
+<section class="p-5 md:p-10 py-10 lg:p-20">
+    <div class="flex flex-col-reverse lg:flex-row bg-white shadow-xl items-stretch">
+        <div class="flex-2 p-8 lg:p-16 md:text-lg">
+            <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
+                دفتر مرکزی
+            </h2>
+            <div>
+                <p class="py-5 text-justify">
+                    تهـران، خیابان مطــهــری، خـیابان میــرعماد، کوچه چهاردهــم، پلاک
+                    5، طبقه 1
+                </p>
+                <div class="flex items-center justify-between py-2">
+                    <p>تلـفن:</p>
+                    <a href="tel:021881122333">333 22 11 88 - 021</a>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <p>فکـس:</p>
+                    <a href="tel:021881122333">333 22 11 88 - 021</a>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <p>ایمیـــل:</p>
+                    <a href="mailto:info@zelutco.com">info@zelutco.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex-3 bg-green min-h-56 w-full lg:min-h-auto z-10"
+             id="map"></div>
+    </div>
+</section>
+
+<section class="px-10 lg:px-20 mb-10">
+    @await Component.InvokeAsync("Alert")
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-2 lg:mb-3">
+        تماس با ما
+    </h2>
+    <form asp-controller="Home" asp-action="ContactUs" class="flex flex-col gap-8 py-10">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="relative flex-1">
+                <input asp-for="Name" type="text"
+                       id="nameInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="nameInput"
+                       class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام *</label>
+            </div>
+            <div class="relative flex-1">
+                <input asp-for="Family" type="text"
+                       id="familyInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="familyInput"
+                       class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام خانوادگی *</label>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="relative flex-1">
+                <input asp-for="Mobile" type="tel"
+                       id="phoneInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" "
+                       required />
+                <label for="phoneInput"
+                       class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">شماره تماس *</label>
+            </div>
+            <div class="relative flex-1">
+                <input asp-for="Email" type="email"
+                       id="emailInput"
+                       class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                       placeholder=" " />
+                <label for="emailInput"
+                       class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+            </div>
+        </div>
+        <div class="relative flex-1">
+            <input asp-for="Message" id="textarea"
+                      class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                      placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"/>
+            <label for="textarea"
+                   class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">پیام شما</label>
+        </div>
+        <button type="submit" class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg rounded-md shadow-md self-center md:self-end">
+            ارسال پیام
+        </button>
+    </form>
+</section>
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll weblogContainer">
+ @await Component.InvokeAsync("Blogs")
+     </div>
+</section> 
+
+
+<script defer>
+    var map = L.map("map").setView(
+      [35.72932137582643, 51.42666632042495],
+      17
+    );
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+    }).addTo(map);
+    L.marker([35.72932137582643, 51.42666632042495]).addTo(map);
+</script>

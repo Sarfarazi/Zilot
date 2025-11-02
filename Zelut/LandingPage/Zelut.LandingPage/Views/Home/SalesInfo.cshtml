@@ -1,0 +1,258 @@
+@model CreateSaleInfoDto
+
+@{
+    ViewData["Title"] = "Sales Info";
+}
+
+<section class="px-5 md:px-10 lg:px-20 py-5 pb-20">
+    @await Component.InvokeAsync("Alert")
+    <h2 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen text-center">"کمک هزینه نصب موکت"
+    </h2>
+
+    <div>
+        <form asp-controller="Home" asp-action="SalesInfo" method="post" enctype="multipart/form-data" class="flex flex-col gap-8">
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات خریدار</h3>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="BuyerName" type="text" id="nameInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="nameInput"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">نام
+                            *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="BuyerFamily" type="text" id="familyInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="familyInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            خانوادگی *</label>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="BuyerTel" type="tel" id="phoneInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="phoneInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">شماره
+                            تماس *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="BuyerEmail" type="email" id="emailInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " />
+                        <label for="emailInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات فروشگاه و فروشنده</h3>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="SellerNameShop" type="text" id="storeNameInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="storeNameInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            فروشگاه
+                            *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="SellerName" type="text" id="storeFamilyInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="storeFamilyInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            خانوادگی فروشنده *</label>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="SellerTel" type="tel" id="storePhoneInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="storePhoneInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
+                            همراه فروشنده *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="SellerEmail" type="email" id="storeEmailInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " />
+                        <label for="storeEmailInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات کارشناس نصب موکت</h3>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="InstalerName" type="text" id="installerNameInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="installerNameInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            کارشناس نصب
+                            *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="InstalerFamily" type="text" id="installerFamilyInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="installerFamilyInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">نام
+                            خانوادگی کارشناس نصب *</label>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="InstalerTel" type="tel" id="installerPhoneInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="installerPhoneInput"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-5 start-1">شماره
+                            همراه کارشناس نصب *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <input asp-for="InstallerEmail" type="email" id="installerEmailInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " />
+                        <label for="installerEmailInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">ایمیل</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl lg:text-3xl pt-5 pb-2 text-lightGreen">اطلاعات موکت</h3>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row gap-8">
+                     <div class="relative flex-1">
+                        <div class="border-1 border-gray-300 px-3 py-3 pe-14 flex flex-wrap gap-y-2">
+                            <div class="flex gap-1 overflow-auto" id="nameTagsContainer">
+
+                            </div>
+                            <input type="text" id="productNames"
+                                class="block px-2.5 w-full text-lg flex-1 min-w-72 text-green bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                                 placeholder="پونه، زیبا..."  />
+                            <input type="hidden" asp-for="GoodsName" id="nameHiddenInput" >
+                        </div>
+                        <div class="flex items-center px-2 justify-center font-2xl text-white bg-gray-100 cursor-pointer absolute left-2.5 top-2"
+                            style="height: calc(100% - 16px);" onclick="addNameTagInput()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="var(--green)">
+                                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                            </svg>
+                        </div>
+                        <label for="productNames"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
+                            نام موکت *</label>
+                    </div>
+
+                    <div class="relative flex-1">
+                        <input asp-for="GoodsMetraj" type="number" id="totalMeter"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="totalMeter"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">متراژ
+                            موکت
+                            *</label>
+                    </div>
+
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="relative flex-1">
+                        <input asp-for="GoodsCount" type="number" id="serialNumberCount"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  />
+                        <label for="serialNumberCount"
+                            class="absolute text-xl -right-4.5 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-4.5 start-1">
+                            تعداد شماره سریال *</label>
+                    </div>
+                    <div class="relative flex-1">
+                        <div class="border-1 border-gray-300 px-3 py-3 pe-14 flex flex-wrap gap-y-2">
+                            <div class="flex gap-1 overflow-auto" id="tagsContainer">
+
+                            </div>
+                            <input type="text" id="serialNumbers"
+                                class="block px-2.5 w-full text-lg flex-1 min-w-72 text-green bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                                placeholder="شماره سریال" />
+                            <input type="hidden" asp-for="GoodsSerial" id="hiddenInput" >
+                        </div>
+                        <div class="flex items-center px-2 justify-center font-2xl text-white bg-gray-100 cursor-pointer absolute left-2.5 top-2"
+                            style="height: calc(100% - 16px);" onclick="addTagInput()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="var(--green)">
+                                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                            </svg>
+                        </div>
+                        <label for="serialNumbers"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">ثبت
+                            شماره سریال *</label>
+                    </div>
+
+
+                </div>
+                <div class="flex flex-col md:flex-row gap-8" >
+                    <div class="relative flex-1">
+                        <input type="text" id="productCategory"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" "  readonly onclick="openSelectHandler()" />
+                            <input type="hidden" asp-for="KindOfGoods" id="hiddenProductCategory" >
+
+                        <label for="productCategory"
+                            class="absolute text-xl -right-0 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-0 start-1">
+                            کاربری موکت
+                            *</label>
+
+                        <div id="selectBoxOptions" class="absolute hidden w-full bg-white shadow-lg p-3 flex flex-col z-20 max-h-72 overflow-auto">
+                            <div class="w-full p-3 py-4 hover:bg-pastelGreen cursor-pointer duration-300 text-lg">
+                                option
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="relative flex-1">
+                        <input asp-for="PictureFactor" type="file" name="PictureFactor" id="fileInput"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-lg text-green bg-transparent border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                            placeholder=" " />
+                        <label for="fileInput"
+                            class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">بارگزاری
+                            فاکتور
+                        </label>
+                    </div>
+                </div>
+                <div class="relative flex-1">
+                    <input asp-for="Description" type="text" id="textarea"
+                        class="block px-2.5 pb-2.5 pt-6 w-full text-lg text-green bg-transparent placeholder:opacity-0 focus:placeholder:opacity-100 border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-lightGreen peer"
+                        placeholder="لطفا پیام مورد نظرتان را در 250 کاراکتر شرح دهید:"/>
+                    <label for="textarea"÷
+                        class="absolute text-xl -right-2 text-gray-500 duration-300 transform -translate-y-5.5 scale-75 top-2 z-10 origin-[0] bg-white px-3 peer-focus:px-3 peer-focus:text-lightGreen peer-placeholder-shown:scale-100 peer-placeholder-shown:right-1 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4.5 rtl:peer-focus:-right-2 start-1">توضیحات
+                        تکمیلی
+                    </label>
+                </div>
+            </div>
+            <button type="submit"
+                class="w-fit bg-lightGreen text-center text-white p-3 px-16 text-lg cursor-pointer rounded-md shadow-md self-center md:self-end">
+                ارسال اطلاعات
+            </button>
+        </form>
+    </div>
+</section>
+
+<section class="px-1 md:px-6 lg:px-16 mb-20">
+    <h2 class="text-2xl lg:text-3xl text-lightGreen mb-5 lg:mb-10 px-4">
+        اخبار و مقالات
+    </h2>
+    <div class="flex items-stretch gap-y-12 w-full overflow-x-scroll weblogContainer">
+ @await Component.InvokeAsync("Blogs")
+     </div>
+</section> 

@@ -1,0 +1,184 @@
+﻿@using Zelut.LandingPage.DTOs
+@model ZelutProductDetail;
+
+<section class="px-5 md:px-10 lg:px-20 py-5 pb-20 bg-lightGray">
+    <div class="bg-white shadow-xl p-10 flex flex-col lg:flex-row gap-10 relative">
+        <div class="absolute left-5 p-3 lg:p-0 left-10 cursor-pointer">
+                <div id="shareProductBtn" class="bg-white p-2 cursor-pointer">
+                  <img src="~/images/icons/share.svg" alt="share" />
+                </div>
+        </div>
+        <div class="flex-3">
+            <div class="overflow-hidden aspect-square">
+                <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/01.jpg"
+                     alt="product"
+                     id="mainImage"
+                     class="min-w-full min-h-full object-cover" />
+            </div>
+            <div class="flex gap-4 pt-4">
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                    <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/01.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/02.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail" 
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/03.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/04.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/05.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                 <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/06.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+                 <div class="flex-1 aspect-square max-w-24 overflow-hidden">
+                     <img src="~/images/products/category@(Model.Id)/product@(Model.ZelutDetail.Id)/07.jpg" onerror="this.style.display='none';"
+                         alt="thumbnail"
+                         class="min-w-full min-h-full object-cover cursor-pointer thumbnailItem"
+                         onclick="selectThumbnail()" />
+                </div>
+            </div>
+        </div>
+        <div class="flex-4 w-full productDetail">
+            <h2 class="text-3xl">@Model.NameModel @Model.ZelutDetail.NameJadid</h2>
+            <p class="py-3">جدول مشخصات:</p>
+            <table class="w-full mb-4">
+                <tr>
+                    <td class="py-1.5 pe-10">نوع بافت:</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.NoeBaft</td>
+                </tr>
+                <tr>
+                    <td class="py-1.5 pe-10">جنس نخ:</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.JensNakh</td>
+                </tr>
+                <tr>
+                    <td class="py-1.5 pe-10">جنس زیره:</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.Backing</td>
+                </tr>
+                <tr>
+                    <td class="py-1.5 pe-10">عرض موکت:</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.ArzehRol متر</td>
+                </tr>
+                <tr>
+                    <td class="py-1.5 pe-10">ضخامت کل:</td>
+                    <td class="text-end py-2 ps-10">@Model.ZelutDetail.ZelutDetailColors[0].ErtefaKol میلی‌متر</td>
+                </tr>
+            </table>
+            <div class="flex gap-2 items-center pb-2">
+                <div class="w-9 aspect-square">
+                    <img src="~/images/icons/antiBacterial.svg"
+                         alt="icon"
+                         class="w-full" />
+                </div>
+                <p>ضد باکتری</p>
+            </div>
+            <div class="flex gap-2 items-center pb-2">
+                <div class="w-9 aspect-square">
+                    <img src="~/images/icons/antiFire.svg"
+                         alt="icon"
+                         class="w-full" />
+                </div>
+                <p>ضد اشتعال</p>
+            </div>
+            <div class="flex gap-2 items-center pb-2">
+                <div class="w-9 aspect-square">
+                    <img src="~/images/icons/antiElec.svg"
+                         alt="icon"
+                         class="w-full" />
+                </div>
+                <p>ضد الکتریسیته ساکن</p>
+            </div>
+            <p class="text-2xl py-3">@Model.ZelutDetail.TedadeRang رنگ</p>
+            <div class="flex py-2 px-1 mb-5 overflow-x-scroll gap-3 w-full">
+            
+             @if (Model.ZelutDetail.ZelutDetailColors != null && Model.ZelutDetail.ZelutDetailColors.Any())
+                {
+                    for (int i = 0; i < Model.ZelutDetail.ZelutDetailColors.Count; i++)
+                    {
+                        var color = Model.ZelutDetail.ZelutDetailColors[i];
+                        var classes = "w-16 aspect-square bg-green rounded-sm shrink-0 cursor-pointer";
+                        if (i == 0)
+                        {
+                            classes += " currentColor";
+                        }
+                        <div class="@classes" style="background-color: @(color.Hex)" onclick="changeColorHandler()" title="@color.Rang"></div>
+                    }
+                }
+            
+            </div>
+            <p class="w-full bg-lightGreen text-center text-white p-3 rounded-md shadow-lg text-lg cursor-pointer">
+                سفارش محصول
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<script>
+const btn = document.getElementById('shareProductBtn');
+
+btn.addEventListener('click', async () => {
+  const url = window.location.href;
+  const title = document.title || 'لینک';
+  const text = `این صفحه رو ببین: ${title}`;
+
+  // 1) اگر مرورگر از Web Share API پشتیبانی کند — بهترین تجربه روی موبایل/کجاهایی که موجود است
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text, url });
+      return;
+    } catch (err) {
+      // کاربر ممکن است cancel کرده یا خطا رخ داده باشد — ادامه به فِالبک
+      console.warn('share failed:', err);
+    }
+  }
+
+  // 2) فالبک: تلاش برای کپی به کلیپ‌بورد (Clipboard API)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(url);
+      return;
+    } catch (err) {
+      console.warn('clipboard write failed:', err);
+    }
+  }
+
+  // 3) فالبک قدیمی‌تر: document.execCommand (برای مرورگرهای خیلی قدیمی)
+  const tmp = document.createElement('input');
+  tmp.style.position = 'absolute';
+  tmp.style.left = '-9999px';
+  tmp.value = url;
+  document.body.appendChild(tmp);
+  tmp.select();
+  try {
+    const ok = document.execCommand('copy');
+  } catch (err) {
+  }
+  document.body.removeChild(tmp);
+
+  // 4) به‌عنوان گزینه بیشتر: نمایش پنجرهٔ انتخاب اشتراک (مثال: توییتر/فیس‌بوک)
+  // اگر خواستی می‌تونی لینک‌های آماده باز کنی:
+  // window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+});
+</script>

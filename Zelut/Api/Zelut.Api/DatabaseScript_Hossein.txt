@@ -1,0 +1,78 @@
+﻿date: 2025-10-26 sunday
+
+CREATE TABLE ZelutBlogComments(
+	Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+	SaveDate DATETIME NOT NULL,
+	BlogId INT NOT NULL,
+	Description NVARCHAR(250) NOT NULL,
+	Name NVARCHAR(150) NOT NULL,
+	Email NVARCHAR(100) NULL
+)
+
+
+date: 2025-11-1 saturday
+
+--دیتابیس اصلی زیلوت
+create database ZelutDb;
+go
+
+-- دیتابیس تست زیلوت
+create database TestZelutDb;
+go
+
+CREATE TABLE Buyers
+(
+    [Id] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [BuyerName] NVARCHAR(50) NOT NULL,
+    [BuyerFamily] NVARCHAR(50) NOT NULL,
+    [BuyerTel] NVARCHAR(20) NOT NULL,
+    [BuyerEmail] NVARCHAR(100) NULL,
+    [SellerNameShop] NVARCHAR(100) NOT NULL,
+    [SellerName] NVARCHAR(50) NOT NULL,
+    [SellerTel] NVARCHAR(20) NOT NULL,
+    [SellerEmail] NVARCHAR(100) NULL,
+    [InstalerName] NVARCHAR(50) NOT NULL,
+    [InstalerFamily] NVARCHAR(50) NOT NULL,
+    [InstalerTel] NVARCHAR(20) NOT NULL,
+    [InstalerEmail] NVARCHAR(100) NULL,
+    [GoodsName] NVARCHAR(50) NOT NULL,
+    [GoodsMetraj] INT NOT NULL,
+    [GoodsCount] INT NOT NULL,
+    [GoodsSerial] NVARCHAR(MAX) NOT NULL,
+    [PictureFactor] NVARCHAR(MAX) NOT NULL,
+    [PictureSerial] NVARCHAR(MAX) NULL,
+    [KindOfGoods] NVARCHAR(20) NOT NULL,
+    [SaveDate] DATETIME NOT NULL,
+    [Ip] NVARCHAR(20) NOT NULL,
+    [CartNo] NVARCHAR(20) NULL,
+    [ShebaNo] NVARCHAR(30) NULL,
+    [Description] NVARCHAR(250) NULL,
+    [UpdateDate] DATETIME NULL
+);
+
+CREATE TABLE ContactUs
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    Name NVARCHAR(50) NULL,
+    Family NVARCHAR(50) NULL,
+    Mobile NVARCHAR(20) NULL,
+    Email NVARCHAR(100) NULL,
+    Message NVARCHAR(MAX) NULL,
+    SaveDate DATETIME NULL,
+    Ip NVARCHAR(20) NULL
+);
+
+CREATE TABLE BlogComments
+(
+    [Id] BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [SaveDate] DATETIME NOT NULL,
+    [BlogId] INT NOT NULL,
+    [Description] NVARCHAR(250) NOT NULL,
+    [Name] NVARCHAR(150) NOT NULL,
+    [Email] NVARCHAR(100) NULL
+);
+
+------------------------------------
+
+ALTER TABLE Buyers
+DROP COLUMN PictureSerial;
