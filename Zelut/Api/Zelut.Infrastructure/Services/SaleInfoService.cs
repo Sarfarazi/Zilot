@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
@@ -7,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using Zelut.Application.DTOs;
 using Zelut.Application.DTOs.ZelutBuyer;
 using Zelut.Application.Services;
+using Zelut.Common.Helpers;
 using Zelut.Common.Helpers.Dapper;
 using Zelut.Domain.Entities;
 using Zelute.Application.Repository;
@@ -138,6 +140,43 @@ public class SaleInfoService : ISaleInfoService
             Message = string.Empty
         };
     }
+    public async Task<ResultData<List<ZelutBuyersDto>>> GetAll(GetZelutBuyerRequestDto request)
+    {
+        var parameters = new DynamicParameters();
+        var str_filter = string.Empty;
+        if (!string.IsNullOrEmpty(request.Search))
+        {
+            str_filter += $@"WHERE";
+            str_filter += $@"(BuyerTel Like N'%@search%'";
+            str_filter += $@"OR BuyerFamily Like N'%@search%'";
+            str_filter += $@"OR InstallerTel Like N'%@search%'";
+            str_filter += $@"OR InstalerName Like N'%@search%')";
+        }
+
+        var paginig_filter = PaginationHelper.GetSortWithPagingSqlCommand(request, "z_buyer");
+        string str_query = $@"SELECT
+                                    BuyerName,BuyerFamily,BuyerTel,BuyerEmail,
+                                    SellerNameShop,SellerName,SellerTel,SellerEmail,
+                                    InstalerName,InstalerFamily,InstalerTel,InstalerEmail,
+                                    GoodsName,GoodsMetraj,GoodsCount,GoodsSerial,KindOfGoods,
+                                    Ip,CartNo,ShebaNo,Description,PictureFactor
+                                    FROM Buyers z_buyer
+                                    {str_filter}
+                                    {paginig_filter}";
+
+        parameters.AddDynamicParams(new
+        {
+            search = $"N'%{request.Search}%'",
+        });
+
+        var result = await _dapper.RunAsync<ZelutBuyersDto>(ApplicationConfig.SqlServer.ConnectionString, str_query, parameters);
+        return new ResultData<List<ZelutBuyersDto>>
+        {
+            IsSuccess = true,
+            Data = result.ToList(),
+            Message = string.Empty
+        };
+    }
     #endregion
 
     #region Private
@@ -147,7 +186,7 @@ public class SaleInfoService : ISaleInfoService
                            FROM Buyers AS buyer
                            CROSS APPLY string_split(buyer.GoodsSerial,'-') AS split";
 
-        var serial_numbers_fromDB = await _dapper.RunAsync<ZelutSerailNumber>(ApplicationConfig.SqlServer.CrmConnectionString, sql_query);
+        var serial_numbers_fromDB = await _dapper.RunAsync<ZelutSerailNumber>(ApplicationConfig.SqlServer.ConnectionString, sql_query);
         var serail_numbers_request = request.GoodsSerial.Split('-').ToList();
 
         var serial_number_exist = serail_numbers_request.FirstOrDefault(serial_number => serial_numbers_fromDB.Select(z => z.serial_number).Contains(serial_number));

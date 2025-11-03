@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Zelut.Application.DTOs.ZelutBuyer;
 
 public class SaleInfoController : BaseController
@@ -48,10 +49,16 @@ public class SaleInfoController : BaseController
         return Ok(insert_buyer_card_info_result);
     }
 
-    [HttpGet()]
+    [HttpPost()]
     [Route("sale-info/get-zelut-buyers")]
-    public async Task<IActionResult> GetZelutBuyers()
+    public async Task<IActionResult> GetZelutBuyers([FromBody]GetZelutBuyerRequestDto request)
     {
-        return Ok();
+        var result = await _saleInfoService.GetAll(request);
+        if (!result.IsSuccess)
+        {
+            return BadRequest(result);
+        }
+
+        return Ok(result);
     }
 }
